@@ -117,29 +117,79 @@ export function TechOrbit() {
 
 export default function AIShowcase() {
   return (
-    <Card className="p-6 md:p-8 hover-elevate">
-      <div className="grid md:grid-cols-5 gap-6 items-center">
-        <div className="md:col-span-3 space-y-3">
+    <div className="space-y-8">
+      <Card className="p-6 md:p-8 hover-elevate">
+        <div className="grid md:grid-cols-5 gap-6 items-center">
+          <div className="md:col-span-3 space-y-3">
+            <div className="flex items-center gap-2">
+              <Badge variant="secondary" className="font-mono">live • training</Badge>
+              <span className="text-sm text-muted-foreground">simulated metric stream</span>
+            </div>
+            <h3 className="text-xl font-semibold">Hands-on AI · Training Metrics</h3>
+            <p className="text-sm text-muted-foreground">
+              Loss falls as accuracy rises in a smooth, noisy curve — a quick visual nod to gradient-based learning.
+            </p>
+            <TrainingVisualizer />
+          </div>
+          <div className="md:col-span-2 space-y-4">
+            <h4 className="text-sm font-semibold tracking-wide uppercase text-muted-foreground">craft + stack</h4>
+            <TechOrbit />
+            <div className="flex flex-wrap gap-2">
+              {['react', 'typescript', 'vite', 'tailwind', 'three.js', 'node', 'express', 'drizzle', 'postgres'].map((t) => (
+                <Badge key={t} variant="outline" className="font-mono">{t}</Badge>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Card>
+
+      {/* Playground Card */}
+      <Card className="p-6 md:p-8 hover-elevate bg-gradient-to-br from-primary/5 to-transparent">
+        <div className="space-y-4">
           <div className="flex items-center gap-2">
-            <Badge variant="secondary" className="font-mono">live • training</Badge>
-            <span className="text-sm text-muted-foreground">simulated metric stream</span>
+            <Badge variant="default" className="font-mono">Interactive Playground</Badge>
+            <span className="text-sm text-muted-foreground">Live AI/ML demos</span>
           </div>
-          <h3 className="text-xl font-semibold">Hands-on AI · Training Metrics</h3>
-          <p className="text-sm text-muted-foreground">
-            Loss falls as accuracy rises in a smooth, noisy curve — a quick visual nod to gradient-based learning.
+          <h3 className="text-2xl font-semibold">Deployable AI Systems</h3>
+          <p className="text-muted-foreground">
+            Explore live inference demos showcasing production-ready ML models with real-time predictions and model insights.
           </p>
-          <TrainingVisualizer />
-        </div>
-        <div className="md:col-span-2 space-y-4">
-          <h4 className="text-sm font-semibold tracking-wide uppercase text-muted-foreground">craft + stack</h4>
-          <TechOrbit />
-          <div className="flex flex-wrap gap-2">
-            {['react', 'typescript', 'vite', 'tailwind', 'three.js', 'node', 'express', 'drizzle', 'postgres'].map((t) => (
-              <Badge key={t} variant="outline" className="font-mono">{t}</Badge>
-            ))}
+          
+          <div className="grid md:grid-cols-2 gap-4 pt-4">
+            <div className="rounded-lg border border-border p-4 bg-card hover:shadow-md transition-shadow">
+              <h4 className="font-semibold mb-2">Income Prediction Model</h4>
+              <p className="text-sm text-muted-foreground mb-3">
+                KNN-based classifier with 85% accuracy on census data
+              </p>
+              <a 
+                href="#" 
+                className="text-sm text-primary hover:underline inline-flex items-center gap-1"
+              >
+                Try Live Demo →
+              </a>
+            </div>
+            
+            <div className="rounded-lg border border-border p-4 bg-card hover:shadow-md transition-shadow">
+              <h4 className="font-semibold mb-2">Super Tic-Tac-Toe AI</h4>
+              <p className="text-sm text-muted-foreground mb-3">
+                Minimax algorithm with alpha-beta pruning for optimal play
+              </p>
+              <a 
+                href="#" 
+                className="text-sm text-primary hover:underline inline-flex items-center gap-1"
+              >
+                Play Against AI →
+              </a>
+            </div>
+          </div>
+          
+          <div className="pt-4 text-center">
+            <p className="text-xs text-muted-foreground">
+              All models are production-ready with proper error handling, input validation, and performance monitoring
+            </p>
           </div>
         </div>
-      </div>
-    </Card>
+      </Card>
+    </div>
   );
 }
