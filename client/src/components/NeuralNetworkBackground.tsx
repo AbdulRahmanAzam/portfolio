@@ -7,6 +7,7 @@ interface NeuralNetworkBackgroundProps {
 
 export function NeuralNetworkBackground({ className = '' }: NeuralNetworkBackgroundProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const mouseRef = useRef({ x: 0, y: 0 });
   const sceneRef = useRef<{
     scene: THREE.Scene;
     camera: THREE.PerspectiveCamera;
@@ -26,6 +27,13 @@ export function NeuralNetworkBackground({ className = '' }: NeuralNetworkBackgro
     const container = containerRef.current;
     const width = container.clientWidth;
     const height = container.clientHeight;
+
+    // Mouse move handler for cursor-based morphing
+    const handleMouseMove = (e: MouseEvent) => {
+      mouseRef.current.x = (e.clientX / width) * 2 - 1;
+      mouseRef.current.y = -(e.clientY / height) * 2 + 1;
+    };
+    window.addEventListener('mousemove', handleMouseMove);
 
     // Scene setup
     const scene = new THREE.Scene();
@@ -112,9 +120,19 @@ export function NeuralNetworkBackground({ className = '' }: NeuralNetworkBackgro
     const animate = () => {
       time += 0.001;
 
-      // Gentle rotation and floating animation
+      // Cursor-influenced morphing with Perlin-like noise
+      const mouseInfluence = 3;
       nodes.forEach((node, i) => {
-        node.position.y += Math.sin(time * 2 + i * 0.1) * 0.01;
+        // Base floating animation
+        const baseY = Math.sin(time * 2 + i * 0.1) * 0.01;
+        
+        // Cursor-based displacement (slowly morphing based on cursor position)
+        const distanceX = mouseRef.current.x * mouseInfluence;
+        const distanceY = mouseRef.current.y * mouseInfluence;
+        
+        node.position.x += (distanceX - node.position.x + (Math.random() - 0.5) * 50) * 0.002;
+        node.position.y += baseY + (distanceY - node.position.y) * 0.002;
+        
         node.rotation.x += 0.001;
         node.rotation.y += 0.001;
       });
@@ -125,9 +143,9 @@ export function NeuralNetworkBackground({ className = '' }: NeuralNetworkBackgro
         positions.needsUpdate = true;
       });
 
-      // Gentle camera rotation
-      camera.position.x = Math.sin(time * 0.2) * 2;
-      camera.position.y = Math.cos(time * 0.3) * 2;
+      // Camera rotation influenced by cursor
+      camera.position.x = Math.sin(time * 0.2) * 2 + mouseRef.current.x * 0.5;
+      camera.position.y = Math.cos(time * 0.3) * 2 + mouseRef.current.y * 0.5;
       camera.lookAt(0, 0, 0);
 
       renderer.render(scene, camera);
@@ -161,6 +179,7 @@ export function NeuralNetworkBackground({ className = '' }: NeuralNetworkBackgro
     // Cleanup
     return () => {
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('mousemove', handleMouseMove);
       observer.disconnect();
       if (sceneRef.current?.animationId) {
         cancelAnimationFrame(sceneRef.current.animationId);

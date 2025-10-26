@@ -1,4 +1,5 @@
 import { NeuralNetworkBackground } from './NeuralNetworkBackground';
+import { MetricsTicker } from './MetricsTicker';
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
 import { useSmoothScroll } from '@/hooks/useSmoothScroll';
@@ -19,6 +20,9 @@ export function Hero() {
     >
       {/* 3D Background */}
       <NeuralNetworkBackground className="opacity-40" />
+
+      {/* Metrics Ticker */}
+      <MetricsTicker />
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

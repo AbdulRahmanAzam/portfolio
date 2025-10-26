@@ -7,11 +7,13 @@ import { Education } from '@/components/Education';
 import { Achievements } from '@/components/Achievements';
 import { Resume } from '@/components/Resume';
 import { Footer } from '@/components/Footer';
+import { GlobalCommandPalette } from '@/components/GlobalCommandPalette';
 
 export default function Portfolio() {
   return (
     <div className="min-h-screen">
       <Navigation />
+      <GlobalCommandPalette />
       <main>
         <Hero />
         <Skills />
