@@ -117,11 +117,12 @@ export function NeuralNetworkBackground({ className = '' }: NeuralNetworkBackgro
 
     // Animation
     let time = 0;
+    const mouseInfluence = 3;
+    const randomDisplacementRange = 50;
     const animate = () => {
       time += 0.001;
 
       // Cursor-influenced morphing with Perlin-like noise
-      const mouseInfluence = 3;
       nodes.forEach((node, i) => {
         // Base floating animation
         const baseY = Math.sin(time * 2 + i * 0.1) * 0.01;
@@ -130,7 +131,7 @@ export function NeuralNetworkBackground({ className = '' }: NeuralNetworkBackgro
         const distanceX = mouseRef.current.x * mouseInfluence;
         const distanceY = mouseRef.current.y * mouseInfluence;
         
-        node.position.x += (distanceX - node.position.x + (Math.random() - 0.5) * 50) * 0.002;
+        node.position.x += (distanceX - node.position.x + (Math.random() - 0.5) * randomDisplacementRange) * 0.002;
         node.position.y += baseY + (distanceY - node.position.y) * 0.002;
         
         node.rotation.x += 0.001;

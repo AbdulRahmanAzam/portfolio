@@ -29,7 +29,7 @@ export function MetricsTicker() {
   const metric = metrics[currentIndex];
 
   return (
-    <div className="fixed top-20 right-4 z-40 hidden lg:block">
+    <div className="fixed top-20 right-4 z-40 hidden lg:block" aria-live="polite" aria-atomic="true">
       <div className="bg-card/90 backdrop-blur-md border border-border rounded-lg p-3 shadow-lg animate-fade-in">
         <div className="flex items-center gap-3">
           <div className="flex flex-col items-end">

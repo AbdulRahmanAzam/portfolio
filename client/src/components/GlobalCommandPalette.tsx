@@ -16,6 +16,10 @@ export function GlobalCommandPalette() {
   const [open, setOpen] = useState(false);
   const smoothScroll = useSmoothScroll();
 
+  // Detect user platform for keyboard shortcut display
+  const isMac = typeof window !== 'undefined' && navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+  const shortcutKey = isMac ? '⌘K' : 'Ctrl+K';
+
   // Toggle command palette with Cmd+K or Ctrl+K
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -83,9 +87,10 @@ export function GlobalCommandPalette() {
       <button
         onClick={() => setOpen(true)}
         className="fixed bottom-4 right-4 z-50 px-3 py-2 text-sm bg-card/90 backdrop-blur-md border border-border rounded-lg shadow-lg hover:shadow-xl transition-all hover-elevate hidden md:flex items-center gap-2"
+        aria-label={`Open command palette (${shortcutKey})`}
       >
         <span className="text-muted-foreground">Press</span>
-        <kbd className="px-2 py-1 text-xs bg-muted rounded">⌘K</kbd>
+        <kbd className="px-2 py-1 text-xs bg-muted rounded">{shortcutKey}</kbd>
       </button>
 
       <CommandDialog open={open} onOpenChange={setOpen}>
@@ -109,7 +114,7 @@ export function GlobalCommandPalette() {
             {commands.slice(6, 6 + portfolioData.projects.length).map((cmd) => {
               const Icon = cmd.icon;
               return (
-                <CommandItem key={cmd.id} onSelect={cmd.action} keywords={cmd.keywords}>
+                <CommandItem key={cmd.id} onSelect={cmd.action}>
                   <Icon className="mr-2 h-4 w-4" />
                   <span>{cmd.label}</span>
                 </CommandItem>
@@ -121,7 +126,7 @@ export function GlobalCommandPalette() {
             {commands.slice(6 + portfolioData.projects.length).map((cmd) => {
               const Icon = cmd.icon;
               return (
-                <CommandItem key={cmd.id} onSelect={cmd.action} keywords={cmd.keywords}>
+                <CommandItem key={cmd.id} onSelect={cmd.action}>
                   <Icon className="mr-2 h-4 w-4" />
                   <span>{cmd.label}</span>
                 </CommandItem>
