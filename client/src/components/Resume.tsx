@@ -1,14 +1,19 @@
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { Download, Mail, Github, Linkedin, Code2 } from 'lucide-react';
+import { Download, Mail, Github, Linkedin, Code2, Brain, Globe } from 'lucide-react';
 import { portfolioData } from '@shared/schema';
 
 export function Resume() {
-  const handleDownload = () => {
+  const handleDownload = (type: 'general' | 'ai' | 'web') => {
     // Download the resume PDF from the public directory
     const link = document.createElement('a');
-    link.href = '/Abdul_Rahman_Azam_Resume.pdf';
-    link.download = 'Abdul_Rahman_Azam_Resume.pdf';
+    const filename = type === 'general' 
+      ? '/Abdul_Rahman_Azam_Resume.pdf'
+      : type === 'ai'
+      ? '/Abdul_Rahman_Azam_Resume_AI_ML.pdf'
+      : '/Abdul_Rahman_Azam_Resume_Web_Dev.pdf';
+    link.href = filename;
+    link.download = filename.split('/').pop() || 'resume.pdf';
     link.setAttribute('target', '_blank');
     document.body.appendChild(link);
     link.click();
@@ -35,20 +40,40 @@ export function Resume() {
           <div className="mb-8">
             <h3 className="text-2xl font-semibold mb-4">Download My Resume</h3>
             <p className="text-muted-foreground mb-6">
-              Get a detailed overview of my experience, skills, and projects
+              Get a detailed overview of my experience, skills, and projects. Choose a tailored version for your needs.
             </p>
             
-            <Button 
-              size="lg"
-              onClick={handleDownload}
-              className="group"
-              data-testid="button-download-resume-main"
-            >
-              <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
-              Download Resume (PDF)
-            </Button>
-            
-            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button 
+                size="lg"
+                onClick={() => handleDownload('general')}
+                className="group w-full sm:w-auto"
+                data-testid="button-download-resume-main"
+              >
+                <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
+                General Resume
+              </Button>
+              
+              <Button 
+                size="lg"
+                variant="outline"
+                onClick={() => handleDownload('ai')}
+                className="group w-full sm:w-auto"
+              >
+                <Brain className="w-5 h-5 mr-2" />
+                AI/ML Focus
+              </Button>
+              
+              <Button 
+                size="lg"
+                variant="outline"
+                onClick={() => handleDownload('web')}
+                className="group w-full sm:w-auto"
+              >
+                <Globe className="w-5 h-5 mr-2" />
+                Web Dev Focus
+              </Button>
+            </div>
           </div>
 
           {/* Contact Links */}

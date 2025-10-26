@@ -4,6 +4,8 @@ import { Badge } from '@/components/ui/badge';
 import { portfolioData } from '@shared/schema';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import type { MotionValue } from 'framer-motion';
+import { ExternalLink, Github, FileText } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 // Vertical lift per card as they stack (in px). Lower = tighter stack.
 const STACK_OFFSET_PER_CARD = 60;
@@ -73,6 +75,11 @@ const ProjectsStack = () => {
             progress={smoothProgress}
             range={range}
             targetScale={targetScale}
+            problem={project.problem}
+            solution={project.solution}
+            impact={project.impact ? [...project.impact] : undefined}
+            category={project.category}
+            links={project.links}
           />
         );
       })}
@@ -95,6 +102,15 @@ type StickyProps = {
   progress: MotionValue<number>;
   range: [number, number];
   targetScale: number;
+  problem?: string;
+  solution?: string;
+  impact?: Array<{ metric: string; value: string }>;
+  category?: string;
+  links?: {
+    demo?: string;
+    github?: string;
+    modelCard?: string;
+  };
 };
 
 const StickyProjectCard = memo(function StickyProjectCard({
@@ -109,6 +125,11 @@ const StickyProjectCard = memo(function StickyProjectCard({
   progress,
   range,
   targetScale,
+  problem,
+  solution,
+  impact,
+  category,
+  links,
 }: StickyProps) {
   // Use eased transforms for smoother interpolation (reduces jerkiness)
   const scale = useTransform(progress, range, [1.02, targetScale]);
@@ -129,12 +150,48 @@ const StickyProjectCard = memo(function StickyProjectCard({
         <div className="flex flex-1 flex-col gap-6">
           <header className="flex items-start justify-between gap-6">
             <div className="flex-1 space-y-2">
-              <div>
+              <div className="flex items-center gap-2">
                 <h3 className="text-2xl font-semibold leading-snug sm:text-3xl">{title}</h3>
-                <p className="font-mono text-sm uppercase tracking-[0.3em] text-muted-foreground/70">{period}</p>
+                {category && (
+                  <Badge variant="outline" className="text-xs">
+                    {category === 'aiml' ? 'AI/ML' : 'Web'}
+                  </Badge>
+                )}
               </div>
+              <p className="font-mono text-sm uppercase tracking-[0.3em] text-muted-foreground/70">{period}</p>
             </div>
           </header>
+
+          {/* Problem → Solution → Impact blocks */}
+          {(problem || solution || impact) && (
+            <div className="space-y-4 border-l-2 border-primary/30 pl-4">
+              {problem && (
+                <div>
+                  <h4 className="text-xs font-semibold uppercase tracking-wider text-destructive mb-1">Problem</h4>
+                  <p className="text-sm text-muted-foreground">{problem}</p>
+                </div>
+              )}
+              {solution && (
+                <div>
+                  <h4 className="text-xs font-semibold uppercase tracking-wider text-primary mb-1">Solution</h4>
+                  <p className="text-sm text-muted-foreground">{solution}</p>
+                </div>
+              )}
+              {impact && impact.length > 0 && (
+                <div>
+                  <h4 className="text-xs font-semibold uppercase tracking-wider text-green-600 dark:text-green-400 mb-2">Impact</h4>
+                  <div className="grid grid-cols-2 gap-2">
+                    {impact.map((item, idx) => (
+                      <div key={idx} className="rounded-lg bg-muted/50 p-2">
+                        <div className="text-xs text-muted-foreground">{item.metric}</div>
+                        <div className="text-sm font-semibold">{item.value}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
 
           <p className="text-base leading-relaxed text-muted-foreground/90">
             {description}
@@ -156,6 +213,36 @@ const StickyProjectCard = memo(function StickyProjectCard({
               </div>
             ))}
           </div>
+
+          {/* Links section */}
+          {links && (
+            <div className="flex flex-wrap gap-2 pt-4 border-t border-border/50">
+              {links.demo && (
+                <Button size="sm" variant="outline" asChild>
+                  <a href={links.demo} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="w-3 h-3 mr-1" />
+                    Demo
+                  </a>
+                </Button>
+              )}
+              {links.github && (
+                <Button size="sm" variant="outline" asChild>
+                  <a href={links.github} target="_blank" rel="noopener noreferrer">
+                    <Github className="w-3 h-3 mr-1" />
+                    GitHub
+                  </a>
+                </Button>
+              )}
+              {links.modelCard && (
+                <Button size="sm" variant="outline" asChild>
+                  <a href={links.modelCard} target="_blank" rel="noopener noreferrer">
+                    <FileText className="w-3 h-3 mr-1" />
+                    Model Card
+                  </a>
+                </Button>
+              )}
+            </div>
+          )}
         </div>
 
         <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-primary/5 via-primary/0 to-transparent" />
