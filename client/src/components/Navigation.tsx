@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { useSmoothScroll } from '@/hooks/useSmoothScroll';
+import { Calendar, Mail, Linkedin } from 'lucide-react';
 
 export function Navigation() {
   const [activeSection, setActiveSection] = useState('home');
@@ -80,6 +81,16 @@ export function Navigation() {
           </div>
 
           <div className="flex items-center gap-2">
+            {scrolled && (
+              <Button 
+                size="sm" 
+                className="hidden md:flex items-center gap-2"
+                onClick={() => window.open('https://calendly.com/abdulrahmanazam', '_blank')}
+              >
+                <Calendar className="w-4 h-4" />
+                Book a Call
+              </Button>
+            )}
             <ThemeToggle />
             {/* Mobile menu button */}
             <div className="md:hidden">
