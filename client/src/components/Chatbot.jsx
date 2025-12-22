@@ -3,15 +3,19 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, X, Send, Bot, User, Loader2, Sparkles } from "lucide-react";
 import { Button } from "./ui/button";
 import { portfolioData } from "@shared/schema";
+// import { config } from "dotenv";
 
-const GROQ_API_KEY = "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";
+// config();
+
+// const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY;
+// console.log(GROQ_API_KEY);
 
 // System prompt with all portfolio details
 const SYSTEM_PROMPT = `You are Abdul Rahman Azam's AI assistant on his portfolio website. Answer questions about Abdul Rahman Azam's background briefly and accurately. Be friendly but concise - keep responses under 100 words unless more detail is specifically requested.
 
 ABOUT ABDUL RAHMAN AZAM:
 - Full Stack AI Engineer
-- BS in Artificial Intelligence student at FAST NUCES Karachi (2021 - Present, CGPA: 3.33)
+- BS in Artificial Intelligence student at FAST NUCES Karachi (2023 - Present, CGPA: 3.33)
 - Tagline: "Crafting Code That Thinks — and Ideas That Build Themselves."
 
 SKILLS:
@@ -20,7 +24,7 @@ AI/ML: Python, Machine Learning, Deep Learning, Scikit-learn, Pandas & NumPy, Da
 
 PROJECTS:
 1. University Resource Sharing Platform (Jan-May 2025) - Full-stack platform for FAST-NUCES students using React.js, Node.js, Express.js, PostgreSQL
-2. Super Tic Tac Toe (April-May 2025) - AI game with Minimax Algorithm and Alpha-Beta Pruning
+2. Super Tic Tac Toe (Apr-May 2025) - AI game with Minimax Algorithm and Alpha-Beta Pruning
 3. Income Predictor (Sep-Dec 2024) - ML app with 85% accuracy using KNN, React, FastAPI, Python
 4. 2D Platformer Game (Feb-May 2024) - Top 1% project at university using C++ and SFML
 5. AI Tic-Tac-Toe (Sep-Dec 2023) - 100% win rate against humans using Minimax in C
@@ -96,7 +100,7 @@ export function Chatbot() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${GROQ_API_KEY}`,
+          Authorization: `Bearer ${"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"}`,
         },
         body: JSON.stringify({
           model: "llama-3.1-8b-instant",

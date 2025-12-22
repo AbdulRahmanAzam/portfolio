@@ -182,3 +182,5 @@ npm run build
   - Education timeline
   - Achievements and certifications
   - Social media links
+
+  // "dev": "cross-env NODE_ENV=development node server/index.js",
