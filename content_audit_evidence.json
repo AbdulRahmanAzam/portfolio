@@ -1,0 +1,17 @@
+{
+  "url": "https://abdulrahmanazam.me/",
+  "status": 200,
+  "content_type": "text/html; charset=utf-8",
+  "html_bytes": 6610,
+  "script_tags": 3,
+  "json_ld_blocks": 2,
+  "has_main": false,
+  "has_h1": true,
+  "h1": "Abdul Rahman Azam",
+  "title": "Abdul Rahman Azam | Full Stack AI Engineer - Portfolio",
+  "visible_word_count": 68,
+  "has_mailto": true,
+  "has_tel": false,
+  "contains_contact_word": true,
+  "contains_project_word": false
+}

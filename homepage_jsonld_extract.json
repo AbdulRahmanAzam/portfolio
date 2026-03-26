@@ -1,0 +1,37 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Abdul Rahman Azam",
+    "url": "https://abdulrahmanazam.com",
+    "image": "https://abdulrahmanazam.com/og-image.png",
+    "jobTitle": "Full Stack AI Engineer",
+    "description": "Full Stack AI Engineer specializing in Machine Learning, Deep Learning, and modern web development.",
+    "email": "mailto:azamabdulrahman930@gmail.com",
+    "sameAs": [
+      "https://github.com/abdulrahmanazam",
+      "https://linkedin.com/in/abdulrahmanazam",
+      "https://leetcode.com/abdulrahmanazam"
+    ],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "FAST NUCES Karachi"
+    },
+    "knowsAbout": [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Deep Learning",
+      "Full Stack Development",
+      "React.js",
+      "Node.js",
+      "Python"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Abdul Rahman Azam - Portfolio",
+    "url": "https://abdulrahmanazam.com",
+    "description": "Professional portfolio of Abdul Rahman Azam - Full Stack AI Engineer"
+  }
+]

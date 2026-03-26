@@ -1,0 +1,24 @@
+# Robots.txt for Abdul Rahman Azam Portfolio
+# https://abdulrahmanazam.com
+
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://abdulrahmanazam.com/sitemap.xml
+
+# Crawl delay (optional - be gentle on the server)
+Crawl-delay: 1
+
+# Block unnecessary files
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /assets/*.js.map
+
+# Allow important resources for rendering
+Allow: /assets/
+Allow: /*.css
+Allow: /*.js
+Allow: /favicon
+Allow: /og-image.png

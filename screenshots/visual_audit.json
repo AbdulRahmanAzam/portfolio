@@ -1,0 +1,476 @@
+{
+  "url": "https://abdulrahmanazam.me",
+  "ok": true,
+  "error": null,
+  "title": "Abdul Rahman Azam | Full Stack AI Engineer - Portfolio",
+  "finalUrl": "https://abdulrahmanazam.me/",
+  "desktop": {
+    "h1Visible": true,
+    "ctaCount": 13,
+    "ctaAboveFoldCount": 13,
+    "hasCtaAboveFold": true,
+    "ctaSamples": [
+      {
+        "tag": "button",
+        "text": "AR Abdul Rahman Azam",
+        "x": 352,
+        "y": 6,
+        "w": 263,
+        "h": 52,
+        "visible": true,
+        "aboveFold": true,
+        "isCta": true
+      },
+      {
+        "tag": "button",
+        "text": "Home",
+        "x": 784,
+        "y": 16,
+        "w": 60,
+        "h": 32,
+        "visible": true,
+        "aboveFold": true,
+        "isCta": true
+      },
+      {
+        "tag": "button",
+        "text": "Skills",
+        "x": 852,
+        "y": 16,
+        "w": 56,
+        "h": 32,
+        "visible": true,
+        "aboveFold": true,
+        "isCta": true
+      },
+      {
+        "tag": "button",
+        "text": "Projects",
+        "x": 916,
+        "y": 16,
+        "w": 73,
+        "h": 32,
+        "visible": true,
+        "aboveFold": true,
+        "isCta": true
+      },
+      {
+        "tag": "button",
+        "text": "Education",
+        "x": 997,
+        "y": 16,
+        "w": 83,
+        "h": 32,
+        "visible": true,
+        "aboveFold": true,
+        "isCta": true
+      },
+      {
+        "tag": "button",
+        "text": "Achievements",
+        "x": 1088,
+        "y": 16,
+        "w": 108,
+        "h": 32,
+        "visible": true,
+        "aboveFold": true,
+        "isCta": true
+      },
+      {
+        "tag": "button",
+        "text": "Contact",
+        "x": 1203,
+        "y": 16,
+        "w": 71,
+        "h": 32,
+        "visible": true,
+        "aboveFold": true,
+        "isCta": true
+      },
+      {
+        "tag": "button",
+        "text": "Resume",
+        "x": 1444,
+        "y": 16,
+        "w": 72,
+        "h": 32,
+        "visible": true,
+        "aboveFold": true,
+        "isCta": true
+      },
+      {
+        "tag": "button",
+        "text": "Toggle theme",
+        "x": 1524,
+        "y": 20,
+        "w": 44,
+        "h": 24,
+        "visible": true,
+        "aboveFold": true,
+        "isCta": true
+      },
+      {
+        "tag": "button",
+        "text": "View Projects",
+        "x": 783,
+        "y": 598,
+        "w": 157,
+        "h": 40,
+        "visible": true,
+        "aboveFold": true,
+        "isCta": true
+      }
+    ],
+    "navVisible": true,
+    "hamburgerVisible": false,
+    "horizontalOverflow": false,
+    "smallTapTargets": [
+      {
+        "tag": "button",
+        "text": "Home",
+        "width": 60,
+        "height": 32,
+        "x": 784,
+        "y": 16
+      },
+      {
+        "tag": "button",
+        "text": "Skills",
+        "width": 56,
+        "height": 32,
+        "x": 852,
+        "y": 16
+      },
+      {
+        "tag": "button",
+        "text": "Projects",
+        "width": 73,
+        "height": 32,
+        "x": 916,
+        "y": 16
+      },
+      {
+        "tag": "button",
+        "text": "Education",
+        "width": 83,
+        "height": 32,
+        "x": 997,
+        "y": 16
+      },
+      {
+        "tag": "button",
+        "text": "Achievements",
+        "width": 108,
+        "height": 32,
+        "x": 1088,
+        "y": 16
+      },
+      {
+        "tag": "button",
+        "text": "Contact",
+        "width": 71,
+        "height": 32,
+        "x": 1203,
+        "y": 16
+      },
+      {
+        "tag": "button",
+        "text": "Resume",
+        "width": 72,
+        "height": 32,
+        "x": 1444,
+        "y": 16
+      },
+      {
+        "tag": "button",
+        "text": "Toggle theme",
+        "width": 44,
+        "height": 24,
+        "x": 1524,
+        "y": 20
+      },
+      {
+        "tag": "button",
+        "text": "View Projects",
+        "width": 157,
+        "height": 40,
+        "x": 783,
+        "y": 598
+      },
+      {
+        "tag": "button",
+        "text": "Free Call Session",
+        "width": 181,
+        "height": 40,
+        "x": 956,
+        "y": 598
+      },
+      {
+        "tag": "a",
+        "text": "Source Code",
+        "width": 165,
+        "height": 38,
+        "x": 1000,
+        "y": 2682
+      },
+      {
+        "tag": "a",
+        "text": "Source Code",
+        "width": 165,
+        "height": 38,
+        "x": 1000,
+        "y": 3268
+      },
+      {
+        "tag": "a",
+        "text": "Source Code",
+        "width": 165,
+        "height": 38,
+        "x": 1000,
+        "y": 3916
+      },
+      {
+        "tag": "a",
+        "text": "Source Code",
+        "width": 165,
+        "height": 38,
+        "x": 1000,
+        "y": 4564
+      },
+      {
+        "tag": "a",
+        "text": "Source Code",
+        "width": 165,
+        "height": 38,
+        "x": 1000,
+        "y": 5212
+      },
+      {
+        "tag": "a",
+        "text": "GitHub",
+        "width": 40,
+        "height": 40,
+        "x": 1328,
+        "y": 8166
+      },
+      {
+        "tag": "a",
+        "text": "LinkedIn",
+        "width": 40,
+        "height": 40,
+        "x": 1384,
+        "y": 8166
+      },
+      {
+        "tag": "a",
+        "text": "LeetCode",
+        "width": 40,
+        "height": 40,
+        "x": 1440,
+        "y": 8166
+      },
+      {
+        "tag": "a",
+        "text": "Email",
+        "width": 40,
+        "height": 40,
+        "x": 1496,
+        "y": 8166
+      }
+    ]
+  },
+  "mobile": {
+    "h1Visible": true,
+    "ctaCount": 7,
+    "ctaAboveFoldCount": 7,
+    "hasCtaAboveFold": true,
+    "ctaSamples": [
+      {
+        "tag": "button",
+        "text": "AR Abdul Rahman Azam",
+        "x": 16,
+        "y": -4,
+        "w": 254,
+        "h": 72,
+        "visible": true,
+        "aboveFold": true,
+        "isCta": true
+      },
+      {
+        "tag": "button",
+        "text": "Toggle theme",
+        "x": 270,
+        "y": 20,
+        "w": 44,
+        "h": 24,
+        "visible": true,
+        "aboveFold": true,
+        "isCta": true
+      },
+      {
+        "tag": "button",
+        "text": "\u2630",
+        "x": 322,
+        "y": 16,
+        "w": 37,
+        "h": 32,
+        "visible": true,
+        "aboveFold": true,
+        "isCta": true
+      },
+      {
+        "tag": "button",
+        "text": "View Projects",
+        "x": 109,
+        "y": 458,
+        "w": 157,
+        "h": 40,
+        "visible": true,
+        "aboveFold": true,
+        "isCta": true
+      },
+      {
+        "tag": "button",
+        "text": "Free Call Session",
+        "x": 97,
+        "y": 514,
+        "w": 181,
+        "h": 40,
+        "visible": true,
+        "aboveFold": true,
+        "isCta": true
+      },
+      {
+        "tag": "button",
+        "text": "Scroll to skills section",
+        "x": 335,
+        "y": 510,
+        "w": 48,
+        "h": 48,
+        "visible": true,
+        "aboveFold": true,
+        "isCta": true
+      },
+      {
+        "tag": "button",
+        "text": "",
+        "x": 295,
+        "y": 732,
+        "w": 56,
+        "h": 56,
+        "visible": true,
+        "aboveFold": true,
+        "isCta": true
+      }
+    ],
+    "navVisible": true,
+    "hamburgerVisible": true,
+    "horizontalOverflow": false,
+    "smallTapTargets": [
+      {
+        "tag": "button",
+        "text": "Toggle theme",
+        "width": 44,
+        "height": 24,
+        "x": 270,
+        "y": 20
+      },
+      {
+        "tag": "button",
+        "text": "\u2630",
+        "width": 37,
+        "height": 32,
+        "x": 322,
+        "y": 16
+      },
+      {
+        "tag": "button",
+        "text": "View Projects",
+        "width": 157,
+        "height": 40,
+        "x": 109,
+        "y": 458
+      },
+      {
+        "tag": "button",
+        "text": "Free Call Session",
+        "width": 181,
+        "height": 40,
+        "x": 97,
+        "y": 514
+      },
+      {
+        "tag": "a",
+        "text": "Source Code",
+        "width": 165,
+        "height": 38,
+        "x": 32,
+        "y": 3475
+      },
+      {
+        "tag": "a",
+        "text": "Source Code",
+        "width": 165,
+        "height": 38,
+        "x": 32,
+        "y": 4048
+      },
+      {
+        "tag": "a",
+        "text": "Source Code",
+        "width": 165,
+        "height": 38,
+        "x": 32,
+        "y": 4605
+      },
+      {
+        "tag": "a",
+        "text": "Source Code",
+        "width": 165,
+        "height": 38,
+        "x": 32,
+        "y": 5226
+      },
+      {
+        "tag": "a",
+        "text": "Source Code",
+        "width": 165,
+        "height": 38,
+        "x": 32,
+        "y": 5809
+      },
+      {
+        "tag": "a",
+        "text": "GitHub",
+        "width": 40,
+        "height": 40,
+        "x": 84,
+        "y": 9588
+      },
+      {
+        "tag": "a",
+        "text": "LinkedIn",
+        "width": 40,
+        "height": 40,
+        "x": 140,
+        "y": 9588
+      },
+      {
+        "tag": "a",
+        "text": "LeetCode",
+        "width": 40,
+        "height": 40,
+        "x": 196,
+        "y": 9588
+      },
+      {
+        "tag": "a",
+        "text": "Email",
+        "width": 40,
+        "height": 40,
+        "x": 252,
+        "y": 9588
+      }
+    ]
+  }
+}

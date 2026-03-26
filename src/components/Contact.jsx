@@ -1,9 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { Calendar, Mail, Github, Linkedin, ExternalLink, Download, Code2 } from "lucide-react";
-import { useDarkMode } from "@/hooks/use-dark-mode";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { portfolioData } from "@/lib/schema";
@@ -38,61 +36,36 @@ function SocialLink({ href, icon: Icon, label, username, external = true }) {
   );
 }
 
-// Convert HSL "217 91% 48%" to hex for Calendly
-function hslToHex(hslString) {
-  const [hRaw, sRaw, lRaw] = hslString.trim().split(" ");
-  if (!hRaw || !sRaw || !lRaw) return "3b82f6";
-  const h = parseFloat(hRaw);
-  const s = parseFloat(sRaw.replace("%", "")) / 100;
-  const l = parseFloat(lRaw.replace("%", "")) / 100;
-  const a = s * Math.min(l, 1 - l);
-  const f = (n) => {
-    const k = (n + h / 30) % 12;
-    const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
-    return Math.round(255 * color).toString(16).padStart(2, "0");
-  };
-  return `${f(0)}${f(8)}${f(4)}`;
-}
-
-// Calendly Embed with lazy loading
-function CalendlyEmbed() {
-  const embedRef = useRef(null);
-  const isInView = useInView(embedRef, { once: true, margin: "-100px" });
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [primaryHex, setPrimaryHex] = useState("3b82f6");
-  const { isDarkMode } = useDarkMode();
-
-  useEffect(() => {
-    const root = getComputedStyle(document.documentElement);
-    const hsl = root.getPropertyValue("--primary");
-    setPrimaryHex(hslToHex(hsl));
-  }, [isDarkMode]);
-
-  useEffect(() => {
-    if (!isInView) return;
-    const script = document.createElement("script");
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
-    script.async = true;
-    script.onload = () => setIsLoaded(true);
-    document.body.appendChild(script);
-    return () => {
-      const existing = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
-      if (existing) existing.remove();
-    };
-  }, [isInView]);
-
+function ScheduleCallPanel() {
   return (
-    <div
-      ref={embedRef}
-      className="relative w-full h-[360px] overflow-hidden rounded-2xl"
-    >
-      {isInView && (
-        <div
-          className="calendly-inline-widget w-full"
-          data-url={`${CONFIG.calendlyUrl}?hide_event_type_details=1&hide_landing_page_details=1&hide_gdpr_banner=1&background_color=transparent&primary_color=${primaryHex}`}
-          style={{ height: "380px" }}
-        />
-      )}
+    <div className="relative overflow-hidden rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/10 via-background to-background p-6">
+      <div className="absolute -top-20 -right-20 h-44 w-44 rounded-full bg-primary/20 blur-3xl" />
+
+      <div className="relative space-y-5">
+        <p className="text-sm text-muted-foreground leading-relaxed">
+          Pick a time that works for you and let&apos;s discuss your project, collaboration, or AI/ML opportunity.
+        </p>
+
+        <div className="grid gap-3 sm:grid-cols-2">
+          <div className="rounded-xl border border-border/60 bg-card/60 p-3">
+            <p className="text-xs text-muted-foreground">Session Type</p>
+            <p className="text-sm font-medium">1:1 Discovery Call</p>
+          </div>
+          <div className="rounded-xl border border-border/60 bg-card/60 p-3">
+            <p className="text-xs text-muted-foreground">Duration</p>
+            <p className="text-sm font-medium">30 Minutes</p>
+          </div>
+        </div>
+
+        <Button asChild className="w-full h-12 rounded-xl group">
+          <a href={CONFIG.calendlyUrl} target="_blank" rel="noopener noreferrer" aria-label="Book a free meeting on Calendly">
+            <span>Book a Free Meeting</span>
+            <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+          </a>
+        </Button>
+
+        <p className="text-xs text-muted-foreground">You&apos;ll be redirected to Calendly to confirm your slot.</p>
+      </div>
     </div>
   );
 }
@@ -109,11 +82,11 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-16 px-4 sm:px-6 lg:px-8 bg-background overflow-hidden">
+    <section id="contact" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-background overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/4 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-primary/4 rounded-full blur-[120px]" />
       </div>
       
       <motion.div 
@@ -125,56 +98,73 @@ export function Contact() {
       >
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm font-medium text-primary">Available for opportunities</span>
-          </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
-            Let's Work Together
+          <span className="section-label mb-4 inline-flex">Get in Touch</span>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4 mt-4">
+            <span className="heading-underline">Let&apos;s Work Together</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            I'm actively seeking AI/ML opportunities. Schedule a call or connect with me directly.
+            I&apos;m actively seeking AI/ML opportunities. Schedule a call or connect with me directly.
           </p>
         </div>
 
         {/* Two Column Layout */}
         <div className="grid lg:grid-cols-2 gap-8 mb-8">
           {/* Calendly Card */}
-          <Card className="h-full p-6 bg-card/50 backdrop-blur-sm border-border/60 overflow-hidden">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                <Calendar className="w-6 h-6 text-primary" />
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <Card className="h-full p-6 bg-card/50 backdrop-blur-sm border-border/40 overflow-hidden rounded-2xl glow-hover">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Calendar className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold">Schedule a Call</h3>
+                  <p className="text-sm text-muted-foreground">Book a Free Meeting</p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-xl font-semibold">Schedule a Call</h3>
-                <p className="text-sm text-muted-foreground">Book a Free meeting</p>
-              </div>
-            </div>
-            <CalendlyEmbed />
-          </Card>
+              <ScheduleCallPanel />
+            </Card>
+          </motion.div>
 
           {/* Connect Card */}
-          <Card className="h-full p-6 bg-card/50 backdrop-blur-sm border-border/60">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                <Mail className="w-6 h-6 text-primary" />
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <Card className="h-full p-6 bg-card/50 backdrop-blur-sm border-border/40 rounded-2xl glow-hover">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Mail className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold">Connect With Me</h3>
+                  <p className="text-sm text-muted-foreground">Find me on these platforms</p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-xl font-semibold">Connect With Me</h3>
-                <p className="text-sm text-muted-foreground">Find me on these platforms</p>
+              <div className="space-y-3">
+                <SocialLink href={`mailto:${portfolioData.social.email}`} icon={Mail} label="Email" username={portfolioData.social.email} external={false} />
+                <SocialLink href={portfolioData.social.linkedin} icon={Linkedin} label="LinkedIn" username="@abdulrahmanazam" />
+                <SocialLink href={portfolioData.social.github} icon={Github} label="GitHub" username="@abdulrahmanazam" />
+                <SocialLink href={portfolioData.social.leetcode} icon={Code2} label="LeetCode" username="@abdulrahmanazam" />
               </div>
-            </div>
-            <div className="space-y-3">
-              <SocialLink href={`mailto:${portfolioData.social.email}`} icon={Mail} label="Email" username={portfolioData.social.email} external={false} />
-              <SocialLink href={portfolioData.social.linkedin} icon={Linkedin} label="LinkedIn" username="@abdulrahmanazam" />
-              <SocialLink href={portfolioData.social.github} icon={Github} label="GitHub" username="@abdulrahmanazam" />
-              <SocialLink href={portfolioData.social.leetcode} icon={Code2} label="LeetCode" username="@abdulrahmanazam" />
-            </div>
-          </Card>
+            </Card>
+          </motion.div>
         </div>
 
         {/* Resume Download */}
-        <div className="w-full flex justify-center">
+        <motion.div 
+          className="w-full flex justify-center"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+        >
           <Button
             onClick={handleDownloadResume}
             className="w-full max-w-[16.5rem] h-15 rounded-2xl bg-primary text-primary-foreground hover:bg-primary/90 border border-primary/30 shadow-sm transition-all duration-300 group"
@@ -189,7 +179,7 @@ export function Contact() {
               </div>
             </div>
           </Button>
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   );

@@ -1,12 +1,15 @@
 # Robots.txt for Abdul Rahman Azam Portfolio
-# https://abdulrahmanazam.com
+# https://abdulrahmanazam.me
 
 # Allow all search engines
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://abdulrahmanazam.com/sitemap.xml
+Sitemap: https://abdulrahmanazam.me/sitemap.xml
+
+# AI crawler guidance
+# llms.txt is available at: https://abdulrahmanazam.me/llms.txt
 
 # Crawl delay (optional - be gentle on the server)
 Crawl-delay: 1

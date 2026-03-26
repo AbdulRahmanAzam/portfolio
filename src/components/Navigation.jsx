@@ -1,10 +1,12 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "./ui/button";
 import { ThemeToggle } from "./ui/ThemeToggle";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 import { portfolioData } from "@/lib/schema";
+import { Menu, X, Download } from "lucide-react";
 
 const navItems = [
   { id: "home", label: "Home" },
@@ -20,6 +22,7 @@ export function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const smoothScroll = useSmoothScroll();
+  const navRefs = useRef(new Map());
 
   const handleDownloadResume = () => {
     const link = document.createElement("a");
@@ -59,81 +62,123 @@ export function Navigation() {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/80 backdrop-blur-lg border-b border-border" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled 
+          ? "bg-background/70 backdrop-blur-xl border-b border-border/50 shadow-sm" 
+          : "bg-transparent"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
+          {/* Logo */}
           <button
             onClick={() => scrollToSection("home")}
-            className="flex items-center gap-2  text-xl font-bold tracking-tight hover-elevate active-elevate-2 px-3 py-2 rounded-md transition-colors"
+            className="flex items-center gap-2.5 text-xl font-bold tracking-tight px-3 py-2 rounded-lg transition-colors group"
           >
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary/40 bg-primary/10 text-sm font-extrabold text-primary shadow-sm shadow-primary/15">
+            <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 text-sm font-extrabold text-primary shadow-sm transition-all duration-300 group-hover:bg-primary/20 group-hover:border-primary/50 group-hover:shadow-primary/20 group-hover:shadow-md">
               AR
             </span>
-            <span>{portfolioData.name}</span>
+            <span className="hidden sm:inline">{portfolioData.name}</span>
           </button>
 
-          <div className="hidden md:flex items-center gap-2">
+          {/* Desktop nav with sliding indicator */}
+          <div className="hidden md:flex items-center gap-1 relative bg-muted/40 rounded-full px-1.5 py-1.5 backdrop-blur-sm border border-border/30">
             {navItems.map((item) => (
-              <Button
+              <button
                 key={item.id}
-                variant="ghost"
-                size="sm"
+                ref={(el) => { if (el) navRefs.current.set(item.id, el); }}
                 onClick={() => scrollToSection(item.id)}
-                className={`transition-colors ${
-                  activeSection === item.id ? "bg-accent text-accent-foreground" : ""
+                className={`relative z-10 px-3.5 py-1.5 text-sm font-medium rounded-full transition-colors duration-200 ${
+                  activeSection === item.id 
+                    ? "text-primary-foreground" 
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
               >
+                {activeSection === item.id && (
+                  <motion.span
+                    layoutId="nav-pill"
+                    className="absolute inset-0 bg-primary rounded-full shadow-sm"
+                    style={{ zIndex: -1 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                  />
+                )}
                 {item.label}
-              </Button>
+              </button>
             ))}
           </div>
 
+          {/* Right side */}
           <div className="flex items-center gap-2">
             <Button
               variant="outline"
               size="sm"
               onClick={handleDownloadResume}
-              className="hidden md:inline-flex border-primary/50 text-primary/90 bg-primary/5 hover:bg-primary/10 hover:text-primary shadow-sm"
+              className="hidden md:inline-flex gap-2 border-primary/30 text-primary/90 bg-primary/5 hover:bg-primary/10 hover:text-primary hover:border-primary/50 shadow-sm transition-all duration-300"
             >
+              <Download className="w-3.5 h-3.5" />
               Resume
             </Button>
             <ThemeToggle />
             
+            {/* Mobile menu toggle */}
             <div className="md:hidden">
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label="Toggle menu"
+                className="relative w-9 h-9 p-0"
               >
-                {mobileMenuOpen ? "✕" : "☰"}
+                <AnimatePresence mode="wait">
+                  {mobileMenuOpen ? (
+                    <motion.div key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }}>
+                      <X className="w-5 h-5" />
+                    </motion.div>
+                  ) : (
+                    <motion.div key="open" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.2 }}>
+                      <Menu className="w-5 h-5" />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </Button>
             </div>
           </div>
         </div>
 
-        {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border">
-            <div className="flex flex-col gap-2">
-              {navItems.map((item) => (
-                <Button
-                  key={item.id}
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => scrollToSection(item.id)}
-                  className={`justify-start ${
-                    activeSection === item.id ? "bg-accent text-accent-foreground" : ""
-                  }`}
-                >
-                  {item.label}
-                </Button>
-              ))}
-            </div>
-          </div>
-        )}
+        {/* Mobile menu with slide animation */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="md:hidden overflow-hidden border-t border-border/50"
+            >
+              <div className="py-4 flex flex-col gap-1">
+                {navItems.map((item, i) => (
+                  <motion.div
+                    key={item.id}
+                    initial={{ x: -20, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: i * 0.05, duration: 0.3 }}
+                  >
+                    <button
+                      onClick={() => scrollToSection(item.id)}
+                      className={`w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+                        activeSection === item.id 
+                          ? "bg-primary/10 text-primary" 
+                          : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
     </header>
   );

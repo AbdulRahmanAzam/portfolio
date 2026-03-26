@@ -1,0 +1,156 @@
+﻿{
+    "robots":  {
+                   "url":  "https://abdulrahmanazam.me/robots.txt",
+                   "fetched":  true,
+                   "status":  200,
+                   "sitemapDirectives":  [
+                                             "https://abdulrahmanazam.com/sitemap.xml"
+                                         ],
+                   "userAgentStarDisallow":  [
+                                                 "/api/",
+                                                 "/*.json$",
+                                                 "/assets/*.js.map"
+                                             ],
+                   "examples":  {
+                                    "sitemapDirectives":  [
+                                                              "https://abdulrahmanazam.com/sitemap.xml"
+                                                          ],
+                                    "disallow":  [
+                                                     "/api/",
+                                                     "/*.json$",
+                                                     "/assets/*.js.map"
+                                                 ]
+                                }
+               },
+    "sitemap":  {
+                    "defaultUrl":  "https://abdulrahmanazam.me/sitemap.xml",
+                    "seedSitemaps":  [
+                                         "https://abdulrahmanazam.me/sitemap.xml",
+                                         "https://abdulrahmanazam.com/sitemap.xml"
+                                     ],
+                    "fetchedSitemaps":  [
+
+                                        ],
+                    "fetchErrors":  [
+
+                                    ],
+                    "totalUrls":  0,
+                    "sampleUrls":  [
+
+                                   ],
+                    "examples":  {
+                                     "fetchErrors":  [
+
+                                                     ],
+                                     "urls":  [
+
+                                              ]
+                                 }
+                },
+    "urlValidity":  {
+                        "checked":  0,
+                        "ok":  0,
+                        "failed":  0,
+                        "redirects":  0,
+                        "invalidLocCount":  0,
+                        "examples":  {
+                                         "ok":  [
+
+                                                ],
+                                         "failed":  [
+
+                                                    ],
+                                         "redirects":  [
+
+                                                       ],
+                                         "invalidLoc":  [
+
+                                                        ]
+                                     }
+                    },
+    "canonical":  {
+                      "sampleSize":  30,
+                      "checkedHtmlPages":  0,
+                      "canonicalMissingCount":  0,
+                      "hostMismatchCount":  0,
+                      "primaryHost":  "abdulrahmanazam.me",
+                      "examples":  {
+                                       "canonicalMissing":  [
+
+                                                            ],
+                                       "hostMismatch":  [
+
+                                                        ]
+                                   }
+                  },
+    "fragments":  {
+                      "count":  0,
+                      "examples":  [
+
+                                   ]
+                  },
+    "hostConsistency":  {
+                            "primaryHost":  "abdulrahmanazam.me",
+                            "primaryScheme":  "https",
+                            "hostCounts":  {
+
+                                           },
+                            "schemeCounts":  {
+
+                                             },
+                            "hostMismatchCount":  0,
+                            "schemeMismatchCount":  0,
+                            "examples":  {
+                                             "hostMismatch":  [
+
+                                                              ],
+                                             "schemeMismatch":  [
+
+                                                                ]
+                                         }
+                        },
+    "updateSignals":  {
+                          "missingLastmodCount":  0,
+                          "invalidLastmodCount":  0,
+                          "allIdenticalLastmod":  false,
+                          "identicalLastmodValue":  null,
+                          "examples":  {
+                                           "missingLastmod":  [
+
+                                                              ],
+                                           "invalidLastmod":  [
+
+                                                              ],
+                                           "allIdentical":  {
+
+                                                            }
+                                       }
+                      },
+    "robotsConsistency":  {
+                              "robotsHasSitemapDirective":  true,
+                              "defaultSitemapListed":  false,
+                              "disallowedUrlsPresentInSitemapCount":  0,
+                              "sitemapFetchErrorsCount":  0,
+                              "examples":  {
+                                               "disallowedUrlsPresentInSitemap":  [
+
+                                                                                  ],
+                                               "sitemapFetchErrors":  [
+
+                                                                      ]
+                                           }
+                          },
+    "deprecatedTags":  {
+                           "note":  "changefreq and priority are treated as deprecated/low-signal by major search engines.",
+                           "changefreqCount":  0,
+                           "priorityCount":  0,
+                           "examples":  {
+                                            "changefreq":  [
+
+                                                           ],
+                                            "priority":  [
+
+                                                         ]
+                                        }
+                       }
+}

@@ -1,5 +1,18 @@
 import "./globals.css";
-import { portfolioData, getJsonLdSchema, getWebsiteSchema } from "@/lib/schema";
+import { portfolioData, getStructuredDataGraph } from "@/lib/schema";
+import { Inter, JetBrains_Mono } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+  display: "swap",
+});
 
 export const metadata = {
   metadataBase: new URL(portfolioData.siteUrl),
@@ -13,7 +26,7 @@ export const metadata = {
     google: "k9qEtYU5Qjns6lHG_ypRJWruYzrt_cDDRZaxjWbroLw",
   },
   alternates: {
-    canonical: "/",
+    canonical: `${portfolioData.siteUrl}/`,
   },
   openGraph: {
     type: "website",
@@ -33,6 +46,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    url: portfolioData.siteUrl,
     title: `${portfolioData.name} | ${portfolioData.title}`,
     description: portfolioData.description,
     images: ["/og-image.png"],
@@ -65,19 +79,10 @@ export default function RootLayout({ children }) {
         <link id="favicon-dynamic" rel="icon" type="image/svg+xml" href="/favicon-light.svg" />
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
 
-        {/* Preconnect for Performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
         {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(getJsonLdSchema()) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(getWebsiteSchema()) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(getStructuredDataGraph()) }}
         />
 
         {/* Prevent FOUC: apply dark class before React hydrates */}
@@ -87,7 +92,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body suppressHydrationWarning>
+      <body className={`${inter.variable} ${jetBrainsMono.variable}`} suppressHydrationWarning>
         {children}
       </body>
     </html>

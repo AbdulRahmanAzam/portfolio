@@ -1,0 +1,75 @@
+{
+  "summary": {
+    "base": "https://abdulrahmanazam.me",
+    "sitemap": "https://abdulrahmanazam.me/sitemap.xml",
+    "discovered_urls": 2,
+    "audited_urls": 2,
+    "thin_flags": 2
+  },
+  "pages": [
+    {
+      "url": "https://abdulrahmanazam.me",
+      "status_code": 200,
+      "final_url": "https://abdulrahmanazam.me/",
+      "title": "Abdul Rahman Azam | Full Stack AI Engineer - Portfolio",
+      "meta_description": "Full Stack AI Engineer specializing in Machine Learning, Deep Learning, and modern web development. BS in Artificial Intelligence at FAST NUCES. Expert in React, Node.js, Python, and AI/ML technologies.",
+      "h1": "Abdul Rahman Azam",
+      "headings": [
+        "Abdul Rahman Azam",
+        "Skills",
+        "Contact"
+      ],
+      "word_count": 8,
+      "page_type": "homepage",
+      "thin_content": true,
+      "thin_floor": 500,
+      "signals": {
+        "has_email": false,
+        "has_phone": false,
+        "mentions_contact": false,
+        "mentions_form": false,
+        "mentions_testimonial": false,
+        "mentions_clients": false,
+        "mentions_case_study": false,
+        "mentions_certification": false,
+        "cta_hire": false,
+        "cta_contact": false,
+        "cta_book": false,
+        "cta_schedule": false,
+        "cta_work_together": false
+      }
+    },
+    {
+      "url": "https://abdulrahmanazam.me/",
+      "status_code": 200,
+      "final_url": "https://abdulrahmanazam.me/",
+      "title": "Abdul Rahman Azam | Full Stack AI Engineer - Portfolio",
+      "meta_description": "Full Stack AI Engineer specializing in Machine Learning, Deep Learning, and modern web development. BS in Artificial Intelligence at FAST NUCES. Expert in React, Node.js, Python, and AI/ML technologies.",
+      "h1": "Abdul Rahman Azam",
+      "headings": [
+        "Abdul Rahman Azam",
+        "Skills",
+        "Contact"
+      ],
+      "word_count": 8,
+      "page_type": "homepage",
+      "thin_content": true,
+      "thin_floor": 500,
+      "signals": {
+        "has_email": false,
+        "has_phone": false,
+        "mentions_contact": false,
+        "mentions_form": false,
+        "mentions_testimonial": false,
+        "mentions_clients": false,
+        "mentions_case_study": false,
+        "mentions_certification": false,
+        "cta_hire": false,
+        "cta_contact": false,
+        "cta_book": false,
+        "cta_schedule": false,
+        "cta_work_together": false
+      }
+    }
+  ]
+}

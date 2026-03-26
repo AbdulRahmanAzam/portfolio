@@ -1,0 +1,14 @@
+﻿Sitemap Audit Summary for https://abdulrahmanazam.me
+robots.txt fetched: True (status: 200)
+Robots sitemap directives: 1
+Sitemaps fetched: 0; fetch errors: 0
+Total unique URLs in sitemap(s): 0
+URL checks: checked=0 ok=0 failed=0 redirects=0
+Invalid loc entries: 0
+Fragment URLs: 0
+Host consistency: primaryHost=abdulrahmanazam.me mismatches=0
+Scheme consistency: primaryScheme=https mismatches=0
+Canonical checks: checkedHtmlPages=0 missing=0 hostMismatch=0
+Update signals: missingLastmod=0 invalidLastmod=0 allIdenticalLastmod=False
+Robots consistency: disallowedUrlsPresentInSitemap=0
+Deprecated tags: changefreq=0 priority=0

@@ -1,0 +1,23 @@
+﻿Target: https://abdulrahmanazam.me
+HTTP: 200 OK; FinalURL: https://abdulrahmanazam.me/; HTML bytes: 6610
+LD+JSON blocks found: 2
+Block#1: parse OK (Object, chars=853)
+Block#2: parse OK (Object, chars=256)
+Parse errors: 0
+Entities extracted: 2
+Entity#1 block1: @type=Person; keys=@context,@type,name,url,image,jobTitle,description,email,sameAs,alumniOf,ΓÇª
+  name: Abdul Rahman Azam
+  url: https://abdulrahmanazam.com
+  url URL absoluteness: ABS:https://abdulrahmanazam.com
+  sameAs: ["https://github.com/abdulrahmanazam","https://linkedin.com/in/abdulrahmanazam","https://leetcode.com/abdulrahmanazam"]
+  sameAs URL absoluteness: ABS:https://github.com/abdulrahmanazam | ABS:https://linkedin.com/in/abdulrahmanazam | ABS:https://leetcode.com/abdulrahmanazam
+  image: https://abdulrahmanazam.com/og-image.png
+  image URL absoluteness: ABS:https://abdulrahmanazam.com/og-image.png
+  description: Full Stack AI Engineer specializing in Machine Learning, Deep Learning, and modern web development.
+Entity#2 block2: @type=WebSite; keys=@context,@type,name,url,description
+  name: Abdul Rahman Azam - Portfolio
+  url: https://abdulrahmanazam.com
+  url URL absoluteness: ABS:https://abdulrahmanazam.com
+  description: Professional portfolio of Abdul Rahman Azam - Full Stack AI Engineer
+Microdata regex counts: {"itemscope":0,"itemtype":0,"itemprop":0}
+RDFa regex counts: {"typeof":0,"property":10,"vocab":0,"about":0,"resource":0}

@@ -1,0 +1,4 @@
+﻿BEGIN
+v22.19.0
+node_ok
+END EXIT=0

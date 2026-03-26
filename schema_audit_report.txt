@@ -1,0 +1,57 @@
+﻿Schema Audit Summary for: https://abdulrahmanazam.me/
+Fetched At (UTC): 2026-03-26T19:50:39.0458108Z
+HTTP Status: 200
+HTML Length: 6610
+JSON-LD Script Blocks Found: 2
+JSON-LD Blocks Parsed: 2
+JSON-LD Parse Errors: 0
+
+Microdata Attribute Counts:
+- itemscope: 0
+- itemtype: 0
+- itemprop: 0
+- itemid: 0
+- itemref: 0
+
+RDFa-like Attribute Counts:
+- vocab: 0
+- typeof: 0
+- property: 10
+- resource: 0
+- about: 0
+- rel: 11
+- rev: 0
+- content: 33
+- datatype: 0
+- prefix: 0
+
+Entity Count: 2
+
+Entity #1 (Block 1)
+  @type: Person
+  name: Abdul Rahman Azam
+  url: https://abdulrahmanazam.com
+  sameAs: array[3]: https://github.com/abdulrahmanazam | https://linkedin.com/in/abdulrahmanazam | https://leetcode.com/abdulrahmanazam
+  image: present=True; value=https://abdulrahmanazam.com/og-image.png
+  description: present=True; value=Full Stack AI Engineer specializing in Machine Learning, Deep Learning, and modern web development.
+  inLanguage: present=False; value=
+  mainEntityOfPage: present=False; value=
+  breadcrumb: present=False; value=
+  potentialAction: present=False; value=
+  author: present=False; value=
+  publisher: present=False; value=
+
+Entity #2 (Block 2)
+  @type: WebSite
+  name: Abdul Rahman Azam - Portfolio
+  url: https://abdulrahmanazam.com
+  sameAs: 
+  image: present=False; value=
+  description: present=True; value=Professional portfolio of Abdul Rahman Azam - Full Stack AI Engineer
+  inLanguage: present=False; value=
+  mainEntityOfPage: present=False; value=
+  breadcrumb: present=False; value=
+  potentialAction: present=False; value=
+  author: present=False; value=
+  publisher: present=False; value=
+

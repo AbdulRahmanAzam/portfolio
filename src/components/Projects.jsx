@@ -330,8 +330,9 @@ export function Projects() {
           transition={{ duration: 0.6 }}
           className="text-center px-4"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-3 lg:mb-4">
-            Featured Projects
+          <span className="section-label mb-4 inline-flex">Portfolio</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-3 lg:mb-4 mt-4">
+            <span className="heading-underline">Featured Projects</span>
           </h2>
           <p className="text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto">
             A selection of my best work in AI/ML and full-stack development

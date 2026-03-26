@@ -1,0 +1,132 @@
+﻿{
+    "targetUrl":  "https://abdulrahmanazam.me/",
+    "fetchedAtUtc":  "2026-03-26T19:50:39.0458108Z",
+    "httpStatusCode":  200,
+    "htmlLength":  6610,
+    "jsonLdScriptBlockCount":  2,
+    "parsedBlockCount":  2,
+    "parseErrorCount":  0,
+    "parseErrors":  [
+
+                    ],
+    "blocks":  [
+                   {
+                       "blockIndex":  1,
+                       "parseSuccess":  true,
+                       "rawLength":  853,
+                       "error":  ""
+                   },
+                   {
+                       "blockIndex":  2,
+                       "parseSuccess":  true,
+                       "rawLength":  256,
+                       "error":  ""
+                   }
+               ],
+    "entityCount":  2,
+    "entities":  [
+                     {
+                         "entityIndex":  1,
+                         "blockIndex":  1,
+                         "atType":  "Person",
+                         "name":  "Abdul Rahman Azam",
+                         "url":  "https://abdulrahmanazam.com",
+                         "sameAs":  "array[3]: https://github.com/abdulrahmanazam | https://linkedin.com/in/abdulrahmanazam | https://leetcode.com/abdulrahmanazam",
+                         "fields":  {
+                                        "image":  {
+                                                      "present":  true,
+                                                      "valueSummary":  "https://abdulrahmanazam.com/og-image.png"
+                                                  },
+                                        "description":  {
+                                                            "present":  true,
+                                                            "valueSummary":  "Full Stack AI Engineer specializing in Machine Learning, Deep Learning, and modern web development."
+                                                        },
+                                        "inLanguage":  {
+                                                           "present":  false,
+                                                           "valueSummary":  ""
+                                                       },
+                                        "mainEntityOfPage":  {
+                                                                 "present":  false,
+                                                                 "valueSummary":  ""
+                                                             },
+                                        "breadcrumb":  {
+                                                           "present":  false,
+                                                           "valueSummary":  ""
+                                                       },
+                                        "potentialAction":  {
+                                                                "present":  false,
+                                                                "valueSummary":  ""
+                                                            },
+                                        "author":  {
+                                                       "present":  false,
+                                                       "valueSummary":  ""
+                                                   },
+                                        "publisher":  {
+                                                          "present":  false,
+                                                          "valueSummary":  ""
+                                                      }
+                                    }
+                     },
+                     {
+                         "entityIndex":  2,
+                         "blockIndex":  2,
+                         "atType":  "WebSite",
+                         "name":  "Abdul Rahman Azam - Portfolio",
+                         "url":  "https://abdulrahmanazam.com",
+                         "sameAs":  "",
+                         "fields":  {
+                                        "image":  {
+                                                      "present":  false,
+                                                      "valueSummary":  ""
+                                                  },
+                                        "description":  {
+                                                            "present":  true,
+                                                            "valueSummary":  "Professional portfolio of Abdul Rahman Azam - Full Stack AI Engineer"
+                                                        },
+                                        "inLanguage":  {
+                                                           "present":  false,
+                                                           "valueSummary":  ""
+                                                       },
+                                        "mainEntityOfPage":  {
+                                                                 "present":  false,
+                                                                 "valueSummary":  ""
+                                                             },
+                                        "breadcrumb":  {
+                                                           "present":  false,
+                                                           "valueSummary":  ""
+                                                       },
+                                        "potentialAction":  {
+                                                                "present":  false,
+                                                                "valueSummary":  ""
+                                                            },
+                                        "author":  {
+                                                       "present":  false,
+                                                       "valueSummary":  ""
+                                                   },
+                                        "publisher":  {
+                                                          "present":  false,
+                                                          "valueSummary":  ""
+                                                      }
+                                    }
+                     }
+                 ],
+    "microdataAttributeCounts":  {
+                                     "itemscope":  0,
+                                     "itemtype":  0,
+                                     "itemprop":  0,
+                                     "itemid":  0,
+                                     "itemref":  0
+                                 },
+    "rdfaLikeAttributeCounts":  {
+                                    "vocab":  0,
+                                    "typeof":  0,
+                                    "property":  10,
+                                    "resource":  0,
+                                    "about":  0,
+                                    "rel":  11,
+                                    "rev":  0,
+                                    "content":  33,
+                                    "datatype":  0,
+                                    "prefix":  0
+                                }
+}

@@ -1,0 +1,28 @@
+# llms.txt for abdulrahmanazam.me
+
+site: https://abdulrahmanazam.me
+owner: Abdul Rahman Azam
+updated: 2026-03-27
+license: RSL-1.0
+
+preferred-canonical: https://abdulrahmanazam.me/
+sitemap: https://abdulrahmanazam.me/sitemap.xml
+
+about:
+- Personal portfolio for Abdul Rahman Azam, Full Stack AI Engineer.
+- Primary topics: AI/ML engineering, full-stack development, selected projects, skills, and contact information.
+
+allowed-content:
+- Public portfolio content and project summaries.
+- Professional profile details and social links.
+
+disallowed-content:
+- Private APIs and internal endpoints under /api/.
+
+attribution:
+- Please attribute as: "Abdul Rahman Azam Portfolio" with source URL https://abdulrahmanazam.me/
+
+contact:
+- email: azamabdulrahman930@gmail.com
+- linkedin: https://linkedin.com/in/abdulrahmanazam
+- github: https://github.com/abdulrahmanazam

@@ -1,0 +1,1313 @@
+{
+  "url": "https://abdulrahmanazam.me/",
+  "timestamp": "2026-03-26T19:38:40.233784Z",
+  "viewports": {
+    "desktop": {
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "title": "Abdul Rahman Azam | Full Stack AI Engineer - Portfolio",
+      "url": "https://abdulrahmanazam.me/",
+      "h1": {
+        "text": "Abdul Rahman Azam Abdul Rahman Azam",
+        "selector": "h1.text-5xl.sm:text-6xl.lg:text-7xl",
+        "rect": {
+          "x": 610,
+          "y": 394,
+          "width": 701,
+          "height": 72,
+          "top": 394,
+          "left": 610,
+          "right": 1310,
+          "bottom": 466
+        },
+        "inViewport": true
+      },
+      "nav": {
+        "selector": "header.fixed.top-0.left-0",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 1920,
+          "height": 64,
+          "top": 0,
+          "left": 0,
+          "right": 1920,
+          "bottom": 64
+        },
+        "inViewport": true,
+        "position": "fixed"
+      },
+      "menuCandidates": [],
+      "ctas": [
+        {
+          "selector": "button.inline-flex.items-center.justify-center",
+          "text": "View Projects View Projects",
+          "rect": {
+            "x": 783,
+            "y": 598,
+            "width": 157,
+            "height": 40,
+            "top": 598,
+            "left": 783,
+            "right": 940,
+            "bottom": 638
+          },
+          "area": 6280,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 11,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "button.items-center.justify-center.gap-2",
+          "text": "Resume Resume",
+          "rect": {
+            "x": 1444,
+            "y": 16,
+            "width": 72,
+            "height": 32,
+            "top": 16,
+            "left": 1444,
+            "right": 1516,
+            "bottom": 48
+          },
+          "area": 2304,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 10,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "a.group.flex.items-center",
+          "text": "Email azamabdulrahman930@gmail.com Emailazamabdulrahman930@gmail.com",
+          "rect": {
+            "x": 1001,
+            "y": 7596,
+            "width": 510,
+            "height": 74,
+            "top": 7596,
+            "left": 1001,
+            "right": 1511,
+            "bottom": 7670
+          },
+          "area": 37740,
+          "inViewport": false,
+          "likelyCta": true,
+          "ctaScore": 9,
+          "touchTargetSmall": false
+        },
+        {
+          "selector": "button.inline-flex.items-center.justify-center",
+          "text": "Download Resume Instant PDF download Download ResumeInstant PDF download",
+          "rect": {
+            "x": 828,
+            "y": 8013,
+            "width": 264,
+            "height": 54,
+            "top": 8013,
+            "left": 828,
+            "right": 1092,
+            "bottom": 8067
+          },
+          "area": 14256,
+          "inViewport": false,
+          "likelyCta": true,
+          "ctaScore": 9,
+          "touchTargetSmall": false
+        },
+        {
+          "selector": "button.inline-flex.items-center.justify-center",
+          "text": "Free Call Session Free Call Session",
+          "rect": {
+            "x": 956,
+            "y": 598,
+            "width": 181,
+            "height": 40,
+            "top": 598,
+            "left": 956,
+            "right": 1137,
+            "bottom": 638
+          },
+          "area": 7240,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 8,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "button.inline-flex.items-center.justify-center",
+          "text": "Contact Contact",
+          "rect": {
+            "x": 1203,
+            "y": 16,
+            "width": 71,
+            "height": 32,
+            "top": 16,
+            "left": 1203,
+            "right": 1275,
+            "bottom": 48
+          },
+          "area": 2272,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 7,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "button.fixed.bottom-6.right-6",
+          "text": "",
+          "rect": {
+            "x": 1840,
+            "y": 1000,
+            "width": 56,
+            "height": 56,
+            "top": 1000,
+            "left": 1840,
+            "right": 1896,
+            "bottom": 1056
+          },
+          "area": 3136,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 6,
+          "touchTargetSmall": false
+        },
+        {
+          "selector": "button.peer.shrink-0.cursor-pointer",
+          "text": "Toggle theme on",
+          "rect": {
+            "x": 1524,
+            "y": 20,
+            "width": 44,
+            "height": 24,
+            "top": 20,
+            "left": 1524,
+            "right": 1568,
+            "bottom": 44
+          },
+          "area": 1056,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 5,
+          "touchTargetSmall": true
+        }
+      ],
+      "firstFoldCtas": [
+        {
+          "selector": "button.inline-flex.items-center.justify-center",
+          "text": "View Projects View Projects",
+          "rect": {
+            "x": 783,
+            "y": 598,
+            "width": 157,
+            "height": 40,
+            "top": 598,
+            "left": 783,
+            "right": 940,
+            "bottom": 638
+          },
+          "area": 6280,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 11,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "button.items-center.justify-center.gap-2",
+          "text": "Resume Resume",
+          "rect": {
+            "x": 1444,
+            "y": 16,
+            "width": 72,
+            "height": 32,
+            "top": 16,
+            "left": 1444,
+            "right": 1516,
+            "bottom": 48
+          },
+          "area": 2304,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 10,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "button.inline-flex.items-center.justify-center",
+          "text": "Free Call Session Free Call Session",
+          "rect": {
+            "x": 956,
+            "y": 598,
+            "width": 181,
+            "height": 40,
+            "top": 598,
+            "left": 956,
+            "right": 1137,
+            "bottom": 638
+          },
+          "area": 7240,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 8,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "button.inline-flex.items-center.justify-center",
+          "text": "Contact Contact",
+          "rect": {
+            "x": 1203,
+            "y": 16,
+            "width": 71,
+            "height": 32,
+            "top": 16,
+            "left": 1203,
+            "right": 1275,
+            "bottom": 48
+          },
+          "area": 2272,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 7,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "button.fixed.bottom-6.right-6",
+          "text": "",
+          "rect": {
+            "x": 1840,
+            "y": 1000,
+            "width": 56,
+            "height": 56,
+            "top": 1000,
+            "left": 1840,
+            "right": 1896,
+            "bottom": 1056
+          },
+          "area": 3136,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 6,
+          "touchTargetSmall": false
+        },
+        {
+          "selector": "button.peer.shrink-0.cursor-pointer",
+          "text": "Toggle theme on",
+          "rect": {
+            "x": 1524,
+            "y": 20,
+            "width": 44,
+            "height": 24,
+            "top": 20,
+            "left": 1524,
+            "right": 1568,
+            "bottom": 44
+          },
+          "area": 1056,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 5,
+          "touchTargetSmall": true
+        }
+      ],
+      "counts": {
+        "clickablesTotal": 27,
+        "topFoldClickables": 13,
+        "likelyCtas": 8,
+        "firstFoldCtas": 6,
+        "smallTouchTargets": 19,
+        "mobileSmallTouchTargets": null
+      },
+      "readability": {
+        "bodyFontSize": 16,
+        "avgParagraphFontSize": 16.96,
+        "avgLineHeightRatio": 1.52,
+        "avgTextLength": 105.72,
+        "h1Contrast": 15.79,
+        "firstParagraphContrast": 5.19
+      },
+      "layout": {
+        "horizontalOverflow": false,
+        "headingObscuredByHeader": false,
+        "docScrollWidth": 1920,
+        "docClientWidth": 1920
+      }
+    },
+    "mobile": {
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "title": "Abdul Rahman Azam | Full Stack AI Engineer - Portfolio",
+      "url": "https://abdulrahmanazam.me/",
+      "h1": {
+        "text": "Abdul Rahman Azam Abdul Rahman Azam",
+        "selector": "h1.text-5xl.sm:text-6xl.lg:text-7xl",
+        "rect": {
+          "x": 16,
+          "y": 210,
+          "width": 343,
+          "height": 96,
+          "top": 210,
+          "left": 16,
+          "right": 359,
+          "bottom": 306
+        },
+        "inViewport": true
+      },
+      "nav": {
+        "selector": "header.fixed.top-0.left-0",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 375,
+          "height": 64,
+          "top": 0,
+          "left": 0,
+          "right": 375,
+          "bottom": 64
+        },
+        "inViewport": true,
+        "position": "fixed"
+      },
+      "menuCandidates": [
+        {
+          "selector": "button.inline-flex.items-center.justify-center",
+          "text": "\u2630 \u2630 Toggle menu",
+          "rect": {
+            "x": 322,
+            "y": 16,
+            "width": 37,
+            "height": 32,
+            "top": 16,
+            "left": 322,
+            "right": 359,
+            "bottom": 48
+          }
+        }
+      ],
+      "ctas": [
+        {
+          "selector": "button.inline-flex.items-center.justify-center",
+          "text": "View Projects View Projects",
+          "rect": {
+            "x": 109,
+            "y": 458,
+            "width": 157,
+            "height": 40,
+            "top": 458,
+            "left": 109,
+            "right": 266,
+            "bottom": 498
+          },
+          "area": 6280,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 11,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "a.group.flex.items-center",
+          "text": "Email azamabdulrahman930@gmail.com Emailazamabdulrahman930@gmail.com",
+          "rect": {
+            "x": 41,
+            "y": 8976,
+            "width": 319,
+            "height": 74,
+            "top": 8976,
+            "left": 41,
+            "right": 360,
+            "bottom": 9050
+          },
+          "area": 23606,
+          "inViewport": false,
+          "likelyCta": true,
+          "ctaScore": 9,
+          "touchTargetSmall": false
+        },
+        {
+          "selector": "button.inline-flex.items-center.justify-center",
+          "text": "Download Resume Instant PDF download Download ResumeInstant PDF download",
+          "rect": {
+            "x": 56,
+            "y": 9365,
+            "width": 264,
+            "height": 54,
+            "top": 9365,
+            "left": 56,
+            "right": 320,
+            "bottom": 9419
+          },
+          "area": 14256,
+          "inViewport": false,
+          "likelyCta": true,
+          "ctaScore": 9,
+          "touchTargetSmall": false
+        },
+        {
+          "selector": "button.inline-flex.items-center.justify-center",
+          "text": "Free Call Session Free Call Session",
+          "rect": {
+            "x": 97,
+            "y": 514,
+            "width": 181,
+            "height": 40,
+            "top": 514,
+            "left": 97,
+            "right": 278,
+            "bottom": 554
+          },
+          "area": 7240,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 8,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "button.fixed.bottom-6.right-6",
+          "text": "",
+          "rect": {
+            "x": 295,
+            "y": 732,
+            "width": 56,
+            "height": 56,
+            "top": 732,
+            "left": 295,
+            "right": 351,
+            "bottom": 788
+          },
+          "area": 3136,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 6,
+          "touchTargetSmall": false
+        },
+        {
+          "selector": "button.peer.shrink-0.cursor-pointer",
+          "text": "Toggle theme on",
+          "rect": {
+            "x": 270,
+            "y": 20,
+            "width": 44,
+            "height": 24,
+            "top": 20,
+            "left": 270,
+            "right": 314,
+            "bottom": 44
+          },
+          "area": 1056,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 5,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "a.w-10.h-10.rounded-md",
+          "text": "Email",
+          "rect": {
+            "x": 252,
+            "y": 9588,
+            "width": 40,
+            "height": 40,
+            "top": 9588,
+            "left": 252,
+            "right": 292,
+            "bottom": 9628
+          },
+          "area": 1600,
+          "inViewport": false,
+          "likelyCta": true,
+          "ctaScore": 5,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "a.inline-flex.items-center.justify-center",
+          "text": "Source Code Source Code",
+          "rect": {
+            "x": 32,
+            "y": 3475,
+            "width": 165,
+            "height": 38,
+            "top": 3475,
+            "left": 32,
+            "right": 197,
+            "bottom": 3513
+          },
+          "area": 6270,
+          "inViewport": false,
+          "likelyCta": true,
+          "ctaScore": 4,
+          "touchTargetSmall": true
+        }
+      ],
+      "firstFoldCtas": [
+        {
+          "selector": "button.inline-flex.items-center.justify-center",
+          "text": "View Projects View Projects",
+          "rect": {
+            "x": 109,
+            "y": 458,
+            "width": 157,
+            "height": 40,
+            "top": 458,
+            "left": 109,
+            "right": 266,
+            "bottom": 498
+          },
+          "area": 6280,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 11,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "button.inline-flex.items-center.justify-center",
+          "text": "Free Call Session Free Call Session",
+          "rect": {
+            "x": 97,
+            "y": 514,
+            "width": 181,
+            "height": 40,
+            "top": 514,
+            "left": 97,
+            "right": 278,
+            "bottom": 554
+          },
+          "area": 7240,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 8,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "button.fixed.bottom-6.right-6",
+          "text": "",
+          "rect": {
+            "x": 295,
+            "y": 732,
+            "width": 56,
+            "height": 56,
+            "top": 732,
+            "left": 295,
+            "right": 351,
+            "bottom": 788
+          },
+          "area": 3136,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 6,
+          "touchTargetSmall": false
+        },
+        {
+          "selector": "button.peer.shrink-0.cursor-pointer",
+          "text": "Toggle theme on",
+          "rect": {
+            "x": 270,
+            "y": 20,
+            "width": 44,
+            "height": 24,
+            "top": 20,
+            "left": 270,
+            "right": 314,
+            "bottom": 44
+          },
+          "area": 1056,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 5,
+          "touchTargetSmall": true
+        }
+      ],
+      "counts": {
+        "clickablesTotal": 21,
+        "topFoldClickables": 7,
+        "likelyCtas": 8,
+        "firstFoldCtas": 4,
+        "smallTouchTargets": 13,
+        "mobileSmallTouchTargets": 13
+      },
+      "readability": {
+        "bodyFontSize": 16,
+        "avgParagraphFontSize": 16.32,
+        "avgLineHeightRatio": 1.53,
+        "avgTextLength": 105.72,
+        "h1Contrast": 15.79,
+        "firstParagraphContrast": 5.19
+      },
+      "layout": {
+        "horizontalOverflow": false,
+        "headingObscuredByHeader": false,
+        "docScrollWidth": 375,
+        "docClientWidth": 375
+      }
+    },
+    "laptop": {
+      "viewport": {
+        "width": 1366,
+        "height": 768
+      },
+      "title": "Abdul Rahman Azam | Full Stack AI Engineer - Portfolio",
+      "url": "https://abdulrahmanazam.me/",
+      "h1": {
+        "text": "Abdul Rahman Azam Abdul Rahman Azam",
+        "selector": "h1.text-5xl.sm:text-6xl.lg:text-7xl",
+        "rect": {
+          "x": 333,
+          "y": 238,
+          "width": 701,
+          "height": 72,
+          "top": 238,
+          "left": 333,
+          "right": 1033,
+          "bottom": 310
+        },
+        "inViewport": true
+      },
+      "nav": {
+        "selector": "header.fixed.top-0.left-0",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 1366,
+          "height": 64,
+          "top": 0,
+          "left": 0,
+          "right": 1366,
+          "bottom": 64
+        },
+        "inViewport": true,
+        "position": "fixed"
+      },
+      "menuCandidates": [],
+      "ctas": [
+        {
+          "selector": "button.inline-flex.items-center.justify-center",
+          "text": "View Projects View Projects",
+          "rect": {
+            "x": 506,
+            "y": 442,
+            "width": 157,
+            "height": 40,
+            "top": 442,
+            "left": 506,
+            "right": 663,
+            "bottom": 482
+          },
+          "area": 6280,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 11,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "button.items-center.justify-center.gap-2",
+          "text": "Resume Resume",
+          "rect": {
+            "x": 1167,
+            "y": 16,
+            "width": 72,
+            "height": 32,
+            "top": 16,
+            "left": 1167,
+            "right": 1239,
+            "bottom": 48
+          },
+          "area": 2304,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 10,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "a.group.flex.items-center",
+          "text": "Email azamabdulrahman930@gmail.com Emailazamabdulrahman930@gmail.com",
+          "rect": {
+            "x": 724,
+            "y": 6339,
+            "width": 510,
+            "height": 74,
+            "top": 6339,
+            "left": 724,
+            "right": 1234,
+            "bottom": 6413
+          },
+          "area": 37740,
+          "inViewport": false,
+          "likelyCta": true,
+          "ctaScore": 9,
+          "touchTargetSmall": false
+        },
+        {
+          "selector": "button.inline-flex.items-center.justify-center",
+          "text": "Download Resume Instant PDF download Download ResumeInstant PDF download",
+          "rect": {
+            "x": 551,
+            "y": 6756,
+            "width": 264,
+            "height": 54,
+            "top": 6756,
+            "left": 551,
+            "right": 815,
+            "bottom": 6810
+          },
+          "area": 14256,
+          "inViewport": false,
+          "likelyCta": true,
+          "ctaScore": 9,
+          "touchTargetSmall": false
+        },
+        {
+          "selector": "button.inline-flex.items-center.justify-center",
+          "text": "Free Call Session Free Call Session",
+          "rect": {
+            "x": 679,
+            "y": 442,
+            "width": 181,
+            "height": 40,
+            "top": 442,
+            "left": 679,
+            "right": 860,
+            "bottom": 482
+          },
+          "area": 7240,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 8,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "button.inline-flex.items-center.justify-center",
+          "text": "Contact Contact",
+          "rect": {
+            "x": 926,
+            "y": 16,
+            "width": 71,
+            "height": 32,
+            "top": 16,
+            "left": 926,
+            "right": 998,
+            "bottom": 48
+          },
+          "area": 2272,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 7,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "button.fixed.bottom-6.right-6",
+          "text": "",
+          "rect": {
+            "x": 1286,
+            "y": 688,
+            "width": 56,
+            "height": 56,
+            "top": 688,
+            "left": 1286,
+            "right": 1342,
+            "bottom": 744
+          },
+          "area": 3136,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 6,
+          "touchTargetSmall": false
+        },
+        {
+          "selector": "button.peer.shrink-0.cursor-pointer",
+          "text": "Toggle theme on",
+          "rect": {
+            "x": 1247,
+            "y": 20,
+            "width": 44,
+            "height": 24,
+            "top": 20,
+            "left": 1247,
+            "right": 1291,
+            "bottom": 44
+          },
+          "area": 1056,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 5,
+          "touchTargetSmall": true
+        }
+      ],
+      "firstFoldCtas": [
+        {
+          "selector": "button.inline-flex.items-center.justify-center",
+          "text": "View Projects View Projects",
+          "rect": {
+            "x": 506,
+            "y": 442,
+            "width": 157,
+            "height": 40,
+            "top": 442,
+            "left": 506,
+            "right": 663,
+            "bottom": 482
+          },
+          "area": 6280,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 11,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "button.items-center.justify-center.gap-2",
+          "text": "Resume Resume",
+          "rect": {
+            "x": 1167,
+            "y": 16,
+            "width": 72,
+            "height": 32,
+            "top": 16,
+            "left": 1167,
+            "right": 1239,
+            "bottom": 48
+          },
+          "area": 2304,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 10,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "button.inline-flex.items-center.justify-center",
+          "text": "Free Call Session Free Call Session",
+          "rect": {
+            "x": 679,
+            "y": 442,
+            "width": 181,
+            "height": 40,
+            "top": 442,
+            "left": 679,
+            "right": 860,
+            "bottom": 482
+          },
+          "area": 7240,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 8,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "button.inline-flex.items-center.justify-center",
+          "text": "Contact Contact",
+          "rect": {
+            "x": 926,
+            "y": 16,
+            "width": 71,
+            "height": 32,
+            "top": 16,
+            "left": 926,
+            "right": 998,
+            "bottom": 48
+          },
+          "area": 2272,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 7,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "button.fixed.bottom-6.right-6",
+          "text": "",
+          "rect": {
+            "x": 1286,
+            "y": 688,
+            "width": 56,
+            "height": 56,
+            "top": 688,
+            "left": 1286,
+            "right": 1342,
+            "bottom": 744
+          },
+          "area": 3136,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 6,
+          "touchTargetSmall": false
+        },
+        {
+          "selector": "button.peer.shrink-0.cursor-pointer",
+          "text": "Toggle theme on",
+          "rect": {
+            "x": 1247,
+            "y": 20,
+            "width": 44,
+            "height": 24,
+            "top": 20,
+            "left": 1247,
+            "right": 1291,
+            "bottom": 44
+          },
+          "area": 1056,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 5,
+          "touchTargetSmall": true
+        }
+      ],
+      "counts": {
+        "clickablesTotal": 27,
+        "topFoldClickables": 13,
+        "likelyCtas": 8,
+        "firstFoldCtas": 6,
+        "smallTouchTargets": 19,
+        "mobileSmallTouchTargets": null
+      },
+      "readability": {
+        "bodyFontSize": 16,
+        "avgParagraphFontSize": 16.96,
+        "avgLineHeightRatio": 1.52,
+        "avgTextLength": 105.72,
+        "h1Contrast": 15.79,
+        "firstParagraphContrast": 5.19
+      },
+      "layout": {
+        "horizontalOverflow": false,
+        "headingObscuredByHeader": false,
+        "docScrollWidth": 1366,
+        "docClientWidth": 1366
+      }
+    },
+    "tablet": {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "title": "Abdul Rahman Azam | Full Stack AI Engineer - Portfolio",
+      "url": "https://abdulrahmanazam.me/",
+      "h1": {
+        "text": "Abdul Rahman Azam Abdul Rahman Azam",
+        "selector": "h1.text-5xl.sm:text-6xl.lg:text-7xl",
+        "rect": {
+          "x": 85,
+          "y": 374,
+          "width": 598,
+          "height": 60,
+          "top": 374,
+          "left": 85,
+          "right": 683,
+          "bottom": 434
+        },
+        "inViewport": true
+      },
+      "nav": {
+        "selector": "header.fixed.top-0.left-0",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 64,
+          "top": 0,
+          "left": 0,
+          "right": 768,
+          "bottom": 64
+        },
+        "inViewport": true,
+        "position": "fixed"
+      },
+      "menuCandidates": [],
+      "ctas": [
+        {
+          "selector": "button.inline-flex.items-center.justify-center",
+          "text": "View Projects View Projects",
+          "rect": {
+            "x": 207,
+            "y": 562,
+            "width": 157,
+            "height": 40,
+            "top": 562,
+            "left": 207,
+            "right": 364,
+            "bottom": 602
+          },
+          "area": 6280,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 11,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "button.items-center.justify-center.gap-2",
+          "text": "Resume Resume",
+          "rect": {
+            "x": 659,
+            "y": 16,
+            "width": 72,
+            "height": 32,
+            "top": 16,
+            "left": 659,
+            "right": 731,
+            "bottom": 48
+          },
+          "area": 2304,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 10,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "a.group.flex.items-center",
+          "text": "Email azamabdulrahman930@gmail.com Emailazamabdulrahman930@gmail.com",
+          "rect": {
+            "x": 49,
+            "y": 8772,
+            "width": 670,
+            "height": 74,
+            "top": 8772,
+            "left": 49,
+            "right": 719,
+            "bottom": 8846
+          },
+          "area": 49580,
+          "inViewport": false,
+          "likelyCta": true,
+          "ctaScore": 9,
+          "touchTargetSmall": false
+        },
+        {
+          "selector": "button.inline-flex.items-center.justify-center",
+          "text": "Download Resume Instant PDF download Download ResumeInstant PDF download",
+          "rect": {
+            "x": 252,
+            "y": 9161,
+            "width": 264,
+            "height": 54,
+            "top": 9161,
+            "left": 252,
+            "right": 516,
+            "bottom": 9215
+          },
+          "area": 14256,
+          "inViewport": false,
+          "likelyCta": true,
+          "ctaScore": 9,
+          "touchTargetSmall": false
+        },
+        {
+          "selector": "button.inline-flex.items-center.justify-center",
+          "text": "Free Call Session Free Call Session",
+          "rect": {
+            "x": 380,
+            "y": 562,
+            "width": 181,
+            "height": 40,
+            "top": 562,
+            "left": 380,
+            "right": 561,
+            "bottom": 602
+          },
+          "area": 7240,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 8,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "button.inline-flex.items-center.justify-center",
+          "text": "Contact Contact",
+          "rect": {
+            "x": 588,
+            "y": 16,
+            "width": 71,
+            "height": 32,
+            "top": 16,
+            "left": 588,
+            "right": 659,
+            "bottom": 48
+          },
+          "area": 2272,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 7,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "button.fixed.bottom-6.right-6",
+          "text": "",
+          "rect": {
+            "x": 688,
+            "y": 944,
+            "width": 56,
+            "height": 56,
+            "top": 944,
+            "left": 688,
+            "right": 744,
+            "bottom": 1000
+          },
+          "area": 3136,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 6,
+          "touchTargetSmall": false
+        },
+        {
+          "selector": "button.peer.shrink-0.cursor-pointer",
+          "text": "Toggle theme on",
+          "rect": {
+            "x": 739,
+            "y": 20,
+            "width": 44,
+            "height": 24,
+            "top": 20,
+            "left": 739,
+            "right": 783,
+            "bottom": 44
+          },
+          "area": 1056,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 5,
+          "touchTargetSmall": true
+        }
+      ],
+      "firstFoldCtas": [
+        {
+          "selector": "button.inline-flex.items-center.justify-center",
+          "text": "View Projects View Projects",
+          "rect": {
+            "x": 207,
+            "y": 562,
+            "width": 157,
+            "height": 40,
+            "top": 562,
+            "left": 207,
+            "right": 364,
+            "bottom": 602
+          },
+          "area": 6280,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 11,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "button.items-center.justify-center.gap-2",
+          "text": "Resume Resume",
+          "rect": {
+            "x": 659,
+            "y": 16,
+            "width": 72,
+            "height": 32,
+            "top": 16,
+            "left": 659,
+            "right": 731,
+            "bottom": 48
+          },
+          "area": 2304,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 10,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "button.inline-flex.items-center.justify-center",
+          "text": "Free Call Session Free Call Session",
+          "rect": {
+            "x": 380,
+            "y": 562,
+            "width": 181,
+            "height": 40,
+            "top": 562,
+            "left": 380,
+            "right": 561,
+            "bottom": 602
+          },
+          "area": 7240,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 8,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "button.inline-flex.items-center.justify-center",
+          "text": "Contact Contact",
+          "rect": {
+            "x": 588,
+            "y": 16,
+            "width": 71,
+            "height": 32,
+            "top": 16,
+            "left": 588,
+            "right": 659,
+            "bottom": 48
+          },
+          "area": 2272,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 7,
+          "touchTargetSmall": true
+        },
+        {
+          "selector": "button.fixed.bottom-6.right-6",
+          "text": "",
+          "rect": {
+            "x": 688,
+            "y": 944,
+            "width": 56,
+            "height": 56,
+            "top": 944,
+            "left": 688,
+            "right": 744,
+            "bottom": 1000
+          },
+          "area": 3136,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 6,
+          "touchTargetSmall": false
+        },
+        {
+          "selector": "button.peer.shrink-0.cursor-pointer",
+          "text": "Toggle theme on",
+          "rect": {
+            "x": 739,
+            "y": 20,
+            "width": 44,
+            "height": 24,
+            "top": 20,
+            "left": 739,
+            "right": 783,
+            "bottom": 44
+          },
+          "area": 1056,
+          "inViewport": true,
+          "likelyCta": true,
+          "ctaScore": 5,
+          "touchTargetSmall": true
+        }
+      ],
+      "counts": {
+        "clickablesTotal": 27,
+        "topFoldClickables": 13,
+        "likelyCtas": 8,
+        "firstFoldCtas": 6,
+        "smallTouchTargets": 19,
+        "mobileSmallTouchTargets": null
+      },
+      "readability": {
+        "bodyFontSize": 16,
+        "avgParagraphFontSize": 16.64,
+        "avgLineHeightRatio": 1.52,
+        "avgTextLength": 105.72,
+        "h1Contrast": 15.79,
+        "firstParagraphContrast": 5.19
+      },
+      "layout": {
+        "horizontalOverflow": false,
+        "headingObscuredByHeader": false,
+        "docScrollWidth": 768,
+        "docClientWidth": 768
+      }
+    }
+  },
+  "screenshots": {
+    "desktop": "screenshots/home-desktop-1920x1080.png",
+    "mobile": "screenshots/home-mobile-375x812.png",
+    "laptop": "screenshots/home-laptop-1366x768.png",
+    "tablet": "screenshots/home-tablet-768x1024.png"
+  }
+}

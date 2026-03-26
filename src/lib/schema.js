@@ -196,6 +196,7 @@ projects: [
 export const getJsonLdSchema = () => ({
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": `${portfolioData.siteUrl}/#person`,
   "name": portfolioData.name,
   "url": portfolioData.siteUrl,
   "image": `${portfolioData.siteUrl}/og-image.png`,
@@ -220,18 +221,46 @@ export const getJsonLdSchema = () => ({
     "Node.js",
     "Python",
     "Data Science"
-  ]
+  ],
+  "mainEntityOfPage": {
+    "@id": `${portfolioData.siteUrl}/#webpage`
+  }
 });
 
 // Website Schema
 export const getWebsiteSchema = () => ({
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": `${portfolioData.siteUrl}/#website`,
   "name": `${portfolioData.name} - Portfolio`,
   "url": portfolioData.siteUrl,
+  "inLanguage": "en",
   "description": portfolioData.description,
   "author": {
     "@type": "Person",
-    "name": portfolioData.name
+    "name": portfolioData.name,
+    "@id": `${portfolioData.siteUrl}/#person`
   }
+});
+
+export const getStructuredDataGraph = () => ({
+  "@context": "https://schema.org",
+  "@graph": [
+    getJsonLdSchema(),
+    getWebsiteSchema(),
+    {
+      "@type": "WebPage",
+      "@id": `${portfolioData.siteUrl}/#webpage`,
+      "url": `${portfolioData.siteUrl}/`,
+      "name": `${portfolioData.name} - Portfolio`,
+      "isPartOf": {
+        "@id": `${portfolioData.siteUrl}/#website`
+      },
+      "about": {
+        "@id": `${portfolioData.siteUrl}/#person`
+      },
+      "primaryImageOfPage": `${portfolioData.siteUrl}/og-image.png`,
+      "inLanguage": "en"
+    }
+  ]
 });

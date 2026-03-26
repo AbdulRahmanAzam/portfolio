@@ -1,0 +1,11 @@
+﻿URL=https://abdulrahmanazam.me/
+STATUS=200
+BLOCK_COUNT=2
+BLOCK=1
+RAW_PREVIEW={ "@context": "https://schema.org", "@type": "Person", "name": "Abdul Rahman Azam", "url": "https://abdulrahmanazam.com", "image": "https://abdulrahmanazam.com/og-image.png", "jobTitle": "Full Stack AI Engineer", "description": "Full Stack AI Engineer specializing in Machine Learning, Deep Learning, and modern web development.", "email": "mailto:azamabdulrahman930@gmail.com", "sameAs": [ "https://github.com/abdulrahmanazam", "https://linkedin.com/in/abdulrahmanazam", "https://leetcode.com/abdulr...
+ENTITY=1;CONTEXT=https://schema.org;TYPE=Person;KEYS=@context,@type,name,url,image,jobTitle,description,email,sameAs,alumniOf,knowsAbout
+
+BLOCK=2
+RAW_PREVIEW={ "@context": "https://schema.org", "@type": "WebSite", "name": "Abdul Rahman Azam - Portfolio", "url": "https://abdulrahmanazam.com", "description": "Professional portfolio of Abdul Rahman Azam - Full Stack AI Engineer" }
+ENTITY=1;CONTEXT=https://schema.org;TYPE=WebSite;KEYS=@context,@type,name,url,description
+
