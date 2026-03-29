@@ -6,11 +6,11 @@ import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { Footer } from "@/components/Footer";
 
-const Skills = dynamic(() => import("@/components/Skills").then(m => ({ default: m.Skills })), { ssr: false });
-const Projects = dynamic(() => import("@/components/Projects").then(m => ({ default: m.Projects })), { ssr: false });
-const Education = dynamic(() => import("@/components/Education").then(m => ({ default: m.Education })), { ssr: false });
-const Achievements = dynamic(() => import("@/components/Achievements").then(m => ({ default: m.Achievements })), { ssr: false });
-const Contact = dynamic(() => import("@/components/Contact").then(m => ({ default: m.Contact })), { ssr: false });
+const Skills = dynamic(() => import("@/components/Skills").then(m => ({ default: m.Skills })));
+const Projects = dynamic(() => import("@/components/Projects").then(m => ({ default: m.Projects })));
+const Education = dynamic(() => import("@/components/Education").then(m => ({ default: m.Education })));
+const Achievements = dynamic(() => import("@/components/Achievements").then(m => ({ default: m.Achievements })));
+const Contact = dynamic(() => import("@/components/Contact").then(m => ({ default: m.Contact })));
 const Chatbot = dynamic(() => import("@/components/Chatbot").then(m => ({ default: m.Chatbot })), { ssr: false });
 
 function SectionSkeleton({ height = "400px" }) {
@@ -56,29 +56,39 @@ export default function PortfolioClient() {
         <Hero />
         
         <SectionDivider />
-        <Suspense fallback={<SectionSkeleton height="600px" />}>
-          <Skills />
-        </Suspense>
+        <div className="section-deferred">
+          <Suspense fallback={<SectionSkeleton height="600px" />}>
+            <Skills />
+          </Suspense>
+        </div>
         
         <SectionDivider />
-        <Suspense fallback={<SectionSkeleton height="800px" />}>
-          <Projects />
-        </Suspense>
+        <div className="section-deferred">
+          <Suspense fallback={<SectionSkeleton height="800px" />}>
+            <Projects />
+          </Suspense>
+        </div>
         
         <SectionDivider />
-        <Suspense fallback={<SectionSkeleton height="500px" />}>
-          <Education />
-        </Suspense>
+        <div className="section-deferred">
+          <Suspense fallback={<SectionSkeleton height="500px" />}>
+            <Education />
+          </Suspense>
+        </div>
         
         <SectionDivider />
-        <Suspense fallback={<SectionSkeleton height="400px" />}>
-          <Achievements />
-        </Suspense>
+        <div className="section-deferred">
+          <Suspense fallback={<SectionSkeleton height="400px" />}>
+            <Achievements />
+          </Suspense>
+        </div>
 
         <SectionDivider />
-        <Suspense fallback={<SectionSkeleton height="400px" />}>
-          <Contact />
-        </Suspense>
+        <div className="section-deferred">
+          <Suspense fallback={<SectionSkeleton height="400px" />}>
+            <Contact />
+          </Suspense>
+        </div>
       </main>
       <Footer />
       {showChatbot ? <Chatbot /> : null}

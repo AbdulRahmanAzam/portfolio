@@ -6,7 +6,8 @@ import { Button } from "./ui/button";
 import { ThemeToggle } from "./ui/ThemeToggle";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
 import { portfolioData } from "@/lib/schema";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X, Download, Newspaper } from "lucide-react";
+import Link from "next/link";
 
 const navItems = [
   { id: "home", label: "Home" },
@@ -109,6 +110,13 @@ export function Navigation() {
 
           {/* Right side */}
           <div className="flex items-center gap-2">
+            <Link
+              href="/blog"
+              className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground rounded-full transition-colors"
+            >
+              <Newspaper className="w-3.5 h-3.5" />
+              Blog
+            </Link>
             <Button
               variant="outline"
               size="sm"
@@ -175,6 +183,20 @@ export function Navigation() {
                     </button>
                   </motion.div>
                 ))}
+                <motion.div
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: navItems.length * 0.05, duration: 0.3 }}
+                >
+                  <Link
+                    href="/blog"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 flex items-center gap-2 transition-colors"
+                  >
+                    <Newspaper className="w-4 h-4" />
+                    Blog
+                  </Link>
+                </motion.div>
               </div>
             </motion.div>
           )}

@@ -1,12 +1,9 @@
-import { Providers } from "./providers";
 import PortfolioClient from "./PortfolioClient";
 import { portfolioData } from "@/lib/schema";
 
-// Server-rendered SEO content visible to crawlers + client portfolio
 export default function Home() {
   return (
-    <Providers>
-      {/* Hidden server-rendered content for SEO crawlers */}
+    <>
       <noscript>
         <div style={{ maxWidth: "800px", margin: "0 auto", padding: "40px 20px", fontFamily: "system-ui, sans-serif" }}>
           <h1>{portfolioData.name}</h1>
@@ -20,6 +17,6 @@ export default function Home() {
         </div>
       </noscript>
       <PortfolioClient />
-    </Providers>
+    </>
   );
 }

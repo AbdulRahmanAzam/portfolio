@@ -140,6 +140,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
   }
 
   body {
@@ -446,4 +447,10 @@
     transparent 1px
   );
   background-size: 24px 24px;
+}
+
+/* Below-fold sections: defer rendering until near viewport */
+.section-deferred {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
 }

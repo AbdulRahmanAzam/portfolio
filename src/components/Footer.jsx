@@ -3,6 +3,7 @@
 import { Github, Linkedin, Mail, Code2, ArrowUp } from "lucide-react";
 import { portfolioData } from "@/lib/schema";
 import { useSmoothScroll } from "@/hooks/useSmoothScroll";
+import Link from "next/link";
 
 const socialLinks = [
   { href: portfolioData.social.github, icon: Github, label: "GitHub" },
@@ -50,14 +51,18 @@ export function Footer() {
           <button
             onClick={() => smoothScroll(document.getElementById("home"))}
             className="group flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+            aria-label="Back to top"
           >
             <span>Back to top</span>
             <ArrowUp className="w-4 h-4 transition-transform group-hover:-translate-y-0.5" />
           </button>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-border/30 text-center text-sm text-muted-foreground">
+        <div className="mt-8 pt-8 border-t border-border/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
           <p>&copy; {currentYear} {portfolioData.name}. Crafted with precision.</p>
+          <Link href="/blog" className="hover:text-primary transition-colors">
+            Blog
+          </Link>
         </div>
       </div>
     </footer>

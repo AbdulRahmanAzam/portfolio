@@ -11,9 +11,6 @@ Sitemap: https://abdulrahmanazam.me/sitemap.xml
 # AI crawler guidance
 # llms.txt is available at: https://abdulrahmanazam.me/llms.txt
 
-# Crawl delay (optional - be gentle on the server)
-Crawl-delay: 1
-
 # Block unnecessary files
 Disallow: /api/
 Disallow: /*.json$

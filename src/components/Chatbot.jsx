@@ -154,6 +154,7 @@ export function Chatbot() {
               setIsOpen(true);
             }}
             className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-lg flex items-center justify-center"
+            aria-label="Open AI chat assistant"
           >
             {showPulse && (
               <span className="absolute inset-0 rounded-full bg-primary animate-ping opacity-75" />
@@ -187,6 +188,7 @@ export function Chatbot() {
               <button
                 onClick={() => setIsOpen(false)}
                 className="w-8 h-8 rounded-full hover:bg-primary-foreground/20 flex items-center justify-center transition-colors"
+                aria-label="Close chat"
               >
                 <X className="w-5 h-5" />
               </button>

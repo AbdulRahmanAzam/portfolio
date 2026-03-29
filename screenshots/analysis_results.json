@@ -1,0 +1,2326 @@
+{
+  "desktop": {
+    "title": "Abdul Rahman Azam | Full Stack AI Engineer - Portfolio",
+    "url": "https://abdulrahmanazam.me/",
+    "viewport_meta": "width=device-width, initial-scale=1",
+    "above_fold": {
+      "h1": [
+        {
+          "text": "Abdul Rahman Azam",
+          "top": 393,
+          "fontSize": "96px"
+        }
+      ],
+      "h2": [],
+      "links": [
+        {
+          "tag": "A",
+          "text": "",
+          "href": "mailto:azamabdulrahman930@gmail.com",
+          "width": 40,
+          "height": 40,
+          "top": 717,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "https://linkedin.com/in/abdulrahmanazam",
+          "width": 40,
+          "height": 40,
+          "top": 717,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "https://github.com/abdulrahmanazam",
+          "width": 40,
+          "height": 40,
+          "top": 717,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "https://leetcode.com/abdulrahmanazam",
+          "width": 40,
+          "height": 40,
+          "top": 717,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        }
+      ],
+      "buttons": [
+        {
+          "tag": "BUTTON",
+          "text": "ARAbdul Rahman Azam",
+          "href": null,
+          "width": 265,
+          "height": 52,
+          "top": 6,
+          "fontSize": "20px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Home",
+          "href": null,
+          "width": 68,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Skills",
+          "href": null,
+          "width": 63,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Projects",
+          "href": null,
+          "width": 83,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Education",
+          "href": null,
+          "width": 95,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Achievements",
+          "href": null,
+          "width": 123,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Contact",
+          "href": null,
+          "width": 81,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Resume",
+          "href": null,
+          "width": 96,
+          "height": 32,
+          "top": 16,
+          "fontSize": "12px",
+          "backgroundColor": "rgba(11, 96, 234, 0.05)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "width": 44,
+          "height": 24,
+          "top": 20,
+          "fontSize": "16px",
+          "backgroundColor": "rgb(184, 184, 184)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "View Projects",
+          "href": null,
+          "width": 165,
+          "height": 48,
+          "top": 641,
+          "fontSize": "14px",
+          "backgroundColor": "rgb(11, 96, 234)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Free Call Session",
+          "href": null,
+          "width": 189,
+          "height": 48,
+          "top": 641,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "width": 44,
+          "height": 44,
+          "top": 1004,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "width": 56,
+          "height": 56,
+          "top": 1000,
+          "fontSize": "16px",
+          "backgroundColor": "rgb(11, 96, 234)",
+          "isTouchFriendly": true
+        }
+      ],
+      "images": [],
+      "ctas": [
+        {
+          "tag": "BUTTON",
+          "text": "ARAbdul Rahman Azam",
+          "href": null,
+          "width": 265,
+          "height": 52,
+          "top": 6,
+          "fontSize": "20px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Home",
+          "href": null,
+          "width": 68,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Skills",
+          "href": null,
+          "width": 63,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Projects",
+          "href": null,
+          "width": 83,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Education",
+          "href": null,
+          "width": 95,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Achievements",
+          "href": null,
+          "width": 123,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Contact",
+          "href": null,
+          "width": 81,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Resume",
+          "href": null,
+          "width": 96,
+          "height": 32,
+          "top": 16,
+          "fontSize": "12px",
+          "backgroundColor": "rgba(11, 96, 234, 0.05)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "width": 44,
+          "height": 24,
+          "top": 20,
+          "fontSize": "16px",
+          "backgroundColor": "rgb(184, 184, 184)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "View Projects",
+          "href": null,
+          "width": 165,
+          "height": 48,
+          "top": 641,
+          "fontSize": "14px",
+          "backgroundColor": "rgb(11, 96, 234)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Free Call Session",
+          "href": null,
+          "width": 189,
+          "height": 48,
+          "top": 641,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "mailto:azamabdulrahman930@gmail.com",
+          "width": 40,
+          "height": 40,
+          "top": 717,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "https://linkedin.com/in/abdulrahmanazam",
+          "width": 40,
+          "height": 40,
+          "top": 717,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "https://github.com/abdulrahmanazam",
+          "width": 40,
+          "height": 40,
+          "top": 717,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "https://leetcode.com/abdulrahmanazam",
+          "width": 40,
+          "height": 40,
+          "top": 717,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "width": 44,
+          "height": 44,
+          "top": 1004,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "width": 56,
+          "height": 56,
+          "top": 1000,
+          "fontSize": "16px",
+          "backgroundColor": "rgb(11, 96, 234)",
+          "isTouchFriendly": true
+        }
+      ],
+      "text_content": [
+        {
+          "text": "Open to AI/ML Opportunities",
+          "fontSize": "14px",
+          "tag": "SPAN"
+        },
+        {
+          "text": "Full Stack AI Engineer",
+          "fontSize": "36px",
+          "tag": "P"
+        }
+      ]
+    },
+    "typography": {
+      "bodyFont": "Inter, \"Inter Fallback\"",
+      "bodyFontSize": "16px",
+      "bodyLineHeight": "24px",
+      "bodyColor": "rgb(31, 31, 31)",
+      "bodyBg": "rgb(250, 250, 250)",
+      "uniqueFonts": [
+        "Times New Roman",
+        "Inter"
+      ],
+      "minFontSize": 11,
+      "maxFontSize": 96
+    },
+    "layout": {
+      "hasHorizontalScroll": false,
+      "scrollWidth": 1920,
+      "clientWidth": 1920,
+      "overflow": 0,
+      "documentHeight": 8830,
+      "bodyOverflowX": "visible",
+      "htmlOverflowX": "visible"
+    },
+    "navigation": {
+      "exists": true,
+      "width": 1280,
+      "height": 64,
+      "linkCount": 0,
+      "linkTexts": [],
+      "hasHamburger": true,
+      "position": "static"
+    },
+    "accessibility": {
+      "issues": [
+        {
+          "type": "missing_label",
+          "inputType": "text"
+        }
+      ],
+      "smallTapTargets": [
+        {
+          "tag": "BUTTON",
+          "text": "Home",
+          "width": 68,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Skills",
+          "width": 63,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Projects",
+          "width": 83,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Education",
+          "width": 95,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Achievements",
+          "width": 123,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Contact",
+          "width": 81,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Resume",
+          "width": 96,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "width": 44,
+          "height": 24
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "A",
+          "text": "Source Code",
+          "width": 165,
+          "height": 38
+        },
+        {
+          "tag": "A",
+          "text": "Source Code",
+          "width": 165,
+          "height": 38
+        },
+        {
+          "tag": "A",
+          "text": "Source Code",
+          "width": 165,
+          "height": 38
+        },
+        {
+          "tag": "A",
+          "text": "Source Code",
+          "width": 165,
+          "height": 38
+        },
+        {
+          "tag": "A",
+          "text": "Source Code",
+          "width": 165,
+          "height": 38
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "interactiveWithoutAria": [
+        {
+          "tag": "BUTTON",
+          "html": "<button class=\"fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-lg flex items-center justify-center\" tabin"
+        }
+      ],
+      "htmlLang": "en",
+      "totalImages": 0,
+      "imagesWithAlt": 0
+    },
+    "performance": {
+      "domContentLoaded": 3627,
+      "loadComplete": 3826,
+      "firstPaint": 3700,
+      "firstContentfulPaint": 3700,
+      "resourceCount": 22
+    },
+    "colors": {
+      "backgroundColors": [
+        "rgb(250, 250, 250)",
+        "rgba(32, 148, 243, 0.75)",
+        "rgba(30, 146, 243, 0.73)",
+        "rgba(28, 144, 243, 0.71)",
+        "rgba(26, 142, 242, 0.69)",
+        "rgba(24, 140, 242, 0.675)",
+        "rgba(22, 138, 242, 0.655)",
+        "rgba(20, 136, 241, 0.635)",
+        "rgba(19, 134, 241, 0.616)",
+        "rgba(17, 132, 240, 0.596)",
+        "rgba(15, 130, 240, 0.576)",
+        "rgba(15, 128, 237, 0.557)",
+        "rgba(15, 126, 235, 0.537)",
+        "rgba(15, 124, 232, 0.518)",
+        "rgba(15, 121, 230, 0.498)"
+      ],
+      "textColors": [
+        "rgb(0, 0, 0)",
+        "rgb(31, 31, 31)",
+        "rgb(11, 96, 234)",
+        "rgb(250, 250, 250)",
+        "rgb(89, 89, 89)",
+        "rgba(11, 96, 234, 0.9)",
+        "rgba(89, 89, 89, 0.6)",
+        "rgb(197, 17, 17)",
+        "rgba(255, 255, 255, 0.2)",
+        "rgb(59, 130, 246)",
+        "rgb(245, 158, 11)",
+        "rgb(168, 85, 247)",
+        "rgb(16, 185, 129)",
+        "rgba(250, 250, 250, 0.8)"
+      ]
+    }
+  },
+  "laptop": {
+    "title": "Abdul Rahman Azam | Full Stack AI Engineer - Portfolio",
+    "url": "https://abdulrahmanazam.me/",
+    "viewport_meta": "width=device-width, initial-scale=1",
+    "above_fold": {
+      "h1": [
+        {
+          "text": "Abdul Rahman Azam",
+          "top": 237,
+          "fontSize": "96px"
+        }
+      ],
+      "h2": [],
+      "links": [
+        {
+          "tag": "A",
+          "text": "",
+          "href": "mailto:azamabdulrahman930@gmail.com",
+          "width": 40,
+          "height": 40,
+          "top": 561,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "https://linkedin.com/in/abdulrahmanazam",
+          "width": 40,
+          "height": 40,
+          "top": 561,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "https://github.com/abdulrahmanazam",
+          "width": 40,
+          "height": 40,
+          "top": 561,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "https://leetcode.com/abdulrahmanazam",
+          "width": 40,
+          "height": 40,
+          "top": 561,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        }
+      ],
+      "buttons": [
+        {
+          "tag": "BUTTON",
+          "text": "ARAbdul Rahman Azam",
+          "href": null,
+          "width": 265,
+          "height": 52,
+          "top": 6,
+          "fontSize": "20px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Home",
+          "href": null,
+          "width": 68,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Skills",
+          "href": null,
+          "width": 63,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Projects",
+          "href": null,
+          "width": 83,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Education",
+          "href": null,
+          "width": 95,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Achievements",
+          "href": null,
+          "width": 123,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Contact",
+          "href": null,
+          "width": 81,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Resume",
+          "href": null,
+          "width": 96,
+          "height": 32,
+          "top": 16,
+          "fontSize": "12px",
+          "backgroundColor": "rgba(11, 96, 234, 0.05)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "width": 44,
+          "height": 24,
+          "top": 20,
+          "fontSize": "16px",
+          "backgroundColor": "rgb(184, 184, 184)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "View Projects",
+          "href": null,
+          "width": 165,
+          "height": 48,
+          "top": 485,
+          "fontSize": "14px",
+          "backgroundColor": "rgb(11, 96, 234)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Free Call Session",
+          "href": null,
+          "width": 189,
+          "height": 48,
+          "top": 485,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "width": 44,
+          "height": 44,
+          "top": 692,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "width": 56,
+          "height": 56,
+          "top": 688,
+          "fontSize": "16px",
+          "backgroundColor": "rgb(11, 96, 234)",
+          "isTouchFriendly": true
+        }
+      ],
+      "images": [],
+      "ctas": [
+        {
+          "tag": "BUTTON",
+          "text": "ARAbdul Rahman Azam",
+          "href": null,
+          "width": 265,
+          "height": 52,
+          "top": 6,
+          "fontSize": "20px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Home",
+          "href": null,
+          "width": 68,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Skills",
+          "href": null,
+          "width": 63,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Projects",
+          "href": null,
+          "width": 83,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Education",
+          "href": null,
+          "width": 95,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Achievements",
+          "href": null,
+          "width": 123,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Contact",
+          "href": null,
+          "width": 81,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Resume",
+          "href": null,
+          "width": 96,
+          "height": 32,
+          "top": 16,
+          "fontSize": "12px",
+          "backgroundColor": "rgba(11, 96, 234, 0.05)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "width": 44,
+          "height": 24,
+          "top": 20,
+          "fontSize": "16px",
+          "backgroundColor": "rgb(184, 184, 184)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "View Projects",
+          "href": null,
+          "width": 165,
+          "height": 48,
+          "top": 485,
+          "fontSize": "14px",
+          "backgroundColor": "rgb(11, 96, 234)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Free Call Session",
+          "href": null,
+          "width": 189,
+          "height": 48,
+          "top": 485,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "mailto:azamabdulrahman930@gmail.com",
+          "width": 40,
+          "height": 40,
+          "top": 561,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "https://linkedin.com/in/abdulrahmanazam",
+          "width": 40,
+          "height": 40,
+          "top": 561,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "https://github.com/abdulrahmanazam",
+          "width": 40,
+          "height": 40,
+          "top": 561,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "https://leetcode.com/abdulrahmanazam",
+          "width": 40,
+          "height": 40,
+          "top": 561,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "width": 44,
+          "height": 44,
+          "top": 692,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "width": 56,
+          "height": 56,
+          "top": 688,
+          "fontSize": "16px",
+          "backgroundColor": "rgb(11, 96, 234)",
+          "isTouchFriendly": true
+        }
+      ],
+      "text_content": [
+        {
+          "text": "Open to AI/ML Opportunities",
+          "fontSize": "14px",
+          "tag": "SPAN"
+        },
+        {
+          "text": "Full Stack AI Engineer",
+          "fontSize": "36px",
+          "tag": "P"
+        }
+      ]
+    },
+    "typography": {
+      "bodyFont": "Inter, \"Inter Fallback\"",
+      "bodyFontSize": "16px",
+      "bodyLineHeight": "24px",
+      "bodyColor": "rgb(31, 31, 31)",
+      "bodyBg": "rgb(250, 250, 250)",
+      "uniqueFonts": [
+        "Times New Roman",
+        "Inter"
+      ],
+      "minFontSize": 11,
+      "maxFontSize": 96
+    },
+    "layout": {
+      "hasHorizontalScroll": false,
+      "scrollWidth": 1366,
+      "clientWidth": 1366,
+      "overflow": 0,
+      "documentHeight": 7573,
+      "bodyOverflowX": "visible",
+      "htmlOverflowX": "visible"
+    },
+    "navigation": {
+      "exists": true,
+      "width": 1280,
+      "height": 64,
+      "linkCount": 0,
+      "linkTexts": [],
+      "hasHamburger": true,
+      "position": "static"
+    },
+    "accessibility": {
+      "issues": [
+        {
+          "type": "missing_label",
+          "inputType": "text"
+        }
+      ],
+      "smallTapTargets": [
+        {
+          "tag": "BUTTON",
+          "text": "Home",
+          "width": 68,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Skills",
+          "width": 63,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Projects",
+          "width": 83,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Education",
+          "width": 95,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Achievements",
+          "width": 123,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Contact",
+          "width": 81,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Resume",
+          "width": 96,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "width": 44,
+          "height": 24
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "A",
+          "text": "Source Code",
+          "width": 165,
+          "height": 38
+        },
+        {
+          "tag": "A",
+          "text": "Source Code",
+          "width": 165,
+          "height": 38
+        },
+        {
+          "tag": "A",
+          "text": "Source Code",
+          "width": 165,
+          "height": 38
+        },
+        {
+          "tag": "A",
+          "text": "Source Code",
+          "width": 165,
+          "height": 38
+        },
+        {
+          "tag": "A",
+          "text": "Source Code",
+          "width": 165,
+          "height": 38
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "interactiveWithoutAria": [
+        {
+          "tag": "BUTTON",
+          "html": "<button class=\"fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-lg flex items-center justify-center\" tabin"
+        }
+      ],
+      "htmlLang": "en",
+      "totalImages": 0,
+      "imagesWithAlt": 0
+    },
+    "performance": {
+      "domContentLoaded": 439,
+      "loadComplete": 853,
+      "firstPaint": 708,
+      "firstContentfulPaint": 708,
+      "resourceCount": 22
+    },
+    "colors": {
+      "backgroundColors": [
+        "rgb(250, 250, 250)",
+        "rgba(32, 148, 243, 0.75)",
+        "rgba(30, 146, 243, 0.73)",
+        "rgba(28, 144, 243, 0.71)",
+        "rgba(26, 142, 242, 0.69)",
+        "rgba(24, 140, 242, 0.675)",
+        "rgba(22, 138, 242, 0.655)",
+        "rgba(20, 136, 241, 0.635)",
+        "rgba(19, 134, 241, 0.616)",
+        "rgba(17, 132, 240, 0.596)",
+        "rgba(15, 130, 240, 0.576)",
+        "rgba(15, 128, 237, 0.557)",
+        "rgba(15, 126, 235, 0.537)",
+        "rgba(15, 124, 232, 0.518)",
+        "rgba(15, 121, 230, 0.498)"
+      ],
+      "textColors": [
+        "rgb(0, 0, 0)",
+        "rgb(31, 31, 31)",
+        "rgb(11, 96, 234)",
+        "rgb(250, 250, 250)",
+        "rgb(89, 89, 89)",
+        "rgba(11, 96, 234, 0.9)",
+        "rgba(89, 89, 89, 0.6)",
+        "rgb(197, 17, 17)",
+        "rgba(255, 255, 255, 0.2)",
+        "rgb(59, 130, 246)",
+        "rgb(245, 158, 11)",
+        "rgb(168, 85, 247)",
+        "rgb(16, 185, 129)",
+        "rgba(250, 250, 250, 0.8)"
+      ]
+    }
+  },
+  "tablet": {
+    "title": "Abdul Rahman Azam | Full Stack AI Engineer - Portfolio",
+    "url": "https://abdulrahmanazam.me/",
+    "viewport_meta": "width=device-width, initial-scale=1",
+    "above_fold": {
+      "h1": [
+        {
+          "text": "Abdul Rahman Azam",
+          "top": 385,
+          "fontSize": "60px"
+        }
+      ],
+      "h2": [],
+      "links": [
+        {
+          "tag": "A",
+          "text": "",
+          "href": "mailto:azamabdulrahman930@gmail.com",
+          "width": 40,
+          "height": 40,
+          "top": 669,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "https://linkedin.com/in/abdulrahmanazam",
+          "width": 40,
+          "height": 40,
+          "top": 669,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "https://github.com/abdulrahmanazam",
+          "width": 40,
+          "height": 40,
+          "top": 669,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "https://leetcode.com/abdulrahmanazam",
+          "width": 40,
+          "height": 40,
+          "top": 669,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        }
+      ],
+      "buttons": [
+        {
+          "tag": "BUTTON",
+          "text": "ARAbdul Rahman Azam",
+          "href": null,
+          "width": 146,
+          "height": 100,
+          "top": -18,
+          "fontSize": "20px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Home",
+          "href": null,
+          "width": 68,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Skills",
+          "href": null,
+          "width": 63,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Projects",
+          "href": null,
+          "width": 83,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Education",
+          "href": null,
+          "width": 95,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Achievements",
+          "href": null,
+          "width": 123,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Contact",
+          "href": null,
+          "width": 81,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Resume",
+          "href": null,
+          "width": 96,
+          "height": 32,
+          "top": 16,
+          "fontSize": "12px",
+          "backgroundColor": "rgba(11, 96, 234, 0.05)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "width": 44,
+          "height": 24,
+          "top": 20,
+          "fontSize": "16px",
+          "backgroundColor": "rgb(184, 184, 184)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "View Projects",
+          "href": null,
+          "width": 165,
+          "height": 48,
+          "top": 593,
+          "fontSize": "14px",
+          "backgroundColor": "rgb(11, 96, 234)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Free Call Session",
+          "href": null,
+          "width": 189,
+          "height": 48,
+          "top": 593,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "width": 44,
+          "height": 44,
+          "top": 948,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "width": 56,
+          "height": 56,
+          "top": 944,
+          "fontSize": "16px",
+          "backgroundColor": "rgb(11, 96, 234)",
+          "isTouchFriendly": true
+        }
+      ],
+      "images": [],
+      "ctas": [
+        {
+          "tag": "BUTTON",
+          "text": "ARAbdul Rahman Azam",
+          "href": null,
+          "width": 146,
+          "height": 100,
+          "top": -18,
+          "fontSize": "20px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Home",
+          "href": null,
+          "width": 68,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Skills",
+          "href": null,
+          "width": 63,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Projects",
+          "href": null,
+          "width": 83,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Education",
+          "href": null,
+          "width": 95,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Achievements",
+          "href": null,
+          "width": 123,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Contact",
+          "href": null,
+          "width": 81,
+          "height": 32,
+          "top": 16,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Resume",
+          "href": null,
+          "width": 96,
+          "height": 32,
+          "top": 16,
+          "fontSize": "12px",
+          "backgroundColor": "rgba(11, 96, 234, 0.05)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "width": 44,
+          "height": 24,
+          "top": 20,
+          "fontSize": "16px",
+          "backgroundColor": "rgb(184, 184, 184)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "View Projects",
+          "href": null,
+          "width": 165,
+          "height": 48,
+          "top": 593,
+          "fontSize": "14px",
+          "backgroundColor": "rgb(11, 96, 234)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Free Call Session",
+          "href": null,
+          "width": 189,
+          "height": 48,
+          "top": 593,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "mailto:azamabdulrahman930@gmail.com",
+          "width": 40,
+          "height": 40,
+          "top": 669,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "https://linkedin.com/in/abdulrahmanazam",
+          "width": 40,
+          "height": 40,
+          "top": 669,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "https://github.com/abdulrahmanazam",
+          "width": 40,
+          "height": 40,
+          "top": 669,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "https://leetcode.com/abdulrahmanazam",
+          "width": 40,
+          "height": 40,
+          "top": 669,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "width": 44,
+          "height": 44,
+          "top": 948,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "width": 56,
+          "height": 56,
+          "top": 944,
+          "fontSize": "16px",
+          "backgroundColor": "rgb(11, 96, 234)",
+          "isTouchFriendly": true
+        }
+      ],
+      "text_content": [
+        {
+          "text": "Open to AI/ML Opportunities",
+          "fontSize": "14px",
+          "tag": "SPAN"
+        },
+        {
+          "text": "Full Stack AI Engineer",
+          "fontSize": "30px",
+          "tag": "P"
+        }
+      ]
+    },
+    "typography": {
+      "bodyFont": "Inter, \"Inter Fallback\"",
+      "bodyFontSize": "16px",
+      "bodyLineHeight": "24px",
+      "bodyColor": "rgb(31, 31, 31)",
+      "bodyBg": "rgb(250, 250, 250)",
+      "uniqueFonts": [
+        "Times New Roman",
+        "Inter"
+      ],
+      "minFontSize": 11,
+      "maxFontSize": 60
+    },
+    "layout": {
+      "hasHorizontalScroll": true,
+      "scrollWidth": 774,
+      "clientWidth": 768,
+      "overflow": 6,
+      "documentHeight": 9948,
+      "bodyOverflowX": "visible",
+      "htmlOverflowX": "visible"
+    },
+    "navigation": {
+      "exists": true,
+      "width": 768,
+      "height": 64,
+      "linkCount": 0,
+      "linkTexts": [],
+      "hasHamburger": true,
+      "position": "static"
+    },
+    "accessibility": {
+      "issues": [
+        {
+          "type": "missing_label",
+          "inputType": "text"
+        }
+      ],
+      "smallTapTargets": [
+        {
+          "tag": "BUTTON",
+          "text": "Home",
+          "width": 68,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Skills",
+          "width": 63,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Projects",
+          "width": 83,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Education",
+          "width": 95,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Achievements",
+          "width": 123,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Contact",
+          "width": 81,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Resume",
+          "width": 96,
+          "height": 32
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "width": 44,
+          "height": 24
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "A",
+          "text": "Source Code",
+          "width": 165,
+          "height": 38
+        },
+        {
+          "tag": "A",
+          "text": "Source Code",
+          "width": 165,
+          "height": 38
+        },
+        {
+          "tag": "A",
+          "text": "Source Code",
+          "width": 165,
+          "height": 38
+        },
+        {
+          "tag": "A",
+          "text": "Source Code",
+          "width": 165,
+          "height": 38
+        },
+        {
+          "tag": "A",
+          "text": "Source Code",
+          "width": 165,
+          "height": 38
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "width": 40,
+          "height": 40
+        }
+      ],
+      "interactiveWithoutAria": [
+        {
+          "tag": "BUTTON",
+          "html": "<button class=\"fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-lg flex items-center justify-center\" tabin"
+        }
+      ],
+      "htmlLang": "en",
+      "totalImages": 0,
+      "imagesWithAlt": 0
+    },
+    "performance": {
+      "domContentLoaded": 521,
+      "loadComplete": 846,
+      "firstPaint": 628,
+      "firstContentfulPaint": 628,
+      "resourceCount": 19
+    },
+    "colors": {
+      "backgroundColors": [
+        "rgb(250, 250, 250)",
+        "rgba(32, 148, 243, 0.75)",
+        "rgba(30, 146, 243, 0.73)",
+        "rgba(28, 144, 243, 0.71)",
+        "rgba(26, 142, 242, 0.69)",
+        "rgba(24, 140, 242, 0.675)",
+        "rgba(22, 138, 242, 0.655)",
+        "rgba(20, 136, 241, 0.635)",
+        "rgba(19, 134, 241, 0.616)",
+        "rgba(17, 132, 240, 0.596)",
+        "rgba(15, 130, 240, 0.576)",
+        "rgba(15, 128, 237, 0.557)",
+        "rgba(15, 126, 235, 0.537)",
+        "rgba(15, 124, 232, 0.518)",
+        "rgba(15, 121, 230, 0.498)"
+      ],
+      "textColors": [
+        "rgb(0, 0, 0)",
+        "rgb(31, 31, 31)",
+        "rgb(11, 96, 234)",
+        "rgb(250, 250, 250)",
+        "rgb(89, 89, 89)",
+        "rgba(11, 96, 234, 0.9)",
+        "rgba(89, 89, 89, 0.6)",
+        "rgb(197, 17, 17)",
+        "rgba(255, 255, 255, 0.2)",
+        "rgb(59, 130, 246)",
+        "rgb(245, 158, 11)",
+        "rgb(168, 85, 247)",
+        "rgb(16, 185, 129)",
+        "rgba(250, 250, 250, 0.8)"
+      ]
+    }
+  },
+  "mobile": {
+    "title": "Abdul Rahman Azam | Full Stack AI Engineer - Portfolio",
+    "url": "https://abdulrahmanazam.me/",
+    "viewport_meta": "width=device-width, initial-scale=1",
+    "above_fold": {
+      "h1": [
+        {
+          "text": "Abdul Rahman Azam",
+          "top": 216,
+          "fontSize": "48px"
+        }
+      ],
+      "h2": [],
+      "links": [
+        {
+          "tag": "A",
+          "text": "",
+          "href": "mailto:azamabdulrahman930@gmail.com",
+          "width": 40,
+          "height": 40,
+          "top": 626,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "https://linkedin.com/in/abdulrahmanazam",
+          "width": 40,
+          "height": 40,
+          "top": 626,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "https://github.com/abdulrahmanazam",
+          "width": 40,
+          "height": 40,
+          "top": 626,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "https://leetcode.com/abdulrahmanazam",
+          "width": 40,
+          "height": 40,
+          "top": 626,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        }
+      ],
+      "buttons": [
+        {
+          "tag": "BUTTON",
+          "text": "ARAbdul Rahman Azam",
+          "href": null,
+          "width": 60,
+          "height": 52,
+          "top": 6,
+          "fontSize": "20px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "width": 44,
+          "height": 24,
+          "top": 20,
+          "fontSize": "16px",
+          "backgroundColor": "rgb(184, 184, 184)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "width": 36,
+          "height": 36,
+          "top": 14,
+          "fontSize": "12px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "View Projects",
+          "href": null,
+          "width": 165,
+          "height": 48,
+          "top": 486,
+          "fontSize": "14px",
+          "backgroundColor": "rgb(11, 96, 234)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Free Call Session",
+          "href": null,
+          "width": 189,
+          "height": 48,
+          "top": 550,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "width": 44,
+          "height": 44,
+          "top": 736,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "width": 56,
+          "height": 56,
+          "top": 732,
+          "fontSize": "16px",
+          "backgroundColor": "rgb(11, 96, 234)",
+          "isTouchFriendly": true
+        }
+      ],
+      "images": [],
+      "ctas": [
+        {
+          "tag": "BUTTON",
+          "text": "ARAbdul Rahman Azam",
+          "href": null,
+          "width": 60,
+          "height": 52,
+          "top": 6,
+          "fontSize": "20px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "width": 44,
+          "height": 24,
+          "top": 20,
+          "fontSize": "16px",
+          "backgroundColor": "rgb(184, 184, 184)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "width": 36,
+          "height": 36,
+          "top": 14,
+          "fontSize": "12px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "View Projects",
+          "href": null,
+          "width": 165,
+          "height": 48,
+          "top": 486,
+          "fontSize": "14px",
+          "backgroundColor": "rgb(11, 96, 234)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Free Call Session",
+          "href": null,
+          "width": 189,
+          "height": 48,
+          "top": 550,
+          "fontSize": "14px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "mailto:azamabdulrahman930@gmail.com",
+          "width": 40,
+          "height": 40,
+          "top": 626,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "https://linkedin.com/in/abdulrahmanazam",
+          "width": 40,
+          "height": 40,
+          "top": 626,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "https://github.com/abdulrahmanazam",
+          "width": 40,
+          "height": 40,
+          "top": 626,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "href": "https://leetcode.com/abdulrahmanazam",
+          "width": 40,
+          "height": 40,
+          "top": 626,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(245, 245, 245, 0.4)",
+          "isTouchFriendly": false
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "width": 44,
+          "height": 44,
+          "top": 736,
+          "fontSize": "16px",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "isTouchFriendly": true
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "href": null,
+          "width": 56,
+          "height": 56,
+          "top": 732,
+          "fontSize": "16px",
+          "backgroundColor": "rgb(11, 96, 234)",
+          "isTouchFriendly": true
+        }
+      ],
+      "text_content": [
+        {
+          "text": "Open to AI/ML Opportunities",
+          "fontSize": "14px",
+          "tag": "SPAN"
+        },
+        {
+          "text": "Full Stack AI Engineer",
+          "fontSize": "24px",
+          "tag": "P"
+        }
+      ]
+    },
+    "typography": {
+      "bodyFont": "Inter, \"Inter Fallback\"",
+      "bodyFontSize": "16px",
+      "bodyLineHeight": "24px",
+      "bodyColor": "rgb(31, 31, 31)",
+      "bodyBg": "rgb(250, 250, 250)",
+      "uniqueFonts": [
+        "Times New Roman",
+        "Inter"
+      ],
+      "minFontSize": 11,
+      "maxFontSize": 60
+    },
+    "layout": {
+      "hasHorizontalScroll": true,
+      "scrollWidth": 389,
+      "clientWidth": 375,
+      "overflow": 14,
+      "documentHeight": 10337,
+      "bodyOverflowX": "visible",
+      "htmlOverflowX": "visible"
+    },
+    "navigation": {
+      "exists": true,
+      "width": 375,
+      "height": 64,
+      "linkCount": 0,
+      "linkTexts": [],
+      "hasHamburger": true,
+      "position": "static"
+    },
+    "accessibility": {
+      "issues": [
+        {
+          "type": "missing_label",
+          "inputType": "text"
+        }
+      ],
+      "smallTapTargets": [
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "width": 44,
+          "height": 24
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "width": 36,
+          "height": 36
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "A",
+          "text": "Source Code",
+          "width": 165,
+          "height": 38
+        },
+        {
+          "tag": "A",
+          "text": "Source Code",
+          "width": 165,
+          "height": 38
+        },
+        {
+          "tag": "A",
+          "text": "Source Code",
+          "width": 165,
+          "height": 38
+        },
+        {
+          "tag": "A",
+          "text": "Source Code",
+          "width": 165,
+          "height": 38
+        },
+        {
+          "tag": "A",
+          "text": "Source Code",
+          "width": 165,
+          "height": 38
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "A",
+          "text": "",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Back to top",
+          "width": 99,
+          "height": 20
+        }
+      ],
+      "interactiveWithoutAria": [
+        {
+          "tag": "BUTTON",
+          "html": "<button class=\"fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-primary text-primary-foreground shadow-lg flex items-center justify-center\" tabin"
+        }
+      ],
+      "htmlLang": "en",
+      "totalImages": 0,
+      "imagesWithAlt": 0
+    },
+    "performance": {
+      "domContentLoaded": 1069,
+      "loadComplete": 1923,
+      "firstPaint": 1268,
+      "firstContentfulPaint": 1268,
+      "resourceCount": 19
+    },
+    "colors": {
+      "backgroundColors": [
+        "rgb(250, 250, 250)",
+        "rgba(32, 148, 243, 0.75)",
+        "rgba(30, 146, 243, 0.73)",
+        "rgba(28, 144, 243, 0.71)",
+        "rgba(26, 142, 242, 0.69)",
+        "rgba(24, 140, 242, 0.675)",
+        "rgba(22, 138, 242, 0.655)",
+        "rgba(20, 136, 241, 0.635)",
+        "rgba(19, 134, 241, 0.616)",
+        "rgba(17, 132, 240, 0.596)",
+        "rgba(15, 130, 240, 0.576)",
+        "rgba(15, 128, 237, 0.557)",
+        "rgba(15, 126, 235, 0.537)",
+        "rgba(15, 124, 232, 0.518)",
+        "rgba(15, 121, 230, 0.498)"
+      ],
+      "textColors": [
+        "rgb(0, 0, 0)",
+        "rgb(31, 31, 31)",
+        "rgb(11, 96, 234)",
+        "rgb(250, 250, 250)",
+        "rgb(89, 89, 89)",
+        "rgba(11, 96, 234, 0.9)",
+        "rgba(89, 89, 89, 0.6)",
+        "rgb(197, 17, 17)",
+        "rgba(255, 255, 255, 0.2)",
+        "rgb(59, 130, 246)",
+        "rgb(245, 158, 11)",
+        "rgb(168, 85, 247)",
+        "rgb(16, 185, 129)",
+        "rgba(250, 250, 250, 0.8)"
+      ]
+    }
+  }
+}

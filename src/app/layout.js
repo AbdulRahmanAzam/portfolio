@@ -1,6 +1,7 @@
 import "./globals.css";
 import { portfolioData, getStructuredDataGraph } from "@/lib/schema";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { Providers } from "./providers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -18,7 +19,6 @@ export const metadata = {
   metadataBase: new URL(portfolioData.siteUrl),
   title: `${portfolioData.name} | ${portfolioData.title} - Portfolio`,
   description: portfolioData.description,
-  keywords: portfolioData.keywords,
   authors: [{ name: portfolioData.name, url: portfolioData.siteUrl }],
   creator: portfolioData.name,
   robots: { index: true, follow: true },
@@ -56,7 +56,6 @@ export const metadata = {
     "geo.placename": "Karachi, Pakistan",
     classification: "Portfolio, Technology, AI/ML",
     language: "English",
-    "revisit-after": "7 days",
   },
 };
 
@@ -93,7 +92,9 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={`${inter.className} ${inter.variable} ${jetBrainsMono.variable}`} suppressHydrationWarning>
-        {children}
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );

@@ -2,19 +2,22 @@
 
 site: https://abdulrahmanazam.me
 owner: Abdul Rahman Azam
-updated: 2026-03-27
+updated: 2026-03-29
 license: RSL-1.0
 
 preferred-canonical: https://abdulrahmanazam.me/
 sitemap: https://abdulrahmanazam.me/sitemap.xml
 
 about:
-- Personal portfolio for Abdul Rahman Azam, Full Stack AI Engineer.
+- Personal portfolio for Abdul Rahman Azam, Full Stack AI Engineer based in Karachi, Pakistan.
+- BS in Artificial Intelligence student at FAST NUCES Karachi (CGPA: 3.33).
 - Primary topics: AI/ML engineering, full-stack development, selected projects, skills, and contact information.
+- Blog at /blog covers technical articles on machine learning, game AI, and software engineering.
 
 allowed-content:
 - Public portfolio content and project summaries.
 - Professional profile details and social links.
+- Blog articles and technical writing.
 
 disallowed-content:
 - Private APIs and internal endpoints under /api/.

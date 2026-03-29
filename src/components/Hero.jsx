@@ -194,14 +194,9 @@ export function Hero() {
         <StatusBadge />
         
         {/* Name with gradient & reveal */}
-        <motion.h1 
-          className="text-5xl sm:text-6xl lg:text-8xl font-bold tracking-tight mb-5"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
-        >
+        <h1 className="text-5xl sm:text-6xl lg:text-8xl font-bold tracking-tight mb-5">
           <span className="gradient-text">{portfolioData.name}</span>
-        </motion.h1>
+        </h1>
         
         {/* Title with scramble effect */}
         <motion.p 
