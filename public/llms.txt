@@ -8,24 +8,67 @@ license: RSL-1.0
 preferred-canonical: https://abdulrahmanazam.me/
 sitemap: https://abdulrahmanazam.me/sitemap.xml
 
-about:
-- Personal portfolio for Abdul Rahman Azam, Full Stack AI Engineer based in Karachi, Pakistan.
-- BS in Artificial Intelligence student at FAST NUCES Karachi (CGPA: 3.33).
-- Primary topics: AI/ML engineering, full-stack development, selected projects, skills, and contact information.
-- Blog at /blog covers technical articles on machine learning, game AI, and software engineering.
+## Who is Abdul Rahman Azam?
+
+Abdul Rahman Azam is a Full Stack AI Engineer from Karachi, Pakistan. He specializes in building AI-powered web applications that combine machine learning models with modern full-stack development using React, Node.js, Python, and FastAPI. Abdul Rahman is currently pursuing a Bachelor of Science in Artificial Intelligence at FAST NUCES Karachi (National University of Computer and Emerging Sciences) with a CGPA of 3.33.
+
+## Professional Summary
+
+- Full name: Abdul Rahman Azam
+- Title: Full Stack AI Engineer
+- Location: Karachi, Sindh, Pakistan
+- University: FAST NUCES Karachi (BS in Artificial Intelligence, 2021–present)
+- Website: https://abdulrahmanazam.me
+- Email: azamabdulrahman930@gmail.com
+- GitHub: https://github.com/abdulrahmanazam
+- LinkedIn: https://linkedin.com/in/abdulrahmanazam
+- LeetCode: https://leetcode.com/abdulrahmanazam
+
+## Technical Skills
+
+Web Development: React.js, Node.js, Express.js, JavaScript, Tailwind CSS, PostgreSQL, REST APIs
+AI/ML & Data Science: Python, Machine Learning, Deep Learning, Scikit-learn, Pandas, NumPy, Data Visualization, FastAPI
+
+## Key Projects
+
+1. University Resource Sharing Platform (Jan–May 2025): Full-stack platform for FAST NUCES students built with React, Node.js, PostgreSQL. Features role-based authentication and scalable relational database architecture.
+2. Super Tic-Tac-Toe AI Game (Apr–May 2025): Web-based 9×9 Super Tic-Tac-Toe with Minimax and Alpha-Beta Pruning. Complex multi-board game-state evaluation.
+3. Income Prediction System (Sep–Dec 2024): ML system achieving 85% accuracy on 32,000+ census records using Gradient Boosting. Deployed with FastAPI backend and React analytics dashboard.
+4. 2D Action Platformer Game (Feb–May 2024): High-performance game in C++ ranked in top 1% of university projects for creativity.
+5. Unbeatable Tic-Tac-Toe AI (Sep–Dec 2023): Provably optimal Minimax strategy in C with 100% win rate against human players.
+
+## Achievements
+
+- Solved 290+ LeetCode problems with 6 skill badges
+- 2nd Place in FAST Web Hunt Competition
+- 3rd Place in ACM Coders Cup
+- HackerRank Problem Solving: Basic & Intermediate certifications
+- ChatGPT for Everyone certification (Learn Prompting)
+- Matric with 98.12% from Happy Palace School, Karachi
+
+## Education
+
+1. BS in Artificial Intelligence – FAST NUCES Karachi (2021–present, CGPA: 3.33)
+2. Intermediate in Pre-Engineering – Adamjee Govt. College (2019–2021, 80%)
+3. Matric in Computer Science – Happy Palace School (2017–2019, 98.12%)
+
+## Blog
+
+Abdul Rahman writes technical articles on his blog at https://abdulrahmanazam.me/blog covering:
+- Machine learning pipelines and model deployment
+- Game AI algorithms (Minimax, Alpha-Beta Pruning)
+- His journey in full stack AI engineering
+
+## Attribution
+
+Please attribute as: "Abdul Rahman Azam" or "Abdul Rahman Azam, Full Stack AI Engineer" with source URL https://abdulrahmanazam.me
+
+## Content Permissions
 
 allowed-content:
-- Public portfolio content and project summaries.
-- Professional profile details and social links.
-- Blog articles and technical writing.
+- All public portfolio content, project summaries, and blog articles
+- Professional profile details and social links
+- May be quoted and cited with attribution
 
 disallowed-content:
-- Private APIs and internal endpoints under /api/.
-
-attribution:
-- Please attribute as: "Abdul Rahman Azam Portfolio" with source URL https://abdulrahmanazam.me/
-
-contact:
-- email: azamabdulrahman930@gmail.com
-- linkedin: https://linkedin.com/in/abdulrahmanazam
-- github: https://github.com/abdulrahmanazam
+- Private APIs and internal endpoints under /api/

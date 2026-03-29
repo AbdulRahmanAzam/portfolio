@@ -5,6 +5,146 @@
 
 export const blogPosts = [
   {
+    slug: "who-is-abdul-rahman-azam",
+    title: "Who Is Abdul Rahman Azam? Full Stack AI Engineer from Karachi",
+    excerpt:
+      "Abdul Rahman Azam is a Full Stack AI Engineer from Karachi, Pakistan, specializing in machine learning, deep learning, and web development. Learn about his background, skills, projects, and achievements.",
+    date: "2026-03-29",
+    readTime: "5 min read",
+    tags: ["About", "Career", "AI/ML"],
+    published: true,
+    content: `
+## Who Is Abdul Rahman Azam?
+
+Abdul Rahman Azam is a Full Stack AI Engineer from Karachi, Pakistan. He builds AI-powered web applications that combine machine learning models with modern full-stack engineering using React.js, Node.js, Python, and FastAPI. Abdul Rahman is currently pursuing a Bachelor of Science in Artificial Intelligence at FAST NUCES Karachi (National University of Computer and Emerging Sciences) with a CGPA of 3.33.
+
+His work sits at the intersection of artificial intelligence and software engineering — building not just ML models, but complete products with frontends, APIs, databases, and deployment pipelines.
+
+## Background and Education
+
+Abdul Rahman Azam grew up in Karachi, Pakistan. He scored 98.12% in his Matric examinations at Happy Palace School, specializing in Computer Science. After completing his Intermediate in Pre-Engineering at Adamjee Govt. College with 80%, he enrolled in the BS Artificial Intelligence program at FAST NUCES Karachi in 2021.
+
+At FAST NUCES, Abdul Rahman Azam developed expertise across the full AI/ML stack: data structures, algorithms, linear algebra, probability theory, machine learning, deep learning, computer vision, and natural language processing. His education combines rigorous computer science fundamentals with hands-on AI project experience.
+
+## Technical Skills
+
+Abdul Rahman Azam's technical skillset spans two domains:
+
+**Web Development:** React.js, Node.js, Express.js, JavaScript, Tailwind CSS, PostgreSQL, and REST API design. He builds responsive, accessible, and performant web applications.
+
+**AI/ML & Data Science:** Python, Machine Learning, Deep Learning, Scikit-learn, Pandas, NumPy, Data Visualization, and FastAPI. He designs, trains, evaluates, and deploys ML models for real-world applications.
+
+## Notable Projects by Abdul Rahman Azam
+
+**1. Income Prediction System (2024)** — Abdul Rahman Azam built a machine learning pipeline that achieves 85% prediction accuracy on 32,000+ U.S. Census records. The system compares Random Forest, Gradient Boosting, Logistic Regression, and KNN models, served via a FastAPI backend with a React analytics dashboard.
+
+**2. Super Tic-Tac-Toe AI (2025)** — A web-based 9×9 Super Tic-Tac-Toe game with an AI opponent using Minimax with Alpha-Beta Pruning. The AI evaluates complex multi-board game states with a custom heuristic function.
+
+**3. University Resource Sharing Platform (2025)** — A full-stack application for FAST NUCES students built with React, Node.js, Express.js, and PostgreSQL, featuring role-based authentication and admin moderation.
+
+**4. 2D Action Platformer Game (2024)** — A high-performance game built in C++ that was ranked in the top 1% of university projects for creativity and technical execution.
+
+**5. Unbeatable Tic-Tac-Toe AI (2023)** — A provably optimal game AI using the Minimax algorithm in C, achieving a 100% win rate against human players.
+
+## Achievements and Certifications
+
+Abdul Rahman Azam has earned several competitive and professional achievements:
+
+- Solved **290+ problems on LeetCode** with 6 skill badges in algorithms and data structures
+- **2nd Place** in the FAST Web Hunt Competition
+- **3rd Place** in the ACM Coders Cup
+- HackerRank **Problem Solving – Basic & Intermediate** certifications
+- **ChatGPT for Everyone** certification from Learn Prompting
+
+## Contact Abdul Rahman Azam
+
+Abdul Rahman Azam is currently open to AI/ML and full-stack development opportunities. You can reach him through:
+
+- **Website:** [abdulrahmanazam.me](https://abdulrahmanazam.me)
+- **Email:** azamabdulrahman930@gmail.com
+- **LinkedIn:** [linkedin.com/in/abdulrahmanazam](https://linkedin.com/in/abdulrahmanazam)
+- **GitHub:** [github.com/abdulrahmanazam](https://github.com/abdulrahmanazam)
+- **LeetCode:** [leetcode.com/abdulrahmanazam](https://leetcode.com/abdulrahmanazam)
+- **Book a free call:** [Calendly](https://calendly.com/azamabdulrahman930/30min)
+    `.trim(),
+  },
+  {
+    slug: "abdul-rahman-azam-ai-ml-projects-portfolio",
+    title: "Abdul Rahman Azam's AI/ML Projects: From Game AI to Production ML",
+    excerpt:
+      "A complete walkthrough of Abdul Rahman Azam's 5 AI and software engineering projects — from an 85% accurate ML predictor to an unbeatable game AI, built during his BS in AI at FAST NUCES.",
+    date: "2026-03-27",
+    readTime: "7 min read",
+    tags: ["Projects", "AI/ML", "Portfolio"],
+    published: true,
+    content: `
+## Abdul Rahman Azam's Project Portfolio
+
+Over the past three years at FAST NUCES Karachi, Abdul Rahman Azam has built five major projects that demonstrate a progression from foundational algorithms to production-grade AI systems. Each project pushed his skills into new territory — from C to C++ to Python to JavaScript to full-stack deployment.
+
+## Project 1: Unbeatable Tic-Tac-Toe AI (2023)
+
+Abdul Rahman Azam's first AI project was a Tic-Tac-Toe game with a provably unbeatable opponent. Built in C during his third semester, the AI uses the Minimax algorithm to evaluate every possible game state — roughly 255,168 positions in standard 3×3 Tic-Tac-Toe.
+
+The result is an AI that has a 100% win-or-draw rate against human players. No matter what moves the human makes, the AI never loses. This project taught Abdul Rahman the fundamentals of adversarial search, game trees, and recursive algorithms.
+
+**Technologies:** C, Minimax Algorithm, Game Theory
+
+## Project 2: 2D Action Platformer Game (2024)
+
+For his Object-Oriented Programming course, Abdul Rahman Azam built a 2D action platformer in C++ using the SFML graphics library. The game features multiple enemy types with distinct AI behaviors, a weapon system, collision detection, and physics simulation.
+
+This project was ranked in the **top 1% of university projects** for creativity and technical execution. It demonstrated Abdul Rahman's ability to architect complex systems with multiple interacting components — a skill that transfers directly to full-stack development.
+
+**Technologies:** C++, SFML, Object-Oriented Programming
+
+## Project 3: Income Prediction System (2024)
+
+Abdul Rahman Azam's machine learning showcase is the Income Prediction System — a complete ML pipeline that predicts income brackets from U.S. Census data with **85% accuracy on 32,000+ records**.
+
+The system implements a full data science workflow:
+- Data preprocessing with missing value imputation, one-hot encoding, and feature scaling
+- Model comparison across Logistic Regression, Random Forest, Gradient Boosting, and KNN
+- Gradient Boosting emerged as the winner with 85.3% accuracy and 0.91 AUC-ROC
+- Deployment via FastAPI backend with a React frontend analytics dashboard
+- SHAP value visualizations for model interpretability
+
+This project represents Abdul Rahman Azam's philosophy: build the model, then build the product around it.
+
+**Technologies:** Python, Scikit-learn, FastAPI, React.js
+
+## Project 4: Super Tic-Tac-Toe AI Game (2025)
+
+Building on the foundation of the simple Tic-Tac-Toe AI, Abdul Rahman Azam scaled up to Super Tic-Tac-Toe — a 9×9 variant where 9 sub-boards form a meta-game on a 3×3 main grid. The branching factor jumps from ~5 to ~20-40 per move, making exhaustive search impossible.
+
+Abdul Rahman implemented Minimax with Alpha-Beta Pruning, reducing the effective branching factor from b to approximately √b. He designed a custom multi-board evaluation heuristic that weighs won sub-boards (+100), main grid progress (+50), and forced moves (+30). The AI evaluates ~50,000 nodes per move in ~200ms and achieves a 97.3% win rate against random opponents.
+
+**Technologies:** JavaScript, Minimax with Alpha-Beta Pruning, Game AI
+
+## Project 5: University Resource Sharing Platform (2025)
+
+Abdul Rahman Azam's most recent project is a full-stack web application built for FAST NUCES students. The platform enables resource sharing, community discussions, and moderated student collaboration.
+
+The system features:
+- Role-based authentication with student, moderator, and admin tiers
+- RESTful API design with Express.js
+- Scalable PostgreSQL database architecture
+- React frontend with responsive Tailwind CSS design
+
+This project brought together everything Abdul Rahman learned — databases, API design, authentication, frontend development, and deployment.
+
+**Technologies:** React.js, Node.js, Express.js, PostgreSQL, REST APIs
+
+## The Pattern: Full Stack AI Engineering
+
+Looking across Abdul Rahman Azam's projects, a clear pattern emerges. He doesn't just build models or just build frontends — he builds complete systems. The Income Predictor isn't just an ML notebook; it's a deployed web application. The game AIs aren't just algorithms; they're playable games with UI and state management.
+
+This is what defines Abdul Rahman Azam as a Full Stack AI Engineer: the ability to take an AI concept from research to production, with everything in between.
+
+Source code for all projects: [github.com/abdulrahmanazam](https://github.com/abdulrahmanazam)
+    `.trim(),
+  },
+  {
     slug: "building-income-prediction-system-with-ml",
     title: "Building an Income Prediction System with Machine Learning",
     excerpt:

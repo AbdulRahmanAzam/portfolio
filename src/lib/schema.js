@@ -7,7 +7,7 @@ export const portfolioData = {
   title: "Full Stack AI Engineer",
   tagline: "Crafting Code That Thinks — and Ideas That Build Themselves.",
   description:
-    "Full Stack AI Engineer specializing in AI/ML and modern web development. BS in AI at FAST NUCES Karachi. View projects, skills, and book a free call.",
+    "Abdul Rahman Azam is a Full Stack AI Engineer from Karachi, Pakistan, specializing in machine learning, deep learning, and modern web development. Currently pursuing a BS in Artificial Intelligence at FAST NUCES Karachi.",
 
   siteUrl: "https://abdulrahmanazam.me",
 
@@ -183,14 +183,27 @@ const getPersonSchema = () => ({
   "@type": "Person",
   "@id": `${portfolioData.siteUrl}/#person`,
   name: portfolioData.name,
+  givenName: "Abdul Rahman",
+  familyName: "Azam",
+  alternateName: ["Abdul Rahman Azam", "abdulrahmanazam"],
+  gender: "Male",
   url: portfolioData.siteUrl,
   image: `${portfolioData.siteUrl}/og-image.png`,
   jobTitle: portfolioData.title,
-  description: portfolioData.description,
+  description:
+    "Abdul Rahman Azam is a Full Stack AI Engineer from Karachi, Pakistan. He specializes in machine learning, deep learning, and modern web development with React, Node.js, and Python. Abdul Rahman is pursuing a BS in Artificial Intelligence at FAST NUCES Karachi (CGPA 3.33), has solved 290+ LeetCode problems, and has built AI projects achieving 85% prediction accuracy on 32K+ real-world records. He secured 2nd Place in the FAST Web Hunt Competition and 3rd Place in the ACM Coders Cup.",
   email: `mailto:${portfolioData.social.email}`,
   nationality: {
     "@type": "Country",
     name: "Pakistan",
+  },
+  birthPlace: {
+    "@type": "Place",
+    name: "Karachi, Pakistan",
+  },
+  homeLocation: {
+    "@type": "Place",
+    name: "Karachi, Sindh, Pakistan",
   },
   address: {
     "@type": "PostalAddress",
@@ -213,7 +226,7 @@ const getPersonSchema = () => ({
     name: "Full Stack AI Engineer",
     occupationalCategory: "15-1252.00",
     skills:
-      "Machine Learning, Deep Learning, React.js, Node.js, Python, Data Science",
+      "Machine Learning, Deep Learning, React.js, Node.js, Python, Data Science, FastAPI, PostgreSQL",
   },
   knowsAbout: [
     "Artificial Intelligence",
@@ -224,6 +237,15 @@ const getPersonSchema = () => ({
     "Node.js",
     "Python",
     "Data Science",
+    "Game AI",
+    "Minimax Algorithm",
+  ],
+  knowsLanguage: ["English", "Urdu"],
+  award: [
+    "2nd Place – FAST Web Hunt Competition",
+    "3rd Place – ACM Coders Cup",
+    "290+ LeetCode Problems Solved with 6 Skill Badges",
+    "Top 1% University Project – 2D Action Platformer",
   ],
   hasCredential: [
     {
