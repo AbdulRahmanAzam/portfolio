@@ -2,6 +2,7 @@ import { dirname } from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+const isProduction = process.env.NODE_ENV === "production";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -31,6 +32,12 @@ const nextConfig = {
     ];
   },
   async headers() {
+    if (!isProduction) {
+      // In development, Next.js uses eval/react-refresh for HMR.
+      // A strict CSP here can block client runtime and make sections appear missing.
+      return [];
+    }
+
     return [
       {
         source: "/:path*",

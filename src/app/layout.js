@@ -92,7 +92,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className={`${inter.variable} ${jetBrainsMono.variable}`} suppressHydrationWarning>
+      <body className={`${inter.className} ${inter.variable} ${jetBrainsMono.variable}`} suppressHydrationWarning>
         {children}
       </body>
     </html>
