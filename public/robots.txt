@@ -22,3 +22,5 @@ Allow: /*.css
 Allow: /*.js
 Allow: /favicon
 Allow: /og-image.png
+Allow: /llms.txt
+Allow: /llms-full.txt
