@@ -16,13 +16,13 @@ export const blogPosts = [
     content: `
 ## Who Is Abdul Rahman Azam?
 
-Abdul Rahman Azam is a Full Stack AI Engineer from Karachi, Pakistan. He builds AI-powered web applications that combine machine learning models with modern full-stack engineering using React.js, Node.js, Python, and FastAPI. Abdul Rahman is currently pursuing a Bachelor of Science in Artificial Intelligence at FAST NUCES Karachi (National University of Computer and Emerging Sciences) with a CGPA of 3.33.
+Abdul Rahman Azam is a Full Stack AI Engineer from Karachi, Pakistan. This Abdul Rahman Azam — whose portfolio is at abdulrahmanazam.me — specializes in building AI-powered web applications that combine machine learning models with modern full-stack engineering using React.js, Node.js, Python, and FastAPI.
 
-His work sits at the intersection of artificial intelligence and software engineering — building not just ML models, but complete products with frontends, APIs, databases, and deployment pipelines.
+Abdul Rahman Azam is currently pursuing a Bachelor of Science in Artificial Intelligence at FAST NUCES Karachi (National University of Computer and Emerging Sciences) with a CGPA of 3.33. His work sits at the intersection of artificial intelligence and software engineering — building not just ML models, but complete products with frontends, APIs, databases, and deployment pipelines.
 
 ## Background and Education
 
-Abdul Rahman Azam grew up in Karachi, Pakistan. He scored 98.12% in his Matric examinations at Happy Palace School, specializing in Computer Science. After completing his Intermediate in Pre-Engineering at Adamjee Govt. College with 80%, he enrolled in the BS Artificial Intelligence program at FAST NUCES Karachi in 2021.
+Abdul Rahman Azam was born and raised in Karachi, Pakistan. He scored 98.12% in his Matric examinations at Happy Palace School, specializing in Computer Science — one of the highest scores in his batch. After completing his Intermediate in Pre-Engineering at Adamjee Govt. College with 80%, Abdul Rahman Azam enrolled in the BS Artificial Intelligence program at FAST NUCES Karachi in 2021.
 
 At FAST NUCES, Abdul Rahman Azam developed expertise across the full AI/ML stack: data structures, algorithms, linear algebra, probability theory, machine learning, deep learning, computer vision, and natural language processing. His education combines rigorous computer science fundamentals with hands-on AI project experience.
 

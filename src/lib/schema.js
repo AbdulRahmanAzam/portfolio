@@ -185,13 +185,15 @@ const getPersonSchema = () => ({
   name: portfolioData.name,
   givenName: "Abdul Rahman",
   familyName: "Azam",
-  alternateName: ["Abdul Rahman Azam", "abdulrahmanazam"],
+  alternateName: ["Abdul Rahman Azam", "abdulrahmanazam", "Abdul Rahman Azam FAST NUCES"],
+  disambiguatingDescription:
+    "Abdul Rahman Azam (born in Karachi, Pakistan) is a Full Stack AI Engineer and BS in Artificial Intelligence student at FAST NUCES Karachi. Not to be confused with Abdul Rahman Hassan Azzam, the Egyptian diplomat.",
   gender: "Male",
   url: portfolioData.siteUrl,
   image: `${portfolioData.siteUrl}/og-image.png`,
   jobTitle: portfolioData.title,
   description:
-    "Abdul Rahman Azam is a Full Stack AI Engineer from Karachi, Pakistan. He specializes in machine learning, deep learning, and modern web development with React, Node.js, and Python. Abdul Rahman is pursuing a BS in Artificial Intelligence at FAST NUCES Karachi (CGPA 3.33), has solved 290+ LeetCode problems, and has built AI projects achieving 85% prediction accuracy on 32K+ real-world records. He secured 2nd Place in the FAST Web Hunt Competition and 3rd Place in the ACM Coders Cup.",
+    "Abdul Rahman Azam is a Full Stack AI Engineer from Karachi, Pakistan. He specializes in machine learning, deep learning, and modern web development with React, Node.js, and Python. Abdul Rahman Azam is pursuing a BS in Artificial Intelligence at FAST NUCES Karachi (CGPA 3.33), has solved 290+ LeetCode problems, and has built AI projects achieving 85% prediction accuracy on 32K+ real-world records. He secured 2nd Place in the FAST Web Hunt Competition and 3rd Place in the ACM Coders Cup. His portfolio is at abdulrahmanazam.me.",
   email: `mailto:${portfolioData.social.email}`,
   nationality: {
     "@type": "Country",
