@@ -603,7 +603,7 @@ export const portfolioData = {
     linkedin: "https://www.linkedin.com/in/abdulrahmanazam/",
     leetcode: "https://leetcode.com/abdulrahmanazam",
     aiSeason: "https://aiseason.tech/abdul-rahman-azam",
-    instagram: "https://www.instagram.com/abdurrehman_azam_1/",
+    instagram: "https://www.instagram.com/abdulrahmanazam.ai/",
     vscodeMarketplace: "https://marketplace.visualstudio.com/publishers/Abdul-Rahman-Azam",
     calendly: "https://calendly.com/azamabdulrahman930/30min",
     email: "azamabdulrahman930@gmail.com",
