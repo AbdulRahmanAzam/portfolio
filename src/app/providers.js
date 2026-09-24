@@ -1,24 +1,18 @@
 "use client";
 
-import { QueryClientProvider } from "@tanstack/react-query";
-import { queryClient } from "@/lib/queryClient";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { Toaster } from "@/components/ui/toaster";
 import { FaviconManager } from "@/components/FaviconManager";
 import { CursorTrail } from "@/components/CursorTrail";
-import { SmoothScrollProvider } from "@/components/SmoothScrollProvider";
+import { SmoothScroll } from "@/components/SmoothScroll";
 
+// Only small, side-effect components live here. Nothing wraps the page,
+// so the server-rendered HTML is hydrated once and never re-mounted.
 export function Providers({ children }) {
   return (
-    <SmoothScrollProvider>
-      <QueryClientProvider client={queryClient}>
-        <TooltipProvider>
-          <FaviconManager />
-          <CursorTrail />
-          <Toaster />
-          {children}
-        </TooltipProvider>
-      </QueryClientProvider>
-    </SmoothScrollProvider>
+    <>
+      <SmoothScroll />
+      <FaviconManager />
+      <CursorTrail />
+      {children}
+    </>
   );
 }

@@ -1,69 +1,71 @@
 import "./globals.css";
-import { portfolioData, getStructuredDataGraph } from "@/lib/schema";
+import { portfolioData } from "@/lib/schema";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { Providers } from "./providers";
 
+// display: "optional" means a font that isn't ready at first paint is skipped
+// for that page view instead of swapping in later, so text never re-wraps and
+// shifts the hero (CLS) on slow mobile connections. Preloaded Inter is almost
+// always ready; next/font's size-adjusted fallback covers the rest.
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-  display: "swap",
+  display: "optional",
 });
 
+// Only used for small accents, so it isn't preloaded ahead of the main font.
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jetbrains-mono",
-  display: "swap",
+  display: "optional",
+  preload: false,
 });
 
+// Site-wide defaults. Each page sets its own canonical URL and page-specific
+// title/description; Open Graph and Twitter images come from the
+// opengraph-image / twitter-image files in each route segment.
 export const metadata = {
   metadataBase: new URL(portfolioData.siteUrl),
-  title: `${portfolioData.name} | ${portfolioData.title} - Portfolio`,
+  title: {
+    default: `${portfolioData.name} | ${portfolioData.title}`,
+    template: `%s | ${portfolioData.name}`,
+  },
   description: portfolioData.description,
-  authors: [{ name: portfolioData.name, url: portfolioData.siteUrl }],
+  applicationName: portfolioData.name,
+  authors: [{ name: portfolioData.name, url: `${portfolioData.siteUrl}/` }],
   creator: portfolioData.name,
-  robots: { index: true, follow: true },
+  publisher: portfolioData.name,
+  formatDetection: { telephone: false, address: false, email: false },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   verification: {
     google: "k9qEtYU5Qjns6lHG_ypRJWruYzrt_cDDRZaxjWbroLw",
   },
-  alternates: {
-    canonical: `${portfolioData.siteUrl}/`,
-  },
   openGraph: {
     type: "website",
-    url: portfolioData.siteUrl,
+    siteName: portfolioData.name,
+    locale: "en_US",
     title: `${portfolioData.name} | ${portfolioData.title}`,
     description: portfolioData.description,
-    siteName: `${portfolioData.name} Portfolio`,
-    locale: "en_US",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: `${portfolioData.name} - ${portfolioData.title} Portfolio`,
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    url: portfolioData.siteUrl,
     title: `${portfolioData.name} | ${portfolioData.title}`,
     description: portfolioData.description,
-    images: ["/og-image.png"],
-  },
-  other: {
-    "geo.region": "PK",
-    "geo.placename": "Karachi, Pakistan",
-    classification: "Portfolio, Technology, AI/ML",
-    language: "English",
   },
 };
 
 export const viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#2563eb" },
-    { media: "(prefers-color-scheme: dark)", color: "#22c55e" },
-  ],
+  themeColor: "#2563eb",
   width: "device-width",
   initialScale: 1,
 };
@@ -76,18 +78,16 @@ export default function RootLayout({ children }) {
         <link rel="icon" type="image/svg+xml" href="/favicon-light.svg" media="(prefers-color-scheme: light)" />
         <link rel="icon" type="image/svg+xml" href="/favicon-dark.svg" media="(prefers-color-scheme: dark)" />
         <link id="favicon-dynamic" rel="icon" type="image/svg+xml" href="/favicon-light.svg" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
-        {/* JSON-LD Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(getStructuredDataGraph()) }}
-        />
+        {/* Machine-readable discovery: RSS feed and llms.txt for AI crawlers */}
+        <link rel="alternate" type="application/rss+xml" title={`${portfolioData.name} – Blog`} href="/feed.xml" />
+        <link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt" />
 
-        {/* Prevent FOUC: apply dark class before React hydrates */}
+        {/* Prevent FOUC: light is the default; apply dark only if the visitor chose it */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("theme");if(t){var v=JSON.parse(t);if(v==="dark")document.documentElement.classList.add("dark")}else if(matchMedia("(prefers-color-scheme:dark)").matches){document.documentElement.classList.add("dark")}}catch(e){}})();`,
+            __html: `(function(){try{var t=localStorage.getItem("theme");if(t&&JSON.parse(t)==="dark")document.documentElement.classList.add("dark")}catch(e){}})();`,
           }}
         />
       </head>

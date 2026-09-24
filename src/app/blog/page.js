@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getAllPublishedPosts } from "@/lib/blog";
-import { portfolioData } from "@/lib/schema";
+import { portfolioData, getBlogIndexSchema } from "@/lib/schema";
 import { ArrowLeft, Clock, Calendar, Tag, ArrowRight, Newspaper } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
@@ -17,6 +17,11 @@ export default function BlogIndex() {
 
   return (
     <div className="min-h-screen bg-background noise-bg relative">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getBlogIndexSchema(posts)) }}
+      />
+
       {/* Decorative gradients */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
         <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px]" />
@@ -55,7 +60,10 @@ export default function BlogIndex() {
             Technical Writing
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-5">
-            <span className="gradient-text">Blog</span>
+            <span className="gradient-text">Blog</span>{" "}
+            <span className="block mt-3 text-xl sm:text-2xl font-semibold text-muted-foreground tracking-normal">
+              by {portfolioData.name}
+            </span>
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed">
             Deep dives into AI/ML, full-stack engineering, and lessons learned

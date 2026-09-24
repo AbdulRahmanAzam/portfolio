@@ -9,21 +9,24 @@ const SITE = `https://${HOST}`;
 const KEY = process.env.INDEXNOW_KEY || "a1b2c3d4e5f6g7h8";
 const KEY_LOCATION = `${SITE}/${KEY}.txt`;
 
-const URLS = [
-  `${SITE}/`,
-  `${SITE}/blog`,
-  `${SITE}/blog/who-is-abdul-rahman-azam`,
-  `${SITE}/blog/abdul-rahman-azam-ai-ml-projects-portfolio`,
-  `${SITE}/blog/building-income-prediction-system-with-ml`,
-  `${SITE}/blog/minimax-alpha-beta-pruning-game-ai`,
-  `${SITE}/blog/my-journey-into-full-stack-ai-engineering`,
+// Discovery files that are not listed in the sitemap itself.
+const EXTRA_URLS = [
   `${SITE}/llms.txt`,
   `${SITE}/llms-full.txt`,
-  `${SITE}/robots.txt`,
-  `${SITE}/sitemap.xml`,
+  `${SITE}/feed.xml`,
 ];
 
+// Read page URLs from the deployed sitemap so new pages and posts are picked up automatically.
+async function getUrls() {
+  const res = await fetch(`${SITE}/sitemap.xml`);
+  if (!res.ok) throw new Error(`Could not fetch sitemap: ${res.status}`);
+  const xml = await res.text();
+  const pages = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+  return [...new Set([...pages, ...EXTRA_URLS])];
+}
+
 async function main() {
+  const URLS = await getUrls();
   const body = JSON.stringify({
     host: HOST,
     key: KEY,

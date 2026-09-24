@@ -1,10 +1,10 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Calendar, Mail, Github, Linkedin, ExternalLink, Download, Code2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button-variants";
 import { Card } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 import { portfolioData } from "@/lib/schema";
+
+// Server Component: plain links, CSS scroll reveals, no client JS.
 
 // ============================================================================
 // CONFIGURATION
@@ -39,7 +39,7 @@ function SocialLink({ href, icon: Icon, label, username, external = true }) {
 function ScheduleCallPanel() {
   return (
     <div className="relative overflow-hidden rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/10 via-background to-background p-6">
-      <div className="absolute -top-20 -right-20 h-44 w-44 rounded-full bg-primary/20 blur-3xl" />
+      <div className="glow-blob absolute -top-24 -right-24 h-56 w-56 opacity-90" aria-hidden="true" />
 
       <div className="relative space-y-5">
         <p className="text-sm text-muted-foreground leading-relaxed">
@@ -57,12 +57,16 @@ function ScheduleCallPanel() {
           </div>
         </div>
 
-        <Button asChild className="w-full h-12 rounded-xl group">
-          <a href={CONFIG.calendlyUrl} target="_blank" rel="noopener noreferrer" aria-label="Book a free meeting on Calendly">
-            <span>Book a Free Meeting</span>
-            <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-          </a>
-        </Button>
+        <a
+          href={CONFIG.calendlyUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Book a free meeting on Calendly"
+          className={cn(buttonVariants(), "w-full h-12 rounded-xl group")}
+        >
+          <span>Book a Free Meeting</span>
+          <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+        </a>
 
         <p className="text-xs text-muted-foreground">You&apos;ll be redirected to Calendly to confirm your slot.</p>
       </div>
@@ -71,33 +75,17 @@ function ScheduleCallPanel() {
 }
 
 export function Contact() {
-  const handleDownloadResume = () => {
-    const link = document.createElement("a");
-    link.href = CONFIG.resumeFile;
-    link.download = CONFIG.resumeFileName;
-    link.setAttribute("target", "_blank");
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   return (
     <section id="contact" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-background overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/4 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-primary/4 rounded-full blur-[120px]" />
+        <div className="glow-blob absolute top-0 left-1/4 w-[500px] h-[500px] opacity-60" />
+        <div className="glow-blob absolute bottom-0 right-1/4 w-[500px] h-[500px] opacity-60" />
       </div>
       
-      <motion.div 
-        className="max-w-6xl mx-auto relative z-10"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.5 }}
-      >
+      <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="reveal text-center mb-16">
           <span className="section-label mb-4 inline-flex">Get in Touch</span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-4 mt-4">
             <span className="heading-underline">Let&apos;s Work Together</span>
@@ -110,13 +98,8 @@ export function Contact() {
         {/* Two Column Layout */}
         <div className="grid lg:grid-cols-2 gap-8 mb-8">
           {/* Calendly Card */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <Card className="h-full p-6 bg-card/50 backdrop-blur-sm border-border/40 overflow-hidden rounded-2xl glow-hover">
+          <div className="reveal">
+            <Card className="h-full p-6 bg-card/50 border-border/40 overflow-hidden rounded-2xl glow-hover">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                   <Calendar className="w-6 h-6 text-primary" />
@@ -128,16 +111,11 @@ export function Contact() {
               </div>
               <ScheduleCallPanel />
             </Card>
-          </motion.div>
+          </div>
 
           {/* Connect Card */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <Card className="h-full p-6 bg-card/50 backdrop-blur-sm border-border/40 rounded-2xl glow-hover">
+          <div className="reveal">
+            <Card className="h-full p-6 bg-card/50 border-border/40 rounded-2xl glow-hover">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                   <Mail className="w-6 h-6 text-primary" />
@@ -154,20 +132,18 @@ export function Contact() {
                 <SocialLink href={portfolioData.social.leetcode} icon={Code2} label="LeetCode" username="@abdulrahmanazam" />
               </div>
             </Card>
-          </motion.div>
+          </div>
         </div>
 
         {/* Resume Download */}
-        <motion.div 
-          className="w-full flex justify-center"
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-        >
-          <Button
-            onClick={handleDownloadResume}
-            className="w-full max-w-[16.5rem] h-15 rounded-2xl bg-primary text-primary-foreground hover:bg-primary/90 border border-primary/30 shadow-sm transition-all duration-300 group"
+        <div className="reveal w-full flex justify-center">
+          <a
+            href={CONFIG.resumeFile}
+            download={CONFIG.resumeFileName}
+            className={cn(
+              buttonVariants(),
+              "w-full max-w-[16.5rem] h-15 rounded-2xl bg-primary text-primary-foreground hover:bg-primary/90 border border-primary/30 shadow-sm transition-all duration-300 group"
+            )}
           >
             <div className="flex items-center justify-center gap-3 w-full text-sm">
               <div className="w-9 h-9 rounded-xl bg-primary-foreground/10 flex items-center justify-center group-hover:bg-primary-foreground/20 transition-colors">
@@ -178,9 +154,9 @@ export function Contact() {
                 <p className="text-[11px] text-primary-foreground/80">Instant PDF download</p>
               </div>
             </div>
-          </Button>
-        </motion.div>
-      </motion.div>
+          </a>
+        </div>
+      </div>
     </section>
   );
 }

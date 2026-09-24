@@ -8,63 +8,89 @@ export const blogPosts = [
     slug: "who-is-abdul-rahman-azam",
     title: "Who Is Abdul Rahman Azam? Full Stack AI Engineer from Karachi",
     excerpt:
-      "Abdul Rahman Azam is a Full Stack AI Engineer from Karachi, Pakistan, specializing in machine learning, deep learning, and web development. Learn about his background, skills, projects, and achievements.",
+      "Abdul Rahman Azam is a Full Stack AI Engineer from Karachi, founder of FAST Wheels and AI Season. His education, projects, hackathon wins and contact details.",
     date: "2026-03-29",
-    readTime: "5 min read",
-    tags: ["About", "Career", "AI/ML"],
+    updated: "2026-09-23",
+    readTime: "6 min read",
+    tags: ["About", "Career", "AI Agents"],
     published: true,
     content: `
 ## Who Is Abdul Rahman Azam?
 
-Abdul Rahman Azam is a Full Stack AI Engineer from Karachi, Pakistan. This Abdul Rahman Azam — whose portfolio is at abdulrahmanazam.me — specializes in building AI-powered web applications that combine machine learning models with modern full-stack engineering using React.js, Node.js, Python, and FastAPI.
+Abdul Rahman Azam is a Full Stack AI Engineer from Karachi, Pakistan. He is the founder of FAST Wheels, an AI carpooling platform on WhatsApp, and of AI Season, a live bootcamp that teaches Pakistani students to build AI agents. He is studying for a BS in Artificial Intelligence at FAST NUCES Karachi (2023–2027). His portfolio is at [abdulrahmanazam.me](https://abdulrahmanazam.me).
 
-Abdul Rahman Azam is currently pursuing a Bachelor of Science in Artificial Intelligence at FAST NUCES Karachi (National University of Computer and Emerging Sciences) with a CGPA of 3.33. His work sits at the intersection of artificial intelligence and software engineering — building not just ML models, but complete products with frontends, APIs, databases, and deployment pipelines.
+He builds AI products end to end: agents and multi-agent systems with LangGraph, LangChain and Google ADK, MCP servers, WhatsApp bots, and the React, Node.js, Python and FastAPI apps around them.
 
-## Background and Education
+This Abdul Rahman Azam is not Abdul Rahman Hassan Azzam (1893–1976), the Egyptian diplomat who was the first Secretary-General of the Arab League.
 
-Abdul Rahman Azam was born and raised in Karachi, Pakistan. He scored 98.12% in his Matric examinations at Happy Palace School, specializing in Computer Science — one of the highest scores in his batch. After completing his Intermediate in Pre-Engineering at Adamjee Govt. College with 80%, Abdul Rahman Azam enrolled in the BS Artificial Intelligence program at FAST NUCES Karachi in 2021.
+## Quick Facts
 
-At FAST NUCES, Abdul Rahman Azam developed expertise across the full AI/ML stack: data structures, algorithms, linear algebra, probability theory, machine learning, deep learning, computer vision, and natural language processing. His education combines rigorous computer science fundamentals with hands-on AI project experience.
+| Fact | Detail |
+|---|---|
+| **Name** | Abdul Rahman Azam |
+| **Role** | Full Stack AI Engineer |
+| **Based in** | Karachi, Sindh, Pakistan |
+| **Founder of** | FAST Wheels (October 2025), AI Season (July 2026) |
+| **Education** | BS Artificial Intelligence, FAST NUCES Karachi, 2023–2027 |
+| **Languages** | English, Urdu |
+| **Website** | abdulrahmanazam.me |
 
-## Technical Skills
+## Education
 
-Abdul Rahman Azam's technical skillset spans two domains:
+Abdul Rahman Azam grew up in Karachi. He scored 98.12% in Matric (Computer Science) at Happy Palace School and earned an A+ in Intermediate Pre-Engineering at Adamjee Government Science College (2021–2023). In August 2023 he started the BS Artificial Intelligence program at FAST NUCES Karachi (National University of Computer and Emerging Sciences), where his coursework includes data structures, algorithms, operating systems, databases, artificial intelligence and machine learning.
 
-**Web Development:** React.js, Node.js, Express.js, JavaScript, Tailwind CSS, PostgreSQL, and REST API design. He builds responsive, accessible, and performant web applications.
+## What He Has Built
 
-**AI/ML & Data Science:** Python, Machine Learning, Deep Learning, Scikit-learn, Pandas, NumPy, Data Visualization, and FastAPI. He designs, trains, evaluates, and deploys ML models for real-world applications.
+**FAST Wheels** ([fastwheels.app](https://fastwheels.app)) — An AI carpooling platform that lives inside WhatsApp. Students message a bot and an AI assistant matches riders and drivers by route and time. It connects 2,500+ FAST NUCES students.
 
-## Notable Projects by Abdul Rahman Azam
+**AI Season** ([aiseason.tech](https://aiseason.tech)) — A Pakistan-focused live online bootcamp on AI agents, taught in Urdu and English. It covers LangChain, LangGraph, RAG, tool calling, guardrails and production deployment. Cohort 01 ran from 1 July to 12 August 2026.
 
-**1. Income Prediction System (2024)** — Abdul Rahman Azam built a machine learning pipeline that achieves 85% prediction accuracy on 32,000+ U.S. Census records. The system compares Random Forest, Gradient Boosting, Logistic Regression, and KNN models, served via a FastAPI backend with a React analytics dashboard.
+## Work Experience
 
-**2. Super Tic-Tac-Toe AI (2025)** — A web-based 9×9 Super Tic-Tac-Toe game with an AI opponent using Minimax with Alpha-Beta Pruning. The AI evaluates complex multi-board game states with a custom heuristic function.
+- **AI/ML Intern, REON Energy** (Karachi, February–May 2026) — built rule-based AI decision workflows with LLM tool-calling that turn business constraints into deterministic approval logic.
+- **Backend Engineer (contract), BoxTech** (remote, Dubai, January–February 2026) — built and maintained backend APIs and server-side logic for production applications.
+- **Student Lab Assistant, FAST NUCES** (2025) — taught Object-Oriented Programming and Programming Fundamentals to 50+ students.
 
-**3. University Resource Sharing Platform (2025)** — A full-stack application for FAST NUCES students built with React, Node.js, Express.js, and PostgreSQL, featuring role-based authentication and admin moderation.
+## Other Projects
 
-**4. 2D Action Platformer Game (2024)** — A high-performance game built in C++ that was ranked in the top 1% of university projects for creativity and technical execution.
+**Sir Jee** — A live AI tutor for MDCAT and ECAT students that turns a topic into an animated whiteboard lesson, narrates it in Urdu or English and then quizzes the student. Built on a 3-agent Gemini pipeline for research, lesson planning and assessment, with WebSocket voice streaming.
 
-**5. Unbeatable Tic-Tac-Toe AI (2023)** — A provably optimal game AI using the Minimax algorithm in C, achieving a 100% win rate against human players.
+**NarrativeVerse** — A multi-agent story engine built for the GenAI Hackfest × Datathon, where AI characters with their own memory and emotions act out a story run by an AI Director on LangGraph.
 
-## Achievements and Certifications
+**CivicLens** — A civic-complaint platform where citizens report issues by web, voice note or WhatsApp, and AI categorizes each report and scores its severity.
 
-Abdul Rahman Azam has earned several competitive and professional achievements:
+**VisionRAG** — A multimodal RAG assistant that answers questions over documents and images using OCR, embeddings and Pinecone, with 1,000+ indexed chunks.
 
-- Solved **290+ problems on LeetCode** with 6 skill badges in algorithms and data structures
-- **2nd Place** in the FAST Web Hunt Competition
-- **3rd Place** in the ACM Coders Cup
-- HackerRank **Problem Solving – Basic & Intermediate** certifications
-- **ChatGPT for Everyone** certification from Learn Prompting
+**Token Tracker** — A VS Code extension, published on the Visual Studio Marketplace, that tracks GitHub Copilot usage against monthly token budgets.
+
+Earlier projects include a 9×9 Super Tic-Tac-Toe AI using Minimax with Alpha-Beta Pruning, and a university resource sharing platform built with React, Node.js and PostgreSQL. See all of them on the [portfolio](https://abdulrahmanazam.me/#projects).
+
+## Hackathons and Awards
+
+- **Winner** — Iterate '26, Salim Habib University (April 2026)
+- **Winner** — JS Bank Hackathon, PROCOM '26, FAST NUCES (February 2026)
+- **Winner** — BWAI Hackathon, GDG on Campus, DHA Suffa University (April 2026)
+- **Winner** — AI App Development, Teknofest Karachi '26 (January 2026)
+- **Winner** — Pitch Warriors, Coders Cup '25, ACM NUCES FAST
+- **Runner-up** — Web Development, IBA Hackathon Karachi (January 2026)
+- **2nd Place** — Debugging Competition, Coders Cup, ACM FAST NUCES
+- **3rd Place** — National AI Hackathon '26 by atomcamp, Zab E-Fest '26 at SZABIST, and the Asaani.io 72-hour hackathon at NASTP Karachi
+- **300+ LeetCode problems** solved, plus HackerRank Problem Solving (Basic and Intermediate) certifications
+
+## Leadership
+
+Abdul Rahman Azam ran live machine learning sessions for the 700+ member ML Toppers community. From October 2025 to June 2026 he was AI Competitions Head at PROCOM, leading 7 module teams that ran AI competitions for 700+ participants, and Machine Learning Head at ACM-AI, mentoring 300+ students. He has also been Automation Head at IEEE and Cryptocurrency Head at the Developer Student Club at FAST NUCES.
+
+## SEO and AI Search Work
+
+He also offers technical SEO, AEO and GEO services, the same work used to make this site readable for Google and for AI assistants like ChatGPT, Gemini, Perplexity and Claude. Details are on the [services page](https://abdulrahmanazam.me/services).
 
 ## Contact Abdul Rahman Azam
 
-Abdul Rahman Azam is currently open to AI/ML and full-stack development opportunities. You can reach him through:
-
 - **Website:** [abdulrahmanazam.me](https://abdulrahmanazam.me)
 - **Email:** azamabdulrahman930@gmail.com
-- **LinkedIn:** [linkedin.com/in/abdulrahmanazam](https://linkedin.com/in/abdulrahmanazam)
+- **LinkedIn:** [linkedin.com/in/abdulrahmanazam](https://www.linkedin.com/in/abdulrahmanazam/)
 - **GitHub:** [github.com/abdulrahmanazam](https://github.com/abdulrahmanazam)
-- **LeetCode:** [leetcode.com/abdulrahmanazam](https://leetcode.com/abdulrahmanazam)
 - **Book a free call:** [Calendly](https://calendly.com/azamabdulrahman930/30min)
     `.trim(),
   },
@@ -288,9 +314,9 @@ By the time I finished matric with a 98.12% score, I knew two things: I loved pr
 
 ## Choosing AI at FAST NUCES
 
-When I enrolled in the BS Artificial Intelligence program at FAST NUCES Karachi in 2021, AI was already transforming industries — but the curriculum was rigorous in a way that went far beyond the hype. Data structures, algorithms, linear algebra, probability theory, and statistics came first. The AI-specific courses — machine learning, deep learning, computer vision, NLP — built on top of that mathematical foundation.
+When I enrolled in the BS Artificial Intelligence program at FAST NUCES Karachi in 2023, AI was already transforming industries — but the curriculum was rigorous in a way that went far beyond the hype. Data structures, algorithms, linear algebra, probability theory, and statistics came first. The AI-specific courses — machine learning, deep learning, computer vision, NLP — built on top of that mathematical foundation.
 
-My CGPA of 3.33 doesn't tell the full story. The real education happened in the projects: staying up until 3 AM debugging a neural network that wouldn't converge, discovering that your carefully crafted model fails on edge cases you never considered, learning that 85% accuracy means 15% of your predictions are wrong.
+My CGPA doesn't tell the full story. The real education happened in the projects: staying up until 3 AM debugging a neural network that wouldn't converge, discovering that your carefully crafted model fails on edge cases you never considered, learning that 85% accuracy means 15% of your predictions are wrong.
 
 ## Competing and Growing
 

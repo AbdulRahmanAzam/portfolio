@@ -1,42 +1,84 @@
-import PortfolioClient from "./PortfolioClient";
-import { portfolioData } from "@/lib/schema";
+import { Navigation } from "@/components/Navigation";
+import { Hero } from "@/components/Hero";
+import { About } from "@/components/About";
+import { Skills } from "@/components/Skills";
+import { Projects } from "@/components/Projects";
+import { Experience } from "@/components/Experience";
+import { Education } from "@/components/Education";
+import { Achievements } from "@/components/Achievements";
+import { FAQ } from "@/components/FAQ";
+import { Contact } from "@/components/Contact";
+import { Footer } from "@/components/Footer";
+import { ChatLauncher } from "@/components/ChatLauncher";
+import { portfolioData, getStructuredDataGraph } from "@/lib/schema";
+import { buildMetadata } from "@/lib/seo";
 
+export const metadata = buildMetadata({
+  title: `${portfolioData.name} | ${portfolioData.title} in Karachi`,
+  absoluteTitle: true,
+  path: "/",
+  openGraph: {
+    type: "profile",
+    firstName: "Abdul Rahman",
+    lastName: "Azam",
+    username: "abdulrahmanazam",
+    gender: "male",
+  },
+});
+
+function SectionDivider() {
+  return <div className="section-divider" aria-hidden="true" />;
+}
+
+// The whole page is Server Components: every section ships as HTML and only
+// the small interactive islands (nav menu, theme toggle, search box, chat
+// button, desktop-only effects) hydrate. Below-fold sections use
+// content-visibility so phones skip laying them out until they scroll near.
 export default function Home() {
   return (
     <>
-      <noscript>
-        <div style={{ maxWidth: "800px", margin: "0 auto", padding: "40px 20px", fontFamily: "system-ui, sans-serif" }}>
-          <h1>Abdul Rahman Azam – Full Stack AI Engineer</h1>
-          <p>Abdul Rahman Azam is a Full Stack AI Engineer from Karachi, Pakistan, specializing in machine learning, deep learning, and modern web development with React, Node.js, and Python. He is currently pursuing a BS in Artificial Intelligence at FAST NUCES Karachi with a CGPA of 3.33.</p>
-          <h2>About Abdul Rahman Azam</h2>
-          <p>Abdul Rahman Azam builds AI-powered web applications that combine machine learning models with full-stack engineering. His projects include an Income Prediction System achieving 85% accuracy on 32,000+ census records, a Super Tic-Tac-Toe AI with Minimax and Alpha-Beta Pruning, and a University Resource Sharing Platform built with React, Node.js, and PostgreSQL. He has solved 290+ LeetCode problems, earned 6 skill badges, and holds HackerRank Problem Solving certifications at both Basic and Intermediate levels.</p>
-          <h2>Skills &amp; Technical Expertise</h2>
-          <p>Web Development: {portfolioData.skills.web.map(s => s.name).join(", ")}</p>
-          <p>AI/ML &amp; Data Science: {portfolioData.skills.aiml.map(s => s.name).join(", ")}</p>
-          <h2>Projects by Abdul Rahman Azam</h2>
-          {portfolioData.projects.map(p => (
-            <div key={p.id}>
-              <h3>{p.title} ({p.period})</h3>
-              <p>{p.description} Technologies: {p.technologies.join(", ")}. {p.highlights.join(". ")}.</p>
-            </div>
-          ))}
-          <h2>Education</h2>
-          {portfolioData.education.map(e => (
-            <p key={e.id}>{e.degree} – {e.institution} ({e.period}) – {e.score}</p>
-          ))}
-          <h2>Achievements &amp; Certifications</h2>
-          {portfolioData.achievements.map(a => (
-            <p key={a.id}><strong>{a.title}:</strong> {a.description}</p>
-          ))}
-          <h2>Contact Abdul Rahman Azam</h2>
-          <p>Email: {portfolioData.social.email}</p>
-          <p>GitHub: {portfolioData.social.github}</p>
-          <p>LinkedIn: {portfolioData.social.linkedin}</p>
-          <p>LeetCode: {portfolioData.social.leetcode}</p>
-          <p>Website: {portfolioData.siteUrl}</p>
-        </div>
-      </noscript>
-      <PortfolioClient />
+      {/* Person, organizations, ProfilePage, projects and FAQ as one JSON-LD graph */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getStructuredDataGraph()) }}
+      />
+      <div className="min-h-screen">
+        <Navigation />
+        <main>
+          <Hero />
+          <SectionDivider />
+          <About />
+          <SectionDivider />
+          <div className="section-deferred">
+            <Skills />
+          </div>
+          <SectionDivider />
+          {/* Not deferred: the sticky card stack needs normal layout to scroll correctly */}
+          <Projects />
+          <SectionDivider />
+          <div className="section-deferred">
+            <Experience />
+          </div>
+          <SectionDivider />
+          <div className="section-deferred">
+            <Education />
+          </div>
+          <SectionDivider />
+          <div className="section-deferred">
+            <Achievements />
+          </div>
+          <SectionDivider />
+          <div className="section-deferred">
+            <FAQ />
+          </div>
+          <SectionDivider />
+          <div className="section-deferred">
+            <Contact />
+          </div>
+        </main>
+        <Footer />
+        <ChatLauncher />
+      </div>
     </>
   );
 }

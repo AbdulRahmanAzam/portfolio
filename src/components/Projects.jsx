@@ -1,375 +1,343 @@
-"use client";
-
-import { useRef, useEffect, useState } from "react";
+import Image from "next/image";
 import { Card } from "./ui/card";
-import { Badge } from "./ui/badge";
-import { Button } from "./ui/button";
+import { buttonVariants } from "./ui/button-variants";
+import { cn } from "@/lib/utils";
 import { portfolioData } from "@/lib/schema";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { Github, ChevronRight, Layers, Brain, Gamepad2, Globe, ArrowUpRight } from "lucide-react";
+import {
+  Github,
+  Layers,
+  Brain,
+  Gamepad2,
+  Globe,
+  ArrowUpRight,
+  Rocket,
+  Wrench,
+  Palette,
+} from "lucide-react";
 
-const STACK_CONFIG = {
-  stickyTopOffset: 220,
-  cardSpacing: 46,
-  cardContainerHeight: "60vh",
-  mobileStickyTopOffset: 150,
-  mobileCardSpacing: 20,
-  mobileCardContainerHeight: "75vh",
-  minScale: 0.8,
-  scaleReduction: 0.03,
-  minOpacity: 0.7,
-  opacityReduction: 0.06,
-  parallaxIntensity: 30,
-  hoverRotateX: 2,
-  hoverRotateY: 4,
-  hoverScale: 1.02,
-  bottomPadding: "3vh",
-};
-
-function useIsMobile() {
-  const [isMobile, setIsMobile] = useState(false);
-  
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
-    checkMobile();
-    window.addEventListener("resize", checkMobile, { passive: true });
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-  
-  return isMobile;
-}
-
-const FEATURES = {
-  enableParallax: true,
-  enableOpacityFade: true,
-  enable3DHover: false,
-  enableProgressBar: false,
-  enableReducedMotion: true,
-};
+// Server Component. The featured cards stack with position: sticky, and the
+// shrink/dim effects are CSS scroll-driven animations (globals.css:
+// .project-stack, .project-card-scale, .project-card-dim). No client JS.
+const MIN_SCALE = 0.85;
+const SCALE_STEP = 0.025;
+const MAX_DIM = 0.35;
+const DIM_STEP = 0.07;
 
 const categoryIcons = {
   "Full Stack": Globe,
   "AI/ML": Brain,
+  "AI Product": Rocket,
   "Game Dev": Gamepad2,
+  "Dev Tools": Wrench,
+  "Web Design": Palette,
 };
 
 const projectGradients = {
+  fastverse: "from-emerald-600 via-green-700 to-teal-800",
+  fastwheels: "from-indigo-500 via-violet-500 to-yellow-400",
+  "sir-jee": "from-orange-400 via-amber-500 to-rose-400",
+  civiclens: "from-emerald-500 via-green-600 to-teal-600",
+  instyle: "from-stone-400 via-stone-500 to-lime-700",
+  "vibe-coding": "from-pink-600 via-rose-600 to-teal-500",
+  driftframe: "from-teal-500 via-emerald-600 to-teal-700",
+  "token-tracker": "from-green-500 via-emerald-600 to-neutral-900",
+  "big-five": "from-sky-500 via-indigo-500 to-purple-600",
   "university-platform": "from-blue-500 via-purple-500 to-cyan-500",
   "super-tictactoe": "from-emerald-500 via-teal-500 to-green-500",
-  "income-predictor": "from-orange-500 via-red-500 to-pink-500",
+  visionrag: "from-orange-500 via-red-500 to-pink-500",
   "2d-platformer": "from-violet-500 via-purple-500 to-fuchsia-500",
   "ai-tictactoe": "from-cyan-500 via-blue-500 to-indigo-500",
 };
 
-function useReducedMotion() {
-  const [reducedMotion, setReducedMotion] = useState(false);
-  
-  useEffect(() => {
-    if (!FEATURES.enableReducedMotion) return;
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReducedMotion(mediaQuery.matches);
-    
-    const handler = (e) => setReducedMotion(e.matches);
-    mediaQuery.addEventListener("change", handler);
-    return () => mediaQuery.removeEventListener("change", handler);
-  }, []);
-  
-  return reducedMotion;
-}
+function StickyProjectCard({ project, index, totalProjects }) {
+  const CategoryIcon = categoryIcons[project.category] || Layers;
+  const gradient = projectGradients[project.id] || "from-primary via-primary to-primary";
+  const primaryUrl = project.live || project.github;
 
-function ScrollProgressBar({ progress, totalProjects }) {
-  if (!FEATURES.enableProgressBar) return null;
-  
-  const height = useTransform(progress, [0, 1], ["0%", "100%"]);
-  
+  // Cards further back in the stack shrink and dim more. Each card starts
+  // reacting once the stack has scrolled to its slot.
+  const remaining = totalProjects - index - 1;
+  const stackVars = {
+    "--i": index,
+    "--target-scale": Math.max(MIN_SCALE, 1 - remaining * SCALE_STEP),
+    "--target-dim": Math.min(MAX_DIM, remaining * DIM_STEP),
+    "--scale-start": `${((index / totalProjects) * 100).toFixed(2)}%`,
+    // Dim only once the next card begins sliding over this one.
+    "--dim-start": `${(Math.min((index + 1) / totalProjects, 0.999) * 100).toFixed(2)}%`,
+    zIndex: index + 1,
+  };
+
   return (
-    <div className="fixed right-6 top-1/2 -translate-y-1/2 z-50 hidden lg:flex flex-col items-center gap-3">
-      <div className="relative w-1 h-32 bg-muted/50 rounded-full overflow-hidden backdrop-blur-sm">
-        <motion.div 
-          className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-primary to-primary/50 rounded-full"
-          style={{ height }}
-        />
+    <div className="project-sticky sticky flex items-start justify-center" style={stackVars}>
+      <div className="project-card-scale relative w-full max-w-md px-3 lg:max-w-6xl lg:px-8 mx-auto">
+        <Card className="group relative overflow-hidden rounded-3xl border-0 bg-card shadow-2xl hover:shadow-primary/10 transition-shadow duration-500">
+          {/* content-visibility lets the browser skip laying out cards that are still off screen */}
+          <div className="flex flex-col lg:flex-row [content-visibility:auto] [contain-intrinsic-size:auto_640px]">
+            {/* Visual: the screenshot fills the whole left half of the card */}
+            <div className="relative lg:w-[65%] overflow-hidden aspect-[16/10] lg:aspect-auto lg:min-h-[400px]">
+              {project.image ? (
+                <>
+                  {/* The whole screenshot is shown (contain); a blurred copy of it fills
+                      any space left around it, so the panel never looks empty. */}
+                  <Image
+                    src={project.image}
+                    alt=""
+                    aria-hidden="true"
+                    fill
+                    sizes="(min-width: 1024px) 760px, min(92vw, 420px)"
+                    className="scale-110 object-cover blur-2xl opacity-70"
+                  />
+                  <Image
+                    src={project.image}
+                    alt={`Screenshot of ${project.title}`}
+                    fill
+                    sizes="(min-width: 1024px) 760px, min(92vw, 420px)"
+                    className="object-contain transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  />
+                </>
+              ) : (
+                <div className={`absolute inset-0 bg-gradient-to-br ${gradient}`}>
+                  <div className="dots-white absolute inset-0 opacity-20" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-24 h-24 rounded-2xl bg-white/95 dark:bg-background/95 flex items-center justify-center shadow-2xl">
+                      <CategoryIcon className="w-12 h-12 text-primary" />
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {project.live && (
+                <span className="pointer-events-none absolute bottom-6 right-6 hidden lg:inline-flex items-center gap-1.5 rounded-full bg-background/95 px-3.5 py-1.5 text-xs font-semibold text-foreground shadow-lg opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                  Visit site <ArrowUpRight className="h-3.5 w-3.5" />
+                </span>
+              )}
+            </div>
+
+            {/* Content: hook first, proof second, actions last. The long description
+                lives in the JSON-LD, llms.txt and chatbot, so the card stays skimmable. */}
+            <div className="lg:w-[35%] p-6 sm:p-8 lg:p-8 flex flex-col justify-center">
+              <p className="mb-4 flex items-center gap-2 font-mono text-xs text-muted-foreground">
+                <span className="text-primary font-semibold">{String(index + 1).padStart(2, "0")}</span>
+                <span className="h-px w-6 bg-border" aria-hidden="true" />
+                <CategoryIcon className="h-3.5 w-3.5" aria-hidden="true" />
+                {project.category} · {project.period}
+              </p>
+
+              <h3 className="text-3xl lg:text-4xl font-bold tracking-tight mb-3 group-hover:text-primary transition-colors duration-300">
+                {primaryUrl ? (
+                  <a
+                    href={primaryUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="after:absolute after:inset-0 after:z-0 after:content-[''] focus-visible:outline-none focus-visible:after:ring-2 focus-visible:after:ring-primary focus-visible:after:rounded-3xl"
+                  >
+                    {project.title}
+                  </a>
+                ) : (
+                  project.title
+                )}
+              </h3>
+
+              <p className="text-base lg:text-lg text-muted-foreground leading-relaxed">
+                {project.tagline || project.description}
+              </p>
+
+              <ul className="tick-list hidden lg:block space-y-2.5 mt-6">
+                {project.highlights.slice(0, 3).map((highlight) => (
+                  <li key={highlight}>{highlight}</li>
+                ))}
+              </ul>
+
+              <p className="mt-6 font-mono text-xs text-muted-foreground/80 leading-relaxed">
+                {project.technologies.join("  ·  ")}
+              </p>
+
+              <div className="relative z-10 mt-6 flex flex-wrap items-center gap-4">
+                {project.live && (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={cn(buttonVariants({ size: "sm" }), "gap-2 rounded-full px-4 group/btn")}
+                  >
+                    Visit live site
+                    <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                  </a>
+                )}
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    <Github className="w-4 h-4" />
+                    Source code
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+
+          <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-primary/20 transition-colors duration-500 pointer-events-none" />
+          {/* Dim with an overlay instead of element opacity so the card stays opaque
+              and cards stacked underneath never show through. */}
+          <div aria-hidden="true" className="project-card-dim absolute inset-0 z-20 bg-background pointer-events-none opacity-0" />
+        </Card>
       </div>
-      <motion.span 
-        className="text-xs font-mono text-muted-foreground/70"
-        style={{ opacity: useTransform(progress, [0, 0.1], [0, 1]) }}
-      >
-        {totalProjects}
-      </motion.span>
     </div>
   );
 }
 
-function StickyProjectCard({ 
-  project, 
-  index, 
-  progress, 
-  range, 
-  targetScale,
-  targetOpacity,
-  totalProjects,
-  reducedMotion,
-  isMobile,
-}) {
-  const container = useRef(null);
-  const isEven = 1;
+function MoreProjectCard({ project }) {
   const CategoryIcon = categoryIcons[project.category] || Layers;
   const gradient = projectGradients[project.id] || "from-primary via-primary to-primary";
-
-  const scale = useTransform(progress, range, [1, targetScale]);
-  const opacityTransform = useTransform(progress, range, [1, targetOpacity]);
-  const iconYTransform = useTransform(progress, range, [0, -STACK_CONFIG.parallaxIntensity]);
-
-  const opacity = FEATURES.enableOpacityFade ? opacityTransform : 1;
-  const iconY = FEATURES.enableParallax && !reducedMotion && !isMobile ? iconYTransform : 0;
-
-  const topPosition = isMobile 
-    ? STACK_CONFIG.mobileStickyTopOffset + (index * STACK_CONFIG.mobileCardSpacing)
-    : STACK_CONFIG.stickyTopOffset + (index * STACK_CONFIG.cardSpacing);
-  
-  const containerHeight = isMobile 
-    ? STACK_CONFIG.mobileCardContainerHeight 
-    : STACK_CONFIG.cardContainerHeight;
-
-  const hoverAnimation = FEATURES.enable3DHover && !reducedMotion && !isMobile ? {
-    whileHover: {
-      rotateX: STACK_CONFIG.hoverRotateX,
-      rotateY: isEven ? STACK_CONFIG.hoverRotateY : -STACK_CONFIG.hoverRotateY,
-      scale: STACK_CONFIG.hoverScale,
-      transition: { duration: 0.3, ease: "easeOut" }
-    }
-  } : {};
+  const primaryUrl = project.live || project.github;
+  // The stretched title link covers the card, so only show a separate
+  // source link when it points somewhere different.
+  const showSourceLink = project.github && project.github !== primaryUrl;
 
   return (
-    <div
-      ref={container}
-      className="sticky flex items-start justify-center"
-      style={{ 
-        top: `${topPosition}px`,
-        height: containerHeight,
-        zIndex: index + 1,
-      }}
+    <article
+      className="reveal group relative flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-primary/30"
     >
-      <motion.div
-        style={{
-          scale: reducedMotion ? 1 : scale,
-          opacity: reducedMotion ? 1 : opacity,
-          transformPerspective: 1000,
-        }}
-        {...hoverAnimation}
-        className={`relative origin-top w-full ${isMobile ? 'max-w-md px-3' : 'max-w-6xl px-4 sm:px-6 lg:px-8'} mx-auto pointer-events-auto`}
-      >
-        <Card className="group relative overflow-hidden rounded-3xl border-0 bg-card shadow-2xl hover:shadow-primary/10 transition-shadow duration-500">
-        <div className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
-          <div className="relative lg:w-1/2 aspect-[16/9] lg:aspect-auto overflow-hidden">
-            <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-90`} />
-            
-            <div className="absolute inset-0">
-              <div className="absolute inset-0 opacity-20" 
-                style={{
-                  backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
-                  backgroundSize: '24px 24px'
-                }}
-              />
-              
-              <div className="absolute top-8 left-8 w-20 h-20 border-2 border-white/20 rounded-xl rotate-12 group-hover:rotate-45 transition-transform duration-700" />
-              <div className="absolute bottom-8 right-8 w-16 h-16 border-2 border-white/20 rounded-full group-hover:scale-125 transition-transform duration-700" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 border border-white/10 rounded-2xl -rotate-12 group-hover:rotate-12 transition-transform duration-700" />
-            </div>
-
+      <div className="relative aspect-[16/10] overflow-hidden">
+        {project.image ? (
+          <Image
+            src={project.image}
+            alt={`Screenshot of ${project.title}`}
+            fill
+            sizes="(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw"
+            className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div className={`absolute inset-0 bg-gradient-to-br ${gradient}`}>
+            <div className="dots-white absolute inset-0 opacity-20 [background-size:20px_20px]" />
             <div className="absolute inset-0 flex items-center justify-center">
-              <motion.div
-                style={{ y: iconY }}
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                className="w-24 h-24 rounded-2xl bg-white/95 dark:bg-background/95 backdrop-blur-sm flex items-center justify-center shadow-2xl"
-              >
-                <CategoryIcon className="w-12 h-12 text-primary" />
-              </motion.div>
-            </div>
-
-            <div className="absolute top-5 left-5">
-              <Badge className="bg-white/90 dark:bg-background/90 text-foreground backdrop-blur-sm border-0 shadow-md">
-                {project.category}
-              </Badge>
-            </div>
-            <div className="absolute top-5 right-5">
-              <span className="px-3 py-1.5 text-xs font-mono bg-white/90 dark:bg-background/90 backdrop-blur-sm rounded-full text-muted-foreground shadow-md">
-                {project.period}
-              </span>
-            </div>
-
-            <div className="absolute bottom-5 left-5">
-              <motion.span 
-                className="text-6xl font-bold text-white/20"
-                initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 0.2, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ type: "spring", stiffness: 200, delay: index * 0.1 }}
-              >
-                {String(index + 1).padStart(2, '0')}
-              </motion.span>
+              <div className="w-14 h-14 rounded-xl bg-white/95 dark:bg-background/95 flex items-center justify-center shadow-xl transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
+                <CategoryIcon className="w-7 h-7 text-primary" />
+              </div>
             </div>
           </div>
+        )}
+        <span className="absolute top-3 left-3 rounded-full bg-background/90 px-2.5 py-0.5 text-[11px] font-medium shadow">
+          {project.category}
+        </span>
+      </div>
 
-          <div className="lg:w-1/2 p-5 sm:p-6 lg:p-10 flex flex-col justify-center">
-            <div>
-              <h3 className="text-2xl lg:text-3xl font-bold mb-4 group-hover:text-primary transition-colors duration-300">
+      <div className="flex flex-1 flex-col p-4">
+        <div className="flex items-start justify-between gap-2 mb-1">
+          <h4 className="font-semibold leading-snug group-hover:text-primary transition-colors">
+            {primaryUrl ? (
+              <a
+                href={primaryUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="after:absolute after:inset-0 after:content-[''] focus-visible:outline-none focus-visible:after:ring-2 focus-visible:after:ring-primary focus-visible:after:rounded-2xl"
+              >
                 {project.title}
-              </h3>
-
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                {project.description}
-              </p>
-
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.technologies.map((tech) => (
-                  <Badge 
-                    key={tech} 
-                    variant="secondary"
-                    className="font-mono text-xs tracking-wide"
-                  >
-                    {tech}
-                  </Badge>
-                ))}
-              </div>
-
-              <div className="space-y-2.5 mb-8">
-                {project.highlights.slice(0, 3).map((highlight, idx) => (
-                  <div
-                    key={idx}
-                    className="flex items-start gap-3 text-sm text-muted-foreground"
-                  >
-                    <ChevronRight className="w-4 h-4 mt-0.5 text-primary flex-shrink-0" />
-                    <span>{highlight}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex flex-wrap gap-3">
-                {project.github && (
-                  <Button
-                    variant="outline"
-                    className="gap-2 group/btn hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all"
-                    asChild
-                  >
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Github className="w-4 h-4" />
-                      Source Code
-                      <ArrowUpRight className="w-3.5 h-3.5 opacity-0 -ml-1 group-hover/btn:opacity-100 group-hover/btn:ml-0 transition-all" />
-                    </a>
-                  </Button>
-                )}
-                {project.live && (
-                  <Button className="gap-2 group/btn" asChild>
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Globe className="w-4 h-4" />
-                      Live Demo
-                      <ArrowUpRight className="w-3.5 h-3.5 opacity-0 -ml-1 group-hover/btn:opacity-100 group-hover/btn:ml-0 transition-all" />
-                    </a>
-                  </Button>
-                )}
-                {!project.github && !project.live && (
-                  <span className="text-sm text-muted-foreground/70 italic px-1">
-                    Source code available upon request
-                  </span>
-                )}
-              </div>
-            </div>
-          </div>
+              </a>
+            ) : (
+              project.title
+            )}
+          </h4>
+          {primaryUrl && (
+            <ArrowUpRight className="h-4 w-4 flex-shrink-0 text-muted-foreground transition-all group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          )}
         </div>
-
-        <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-primary/20 transition-colors duration-500 pointer-events-none" />
-      </Card>
-      </motion.div>
-    </div>
+        <span className="font-mono text-[11px] text-muted-foreground mb-2">{project.period}</span>
+        <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3 mb-3">
+          {project.description}
+        </p>
+        <div className="mt-auto flex items-center gap-2">
+          <div className="flex flex-wrap gap-1 min-w-0">
+            {project.technologies.slice(0, 3).map((tech) => (
+              <span key={tech} className="chip-sm">
+                {tech}
+              </span>
+            ))}
+          </div>
+          {showSourceLink && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${project.title} source code on GitHub`}
+              className="relative z-10 ml-auto rounded-md p-1.5 text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
+            >
+              <Github className="h-4 w-4" />
+            </a>
+          )}
+        </div>
+      </div>
+    </article>
   );
 }
 
 export function Projects() {
-  const containerRef = useRef(null);
-  const projects = portfolioData.projects;
-  const reducedMotion = useReducedMotion();
-  const isMobile = useIsMobile();
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
+  const featured = portfolioData.projects.filter((p) => p.featured);
+  const more = portfolioData.projects.filter((p) => !p.featured);
 
   return (
-    <section
-      id="projects"
-      ref={containerRef}
-      className="relative bg-muted/30"
-    >
+    <section id="projects" className="relative bg-muted/30">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-primary/5 rounded-full blur-3xl" />
+        <div className="glow-blob absolute top-1/4 -left-1/4 w-1/2 h-1/2" />
+        <div className="glow-blob absolute bottom-1/4 -right-1/4 w-1/2 h-1/2" />
       </div>
 
-      {!isMobile && <ScrollProgressBar progress={scrollYProgress} totalProjects={projects.length} />}
-
-      <div 
-        className="sticky top-0 z-20 pt-20 sm:pt-20 lg:pt-20 pb-4 sm:pb-6"
-        style={{ 
-          background: 'linear-gradient(to bottom, hsl(var(--muted)/0.98) 0%, hsl(var(--muted)/0.9) 60%, transparent 100%)',
-        }}
-      >
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center px-4"
+      <div className="project-stack relative">
+        <div
+          className="sticky top-0 z-20 pt-20 pb-4 sm:pb-6"
+          style={{
+            background:
+              "linear-gradient(to bottom, hsl(var(--muted)/0.98) 0%, hsl(var(--muted)/0.9) 60%, transparent 100%)",
+          }}
         >
-          <span className="section-label mb-4 inline-flex">Portfolio</span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-3 lg:mb-4 mt-4">
-            <span className="heading-underline">Featured Projects</span>
-          </h2>
-          <p className="text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto">
-            A selection of my best work in AI/ML and full-stack development
-          </p>
-        </motion.div>
+          <div className="text-center px-4">
+            <span className="section-label mb-4 inline-flex">Portfolio</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-3 lg:mb-4 mt-4">
+              <span className="heading-underline">Featured Projects</span>
+            </h2>
+            <p className="hidden sm:block text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto">
+              Live products I&apos;ve designed, built and shipped — click any card to try it
+            </p>
+          </div>
+        </div>
+
+        <div className="relative pb-[4vh] lg:pb-[8vh]">
+          {featured.map((project, i) => (
+            <StickyProjectCard key={project.id} project={project} index={i} totalProjects={featured.length} />
+          ))}
+        </div>
       </div>
 
-      <div 
-        className="relative" 
-        style={{ paddingBottom: isMobile ? STACK_CONFIG.mobileBottomPadding : STACK_CONFIG.bottomPadding }}
-      >
-        {projects.map((project, i) => {
-          const targetScale = Math.max(
-            STACK_CONFIG.minScale, 
-            1 - (projects.length - i - 1) * STACK_CONFIG.scaleReduction
-          );
-          const targetOpacity = Math.max(
-            STACK_CONFIG.minOpacity,
-            1 - (projects.length - i - 1) * STACK_CONFIG.opacityReduction
-          );
-          
-          return (
-            <StickyProjectCard
-              key={project.id}
-              project={project}
-              index={i}
-              progress={scrollYProgress}
-              range={[i * (1 / projects.length), 1]}
-              targetScale={targetScale}
-              targetOpacity={targetOpacity}
-              totalProjects={projects.length}
-              reducedMotion={reducedMotion}
-              isMobile={isMobile}
-            />
-          );
-        })}
-      </div>
+      {more.length > 0 && (
+        <div className="section-deferred relative z-30 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-24">
+          <div className="mb-8 flex items-end justify-between gap-4">
+            <div>
+              <h3 className="text-2xl lg:text-3xl font-bold tracking-tight">More Projects</h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Tools, client websites, experiments and university work
+              </p>
+            </div>
+            <a
+              href={portfolioData.social.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+            >
+              <Github className="h-4 w-4" />
+              All repositories
+              <ArrowUpRight className="h-3.5 w-3.5" />
+            </a>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {more.map((project) => (
+              <MoreProjectCard key={project.id} project={project} />
+            ))}
+          </div>
+        </div>
+      )}
     </section>
   );
 }

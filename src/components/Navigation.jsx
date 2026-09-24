@@ -1,206 +1,179 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Button } from "./ui/button";
-import { ThemeToggle } from "./ui/ThemeToggle";
-import { useSmoothScroll } from "@/hooks/useSmoothScroll";
-import { portfolioData } from "@/lib/schema";
-import { Menu, X, Download, Newspaper } from "lucide-react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { Menu, X, FileText, ArrowUpRight } from "lucide-react";
+import { ThemeToggle } from "./ui/ThemeToggle";
+import { buttonVariants } from "./ui/button-variants";
+import { cn } from "@/lib/utils";
+import { portfolioData } from "@/lib/schema";
 
+// Career-first: four destinations a recruiter or client actually looks for.
+// Home is the logo, Contact is the CTA; Skills, Education, Awards and FAQ are
+// one scroll away and linked from the footer.
 const navItems = [
-  { id: "home", label: "Home" },
-  { id: "skills", label: "Skills" },
-  { id: "projects", label: "Projects" },
-  { id: "education", label: "Education" },
-  { id: "achievements", label: "Achievements" },
-  { id: "contact", label: "Contact" },
+  { id: "projects", label: "Work" },
+  { id: "experience", label: "Experience" },
+  { id: "about", label: "About" },
 ];
 
+const RESUME = "/Abdul_Rahman_Azam__Resume.pdf";
+
 export function Navigation() {
-  const [activeSection, setActiveSection] = useState("home");
+  const [activeSection, setActiveSection] = useState(null);
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const smoothScroll = useSmoothScroll();
-  const navRefs = useRef(new Map());
 
-  const handleDownloadResume = () => {
-    const link = document.createElement("a");
-    link.href = "/Abdul_Rahman_Azam__Resume.pdf";
-    link.download = "Abdul_Rahman_Azam_Resume.pdf";
-    link.setAttribute("target", "_blank");
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
+  // Header background: one cheap scroll read, no layout work.
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-
-      for (const item of navItems) {
-        const element = document.getElementById(item.id);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 100 && rect.bottom >= 100) {
-            setActiveSection(item.id);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const scrollToSection = useCallback((sectionId) => {
-    const element = document.getElementById(sectionId);
-    smoothScroll(element);
-    setMobileMenuOpen(false);
-  }, [smoothScroll]);
+  // Active link: IntersectionObserver instead of measuring every section on every scroll.
+  // Sections that aren't in the nav clear the highlight so it never points at the wrong place.
+  useEffect(() => {
+    const ids = ["home", "about", "skills", "projects", "experience", "education", "achievements", "faq", "contact"];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) setActiveSection(entry.target.id);
+        }
+      },
+      // A thin band just below the header counts as "current section".
+      { rootMargin: "-100px 0px -60% 0px" }
+    );
+    for (const id of ids) {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    }
+    return () => observer.disconnect();
+  }, []);
+
+  const closeMenu = () => setMobileMenuOpen(false);
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled 
-          ? "bg-background/70 backdrop-blur-xl border-b border-border/50 shadow-sm" 
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ${
+        scrolled || mobileMenuOpen
+          ? "bg-background/90 supports-[backdrop-filter]:bg-background/70 supports-[backdrop-filter]:backdrop-blur-xl border-b border-border/50 shadow-sm"
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <button
-            onClick={() => scrollToSection("home")}
-            className="flex items-center gap-2.5 text-xl font-bold tracking-tight px-3 py-2 rounded-lg transition-colors group"
-          >
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-primary/30 bg-primary/10 text-sm font-extrabold text-primary shadow-sm transition-all duration-300 group-hover:bg-primary/20 group-hover:border-primary/50 group-hover:shadow-primary/20 group-hover:shadow-md">
+      <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main">
+        <div className="flex items-center justify-between h-16 gap-4">
+          <a href="#home" onClick={closeMenu} className="group flex items-center gap-2.5">
+            <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-sm font-extrabold text-primary-foreground shadow-sm transition-transform duration-300 group-hover:-rotate-6">
               AR
             </span>
-            <span className="hidden sm:inline">{portfolioData.name}</span>
-          </button>
+            <span className="leading-tight">
+              <span className="block text-sm font-bold tracking-tight">{portfolioData.name}</span>
+              <span className="hidden sm:block text-[11px] text-muted-foreground">{portfolioData.title}</span>
+            </span>
+          </a>
 
-          {/* Desktop nav with sliding indicator */}
-          <div className="hidden md:flex items-center gap-1 relative bg-muted/40 rounded-full px-1.5 py-1.5 backdrop-blur-sm border border-border/30">
+          {/* Desktop nav */}
+          <div className="hidden md:flex items-center gap-7">
             {navItems.map((item) => (
-              <button
+              <a
                 key={item.id}
-                ref={(el) => { if (el) navRefs.current.set(item.id, el); }}
-                onClick={() => scrollToSection(item.id)}
-                className={`relative z-10 px-3.5 py-1.5 text-sm font-medium rounded-full transition-colors duration-200 ${
-                  activeSection === item.id 
-                    ? "text-primary-foreground" 
-                    : "text-muted-foreground hover:text-foreground"
+                href={`#${item.id}`}
+                aria-current={activeSection === item.id ? "true" : undefined}
+                className={`relative py-1 text-sm font-medium transition-colors after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:rounded-full after:bg-primary after:transition-transform after:duration-300 ${
+                  activeSection === item.id
+                    ? "text-foreground after:scale-x-100"
+                    : "text-muted-foreground hover:text-foreground after:scale-x-0"
                 }`}
               >
-                {activeSection === item.id && (
-                  <motion.span
-                    layoutId="nav-pill"
-                    className="absolute inset-0 bg-primary rounded-full shadow-sm"
-                    style={{ zIndex: -1 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                  />
-                )}
                 {item.label}
-              </button>
+              </a>
             ))}
-          </div>
-
-          {/* Right side */}
-          <div className="flex items-center gap-2">
             <Link
               href="/blog"
-              className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground rounded-full transition-colors"
+              className="py-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
-              <Newspaper className="w-3.5 h-3.5" />
               Blog
             </Link>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={handleDownloadResume}
-              className="hidden md:inline-flex gap-2 border-primary/30 text-primary/90 bg-primary/5 hover:bg-primary/10 hover:text-primary hover:border-primary/50 shadow-sm transition-all duration-300"
+          </div>
+
+          <div className="flex items-center gap-1.5">
+            <a
+              href={RESUME}
+              target="_blank"
+              rel="noopener"
+              aria-label="Resume (PDF)"
+              title="Resume (PDF)"
+              className={cn(buttonVariants({ variant: "ghost", size: "sm" }), "hidden md:inline-flex w-9 h-9 p-0")}
             >
-              <Download className="w-3.5 h-3.5" />
-              Resume
-            </Button>
+              <FileText className="w-4 h-4" aria-hidden="true" />
+            </a>
             <ThemeToggle />
-            
-            {/* Mobile menu toggle */}
-            <div className="md:hidden">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                aria-label="Toggle menu"
-                className="relative w-9 h-9 p-0"
-              >
-                <AnimatePresence mode="wait">
-                  {mobileMenuOpen ? (
-                    <motion.div key="close" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.2 }}>
-                      <X className="w-5 h-5" />
-                    </motion.div>
-                  ) : (
-                    <motion.div key="open" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.2 }}>
-                      <Menu className="w-5 h-5" />
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </Button>
-            </div>
+            <a
+              href="#contact"
+              className={cn(buttonVariants({ size: "sm" }), "hidden md:inline-flex ml-1.5 gap-1.5 rounded-full px-4")}
+            >
+              Let&apos;s talk
+              <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
+            </a>
+
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen((open) => !open)}
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-menu"
+              className={cn(buttonVariants({ variant: "ghost", size: "sm" }), "md:hidden relative w-9 h-9 p-0")}
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
           </div>
         </div>
 
-        {/* Mobile menu with slide animation */}
-        <AnimatePresence>
-          {mobileMenuOpen && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="md:hidden overflow-hidden border-t border-border/50"
-            >
-              <div className="py-4 flex flex-col gap-1">
-                {navItems.map((item, i) => (
-                  <motion.div
-                    key={item.id}
-                    initial={{ x: -20, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: i * 0.05, duration: 0.3 }}
-                  >
-                    <button
-                      onClick={() => scrollToSection(item.id)}
-                      className={`w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                        activeSection === item.id 
-                          ? "bg-primary/10 text-primary" 
-                          : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
-                      }`}
-                    >
-                      {item.label}
-                    </button>
-                  </motion.div>
-                ))}
-                <motion.div
-                  initial={{ x: -20, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: navItems.length * 0.05, duration: 0.3 }}
+        {mobileMenuOpen && (
+          <div id="mobile-menu" className="pop-in md:hidden border-t border-border/50">
+            <div className="py-4 flex flex-col gap-1">
+              {navItems.map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  onClick={closeMenu}
+                  className={`px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+                    activeSection === item.id
+                      ? "bg-primary/10 text-primary"
+                      : "text-foreground/80 hover:bg-muted/50"
+                  }`}
                 >
-                  <Link
-                    href="/blog"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="w-full text-left px-4 py-2.5 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 flex items-center gap-2 transition-colors"
-                  >
-                    <Newspaper className="w-4 h-4" />
-                    Blog
-                  </Link>
-                </motion.div>
+                  {item.label}
+                </a>
+              ))}
+              <Link
+                href="/blog"
+                onClick={closeMenu}
+                className="px-4 py-3 rounded-lg text-base font-medium text-foreground/80 hover:bg-muted/50 transition-colors"
+              >
+                Blog
+              </Link>
+              <div className="mt-3 grid grid-cols-2 gap-2 px-1">
+                <a
+                  href={RESUME}
+                  target="_blank"
+                  rel="noopener"
+                  onClick={closeMenu}
+                  className={cn(buttonVariants({ variant: "outline" }), "gap-2")}
+                >
+                  <FileText className="w-4 h-4" aria-hidden="true" />
+                  Resume
+                </a>
+                <a href="#contact" onClick={closeMenu} className={cn(buttonVariants(), "gap-1.5")}>
+                  Let&apos;s talk
+                  <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
+                </a>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+            </div>
+          </div>
+        )}
       </nav>
     </header>
   );

@@ -103,7 +103,7 @@
   --popover-foreground: 150 10% 90%;
   --popover-border: 150 10% 22%;
   --primary: 145 63% 42%;
-  --primary-foreground: 0 0% 98%;
+  --primary-foreground: 150 30% 6%; /* dark text on green: ~7:1 contrast (WCAG AA) */
   --secondary: 150 10% 22%;
   --secondary-foreground: 150 10% 90%;
   --muted: 150 10% 18%;
@@ -136,7 +136,7 @@
   }
 
   html {
-    scroll-behavior: auto;
+    scroll-padding-top: 5rem; /* in-page anchors land below the fixed header */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -189,7 +189,9 @@
   background-color: hsl(var(--primary) / 0.9);
 }
 
-* {
+/* Set on html only: on every element (*) it made each transition-all element
+   restart a scrollbar-color transition on each style recalc during load. */
+html {
   scrollbar-width: thin;
   scrollbar-color: hsl(var(--primary)) hsl(var(--background));
 }
@@ -207,7 +209,7 @@
   background-color: hsl(var(--sidebar-primary) / 0.9);
 }
 
-.dark * {
+.dark {
   scrollbar-color: hsl(var(--sidebar-primary)) hsl(var(--background));
 }
 
@@ -453,4 +455,169 @@
 .section-deferred {
   content-visibility: auto;
   contain-intrinsic-size: auto 500px;
+}
+
+/* Repeated small elements get short component classes to keep the HTML
+   (and the RSC payload that mirrors it) small. */
+@layer components {
+  .chip {
+    @apply inline-flex items-center whitespace-nowrap rounded-md border px-2.5 py-0.5 font-mono text-[11px] font-semibold tracking-wide;
+    border-color: var(--badge-outline);
+  }
+  .chip-sm {
+    @apply rounded bg-muted px-1.5 py-0.5 font-mono text-[10px] text-muted-foreground;
+  }
+  .skill-pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/80 px-3.5 py-1.5 text-sm font-medium leading-none shadow-sm transition-all duration-300;
+  }
+  .skill-pill::before {
+    content: "";
+    @apply size-1.5 rounded-full bg-primary;
+  }
+  .skill-pill:hover {
+    @apply -translate-y-0.5 scale-105 shadow-md border-primary/30;
+  }
+  .tick-list > li {
+    @apply relative pl-6 text-sm text-muted-foreground;
+  }
+  .tick-list > li::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 0.4em;
+    width: 7px;
+    height: 7px;
+    border-right: 2px solid hsl(var(--primary));
+    border-bottom: 2px solid hsl(var(--primary));
+    transform: rotate(-45deg);
+  }
+  .dots-white {
+    background-image: radial-gradient(circle, white 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
+
+/* ── Motion (CSS only, no JS) ──
+   Everything below replaces framer-motion. Content is visible by default;
+   animations only run when the browser supports them and the visitor
+   hasn't asked for reduced motion. */
+
+/* No colour transitions while the theme switches (see use-dark-mode.js). */
+.theme-switching *,
+.theme-switching *::before,
+.theme-switching *::after {
+  transition: none !important;
+}
+
+/* Native smooth anchor scrolling; Lenis (desktop only) takes over when active. */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+html.lenis, html.lenis body { height: auto; }
+html.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth iframe { pointer-events: none; }
+
+/* Soft glows drawn with gradients instead of filter: blur() (much cheaper to paint on phones) */
+.glow-blob {
+  background: radial-gradient(closest-side, hsl(var(--primary) / 0.09), transparent);
+}
+
+@keyframes hero-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes hero-word {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes nudge-down {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes pop-in {
+  from { opacity: 0; transform: translateY(16px) scale(0.96); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes draw-line {
+  0% { stroke-dashoffset: 1; }
+  70%, 100% { stroke-dashoffset: 0; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-in { animation: hero-in 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; animation-delay: var(--delay, 0s); }
+  .hero-word { display: inline-block; animation: hero-word 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; animation-delay: var(--delay, 0s); }
+  .nudge-down { animation: nudge-down 1.8s ease-in-out infinite; }
+  .pop-in { animation: pop-in 0.2s ease-out both; }
+  .draw-line { stroke-dasharray: 1; animation: draw-line 9s linear infinite; }
+
+  /* Idle floating skill pills: desktop only, to keep phones' compositor free */
+  @media (min-width: 768px) {
+    .float-y { animation: float-y var(--float-duration, 2.5s) ease-in-out infinite; }
+  }
+
+  /* Scroll-linked effects (Chrome, Edge, Safari 26+). Other browsers show static content. */
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 70%;
+    }
+
+    /* Featured projects: each sticky card shrinks and dims as the next one slides over it. */
+    .project-stack { view-timeline: --project-stack block; }
+    .project-card-scale {
+      transform-origin: top center;
+      animation: stack-scale linear both;
+      animation-timeline: --project-stack;
+      animation-range: contain var(--scale-start) contain 100%;
+    }
+    .project-card-dim {
+      animation: stack-dim linear both;
+      animation-timeline: --project-stack;
+      animation-range: contain var(--dim-start) contain 100%;
+    }
+
+    /* Education: timeline dots and cards glow while they cross the middle of the screen. */
+    .edu-glow {
+      animation: edu-glow linear both;
+      animation-timeline: view();
+      animation-range: cover 25% cover 75%;
+    }
+    .edu-dot-glow {
+      animation: edu-dot-glow linear both;
+      animation-timeline: view();
+      animation-range: cover 25% cover 75%;
+    }
+  }
+}
+
+@keyframes stack-scale { to { transform: scale(var(--target-scale, 1)); } }
+@keyframes stack-dim { from { opacity: 0; } to { opacity: var(--target-dim, 0); } }
+@keyframes edu-glow {
+  0%, 100% { border-color: hsl(var(--primary) / 0.18); box-shadow: none; }
+  50% { border-color: hsl(var(--primary) / 0.5); box-shadow: 0 0 48px -4px hsl(var(--primary) / 0.6); }
+}
+@keyframes edu-dot-glow {
+  0%, 100% { box-shadow: none; }
+  50% { box-shadow: 0 0 36px 8px hsl(var(--primary) / 0.7); }
+}
+
+/* Featured project stack geometry (was computed in JS from window width) */
+.project-sticky {
+  top: calc(200px + var(--i) * 12px);
+  height: 82vh;
+}
+@media (min-width: 1024px) {
+  .project-sticky {
+    top: calc(255px + var(--i) * 16px);
+    height: 72vh;
+  }
 }

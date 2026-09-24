@@ -9,6 +9,13 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   outputFileTracingRoot: __dirname,
+  images: {
+    // AVIF first (smallest), WebP fallback.
+    formats: ["image/avif", "image/webp"],
+    // Fewer widths = shorter srcset attributes in the HTML and fewer variants to generate.
+    deviceSizes: [640, 828, 1080, 1440, 1920],
+    imageSizes: [64, 128, 256, 384],
+  },
   modularizeImports: {
     "lucide-react": {
       transform: "lucide-react/dist/esm/icons/{{ kebabCase member }}",

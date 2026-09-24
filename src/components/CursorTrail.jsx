@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useSyncExternalStore } from "react";
 
 // Read base theme color from CSS var
 function getBaseHsl() {
@@ -34,8 +34,19 @@ function colorFor(index, total, base) {
 
 const CIRCLES = 32;
 
+// Only on fine pointers (mouse/trackpad) and when motion is allowed. Server
+// render is always off, so the trail appears after hydration.
+const QUERIES = ["(prefers-reduced-motion: reduce)", "(pointer: coarse)"];
+const subscribe = (onChange) => {
+  const lists = QUERIES.map((q) => window.matchMedia(q));
+  lists.forEach((l) => l.addEventListener("change", onChange));
+  return () => lists.forEach((l) => l.removeEventListener("change", onChange));
+};
+const getEnabled = () => QUERIES.every((q) => !window.matchMedia(q).matches);
+const getServerEnabled = () => false;
+
 export function CursorTrail() {
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(subscribe, getEnabled, getServerEnabled);
   const containerRef = useRef(null);
   const circleRefs = useRef([]);
   const coordsRef = useRef({ x: 0, y: 0 });
@@ -43,16 +54,9 @@ export function CursorTrail() {
   const rafRef = useRef();
 
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const isCoarse = window.matchMedia("(pointer: coarse)").matches;
-    if (prefersReducedMotion || isCoarse) return;
-
-    coordsRef.current = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
     if (!mounted) return;
+    coordsRef.current = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+    startedRef.current = false;
     const circles = circleRefs.current;
     const positions = Array.from({ length: circles.length }, () => ({ x: coordsRef.current.x, y: coordsRef.current.y }));
 

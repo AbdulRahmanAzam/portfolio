@@ -27,7 +27,7 @@ export function Resume() {
             Get In Touch
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-            I'm actively looking for AI/ML opportunities. Let's connect and discuss how I can contribute to your team.
+            I&apos;m actively looking for AI/ML opportunities. Let&apos;s connect and discuss how I can contribute to your team.
           </p>
         </div>
 

@@ -1,7 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getBlogPost, getAllPublishedPosts } from "@/lib/blog";
-import { portfolioData } from "@/lib/schema";
+import { portfolioData, getBlogPostSchema, PROFILE_IMAGE } from "@/lib/schema";
+import { buildMetadata } from "@/lib/seo";
 import { ArrowLeft, Clock, Calendar, Tag, Github, Linkedin } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { ReadingProgress } from "@/components/ReadingProgress";
@@ -16,21 +18,20 @@ export async function generateMetadata({ params }) {
   if (!post) return {};
 
   return {
-    title: `${post.title} | ${portfolioData.name}`,
-    description: post.excerpt,
-    openGraph: {
+    ...buildMetadata({
       title: post.title,
+      absoluteTitle: post.title.includes(portfolioData.name),
       description: post.excerpt,
-      type: "article",
-      publishedTime: post.date,
-      authors: [portfolioData.name],
-      tags: post.tags,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: post.title,
-      description: post.excerpt,
-    },
+      path: `/blog/${post.slug}`,
+      openGraph: {
+        type: "article",
+        publishedTime: post.date,
+        modifiedTime: post.updated || post.date,
+        authors: [`${portfolioData.siteUrl}/`],
+        tags: post.tags,
+      },
+    }),
+    authors: [{ name: portfolioData.name, url: `${portfolioData.siteUrl}/` }],
   };
 }
 
@@ -263,12 +264,15 @@ function renderInline(text) {
       );
       remaining = remaining.slice(first.index + first.match[0].length);
     } else if (first.type === "link") {
+      // Internal links stay in the same tab so they pass as normal site navigation.
+      const href = first.match[2];
+      const isInternal = href.startsWith("/") || href.startsWith(portfolioData.siteUrl);
       parts.push(
         <a
           key={key++}
-          href={first.match[2]}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={isInternal ? href.replace(portfolioData.siteUrl, "") || "/" : href}
+          target={isInternal ? undefined : "_blank"}
+          rel={isInternal ? undefined : "noopener noreferrer"}
           className="text-primary font-medium hover:underline underline-offset-2 decoration-primary/40 hover:decoration-primary"
         >
           {first.match[1]}
@@ -291,26 +295,7 @@ export default async function BlogPost({ params }) {
   const prevPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
   const nextPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: post.title,
-    description: post.excerpt,
-    datePublished: post.date,
-    author: {
-      "@type": "Person",
-      name: portfolioData.name,
-      url: portfolioData.siteUrl,
-    },
-    publisher: {
-      "@type": "Person",
-      name: portfolioData.name,
-    },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `${portfolioData.siteUrl}/blog/${post.slug}`,
-    },
-  };
+  const articleSchema = getBlogPostSchema(post);
 
   return (
     <div className="min-h-screen bg-background noise-bg relative">
@@ -377,17 +362,26 @@ export default async function BlogPost({ params }) {
           </p>
 
           <div className="flex items-center gap-5 text-sm text-muted-foreground pb-8 border-b border-border/50">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
-                <span className="text-[10px] font-bold text-primary">AR</span>
-              </div>
-              <span className="font-medium text-foreground">{portfolioData.name}</span>
-            </div>
+            <Link href="/" rel="author" className="flex items-center gap-3 group">
+              <Image
+                src="/abdul-rahman-azam-square.jpg"
+                alt={PROFILE_IMAGE.alt}
+                width={36}
+                height={36}
+                className="w-9 h-9 rounded-full border border-primary/20 object-cover flex-shrink-0"
+              />
+              <span className="font-medium text-foreground group-hover:text-primary transition-colors">{portfolioData.name}</span>
+            </Link>
             <span className="text-border">|</span>
             <span className="inline-flex items-center gap-1.5">
               <Calendar className="w-3.5 h-3.5" />
-              {formatDate(post.date)}
+              <time dateTime={post.date}>{formatDate(post.date)}</time>
             </span>
+            {post.updated && post.updated !== post.date ? (
+              <span className="hidden sm:inline-flex items-center gap-1.5">
+                Updated <time dateTime={post.updated}>{formatDate(post.updated)}</time>
+              </span>
+            ) : null}
             <span className="inline-flex items-center gap-1.5">
               <Clock className="w-3.5 h-3.5" />
               {post.readTime}
@@ -429,16 +423,22 @@ export default async function BlogPost({ params }) {
         {/* Author card */}
         <div className="mt-12 p-6 sm:p-8 rounded-2xl border border-border/50 bg-card/40 backdrop-blur-sm gradient-border">
           <div className="flex items-start gap-4">
-            <div className="w-14 h-14 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
-              <span className="text-base font-bold text-primary">AR</span>
-            </div>
+            <Image
+              src="/abdul-rahman-azam-square.jpg"
+              alt={PROFILE_IMAGE.alt}
+              width={56}
+              height={56}
+              className="w-14 h-14 rounded-full border border-primary/20 object-cover flex-shrink-0"
+            />
             <div className="flex-1">
               <p className="font-semibold text-foreground text-lg">
-                {portfolioData.name}
+                <Link href="/" rel="author" className="hover:text-primary transition-colors">
+                  {portfolioData.name}
+                </Link>
               </p>
               <p className="text-sm text-muted-foreground mt-1 leading-relaxed">
-                {portfolioData.title} — building AI-powered products from model to
-                deployment. Open to AI/ML opportunities.
+                {portfolioData.title} from Karachi, Pakistan. Founder of FAST Wheels and AI Season;
+                builds AI agents and full-stack products from model to deployment.
               </p>
               <div className="flex items-center gap-3 mt-4">
                 <a

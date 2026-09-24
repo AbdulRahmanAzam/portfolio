@@ -1,32 +1,37 @@
 "use client";
 
-import { useLocalStorage, useMediaQuery } from "usehooks-ts";
-import { useEffect, useMemo, useState } from "react";
+import { useSyncExternalStore } from "react";
 
-const COLOR_SCHEME_QUERY = "(prefers-color-scheme: dark)";
+// The inline script in layout.js sets the `dark` class on <html> before the
+// first paint. That class is the single source of truth: this hook only reads
+// it, so hydration never flips the theme (a flip re-styles the whole page and
+// fires every CSS transition at once, which was the main cause of slow loads).
+
+function subscribe(onChange) {
+  const observer = new MutationObserver(onChange);
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+  return () => observer.disconnect();
+}
+
+const getSnapshot = () => document.documentElement.classList.contains("dark");
+const getServerSnapshot = () => false;
 
 export function useDarkMode() {
-  const isDarkOS = useMediaQuery(COLOR_SCHEME_QUERY);
-  const [theme, setTheme] = useLocalStorage("theme", isDarkOS ? "dark" : "light");
-  const [mounted, setMounted] = useState(false);
-
-  const isDarkMode = useMemo(() => theme === "dark", [theme]);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", isDarkMode);
-  }, [isDarkMode]);
+  const isDarkMode = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   const toggle = () => {
-    setTheme(prevTheme => (prevTheme === "light" ? "dark" : "light"));
+    const root = document.documentElement;
+    const next = !root.classList.contains("dark");
+    // Skip colour transitions for the switch itself, then restore them.
+    root.classList.add("theme-switching");
+    root.classList.toggle("dark", next);
+    try {
+      localStorage.setItem("theme", JSON.stringify(next ? "dark" : "light"));
+    } catch {
+      // Private mode or blocked storage: the toggle still works for this visit.
+    }
+    requestAnimationFrame(() => requestAnimationFrame(() => root.classList.remove("theme-switching")));
   };
 
-  return {
-    isDarkMode: mounted ? isDarkMode : false,
-    toggle,
-    mounted,
-  };
+  return { isDarkMode, toggle, mounted: true };
 }
