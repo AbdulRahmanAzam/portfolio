@@ -150,6 +150,11 @@ export function About() {
                   </ul>
                 </div>
               ))}
+              <p>
+                <Link href="/blog/who-is-abdul-rahman-azam" className="font-medium text-primary hover:underline underline-offset-4">
+                  Who is {portfolioData.name}? The full profile →
+                </Link>
+              </p>
             </div>
           </details>
 
