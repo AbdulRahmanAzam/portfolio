@@ -3,6 +3,7 @@ import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const isProduction = process.env.NODE_ENV === "production";
+const RESUME_PDF = "/Abdul_Rahman_Azam__Resume.pdf";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -43,14 +44,30 @@ const nextConfig = {
       },
     ];
   },
+  async rewrites() {
+    // Shareable resume link for recruiters: /resume serves the PDF while the URL stays clean.
+    return [{ source: "/resume", destination: RESUME_PDF }];
+  },
   async headers() {
+    // Open the PDF in the browser's viewer instead of downloading, with a proper file name.
+    const resumeHeaders = [
+      {
+        source: "/resume",
+        headers: [
+          { key: "Content-Disposition", value: 'inline; filename="Abdul_Rahman_Azam_Resume.pdf"' },
+          { key: "Cache-Control", value: "public, max-age=0, must-revalidate" },
+        ],
+      },
+    ];
+
     if (!isProduction) {
       // In development, Next.js uses eval/react-refresh for HMR.
       // A strict CSP here can block client runtime and make sections appear missing.
-      return [];
+      return resumeHeaders;
     }
 
     return [
+      ...resumeHeaders,
       {
         source: "/:path*",
         headers: [
